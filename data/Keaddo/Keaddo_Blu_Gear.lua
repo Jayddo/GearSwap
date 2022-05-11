@@ -578,7 +578,6 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].AoEHealing = set_combine(sets.midcast['Blue Magic']['White Wind'],{})
 
 	sets.midcast['Blue Magic'].Healing = set_combine(sets.midcast['Blue Magic']['White Wind'],{})
-	}
 		
 	sets.midcast['Blue Magic'].UnlockedHealing = set_combine(sets.midcast['Blue Magic']['White Wind'],{})
 
