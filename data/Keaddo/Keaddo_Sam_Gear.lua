@@ -427,7 +427,3 @@ function init_gear_sets()
 end
 
 autows_list = {['Default']='Tachi: Shoha',['Masamune']='Tachi: Fudo',['ShiningOne']='Impulse Drive'}
-
-function user_job_lockstyle()
-	windower.chat.input('/lockstyleset 05')
-end
