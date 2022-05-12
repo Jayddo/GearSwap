@@ -1,3 +1,15 @@
+function user_setup()
+
+	include('Common/SCH_UserSetup_Common.lua')
+
+end
+
+function init_gear_sets()
+
+	include('Common/SCH_Common.lua')
+	
+end
+
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_job_setup()
     state.OffenseMode:options('Normal')

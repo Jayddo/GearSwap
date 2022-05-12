@@ -1,15 +1,3 @@
-function user_setup()
-
-	include('Common/NIN_UserSetup_Common.lua')
-
-end
-
-function init_gear_sets()
-
-	include('Common/NIN_Common.lua')
-	
-end
-
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_job_setup()
 	state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder','Crit')
@@ -30,8 +18,8 @@ function user_job_setup()
 	send_command('bind ^` input /ja "Innin" <me>')
 	send_command('bind !` input /ja "Yonin" <me>')
 	send_command('bind @` gs c cycle SkillchainMode')
-	--send_command('bind !r gs c set WeaponskillMode Proc;;gs c set CastingMode Proc;gs c update')
-	--send_command('bind ^r gs c weapons Default;gs c set WeaponskillMode Normal;gs c set CastingMode Normal;gs c update')
+	send_command('bind !r gs c set WeaponskillMode Proc;;gs c set CastingMode Proc;gs c update')
+	send_command('bind ^r gs c weapons Default;gs c set WeaponskillMode Normal;gs c set CastingMode Normal;gs c update')
 
 	utsusemi_cancel_delay = .3
 	utsusemi_ni_cancel_delay = .06
@@ -53,7 +41,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = {} --legs="Mochizuki Hakama",--main="Nagi"
     sets.precast.JA['Futae'] = {hands="Hattori Tekko +1"}
-    sets.precast.JA['Sange'] = {} --legs="Mochizuki Chainmail"
+    sets.precast.JA['Sange'] = {} --body="Mochizuki Chainmail"
     sets.precast.JA['Provoke'] = sets.Enmity
     sets.precast.JA['Warcry'] = sets.Enmity
 
@@ -91,21 +79,10 @@ function init_gear_sets()
     sets.precast.RA = {}
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {
-        ammo="Seeth. Bomblet +1",
-        head="Mpaca's Cap",
-        neck="Fotia Gorget",
-        ear1="Cessance Earring",
-        ear2="Moonshade Earring",
-        body="Mpaca's Doublet",
-        hands="Adhemar Wrist. +1",
-        ring1="Ilabrat Ring",
-        ring2="Regal Ring",
-        back=gear.da_jse_back,
-        waist="Fotia Belt",
-        legs="Mpaca's Hose",
-        feet="Mpaca's Boots"
-    }
+    sets.precast.WS = {ammo="Voluspa Tathlum",
+        head="Lilitu Headpiece",neck="Fotia Gorget",ear1="Cessance Earring",ear2="Brutal Earring",
+        body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Ilabrat Ring",ring2="Regal Ring",
+        back=gear.da_jse_back,waist="Fotia Belt",legs="Samnuha Tights",feet=gear.herculean_wsd_feet}
     sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {head="Dampening Tam",body="Ken. Samue",legs="Hiza. Hizayoroi +2",ear2="Telos Earring"})
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="C. Palug Stone",head="Ynglinga Sallet",neck="Combatant's Torque",ear2="Telos Earring",body="Ken. Samue",hands="Mummu Wrists +2",waist="Olseni Belt",legs="Hiza. Hizayoroi +2",feet="Malignance Boots"})
 	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {ammo="C. Palug Stone",head="Ynglinga Sallet",neck="Moonbeam Nodowa",ear1="Mache Earring +1",ear2="Telos Earring",body="Mummu Jacket +2",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",waist="Olseni Belt",legs="Hiza. Hizayoroi +2",feet="Malignance Boots"})
@@ -200,12 +177,10 @@ function init_gear_sets()
     sets.resting = {}
 
     -- Idle sets
-    sets.idle = {
-        ammo="Staunch Tathlum +1",
+    sets.idle = {ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Hiza. Haramaki +1",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Dark Ring",
-        back="Solemnity Cape",waist="Flume Belt +1",legs="Malignance Tights",feet="Malignance Boots"
-    }
+        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Dark Ring",
+        back="Moonlight Cape",waist="Flume Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
 
     sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
 
@@ -226,7 +201,7 @@ function init_gear_sets()
 
 
     sets.Kiting = {feet="Danzo Sune-Ate"}
-	sets.DuskKiting = {feet="Hachi. Kyahan +1"}
+	sets.DuskKiting = {}
 	sets.DuskIdle = {}
 	sets.DayIdle = {}
 	sets.NightIdle = {}
@@ -242,12 +217,10 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     -- Normal melee group
-    sets.engaged = {
-        ammo="Happo Shuriken",
-        head="Malignance Chapeau",neck="Lissome Necklace",ear1="Telos Earring",ear2="Brutal Earring",
-        body="Malignance Tabard",hands="Adhemar Wrist. +1",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.da_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet
-    }
+    sets.engaged = {ammo="Seki Shuriken",
+        head="Dampening Tam",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
+        body="Ken. Samue",hands="Adhemar Wrist. +1",ring1="Gere Ring",ring2="Epona's Ring",
+        back=gear.da_jse_back,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
 
     sets.engaged.SomeAcc = {ammo="Seki Shuriken",
         head="Dampening Tam",neck="Moonbeam Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
@@ -318,19 +291,19 @@ function init_gear_sets()
 	sets.Skillchain = {legs="Ryuo Hakama"}
 
 	-- Weapons sets
-	sets.weapons.Heishi = {main="Heishi Shorinken",sub="Ternion Dagger +1"}
-	sets.weapons.Savage = {main="Naegling",sub="Ternion Dagger +1"}
+	sets.weapons.Heishi = {main="Heishi Shorinken",sub="Kunimitsu"}
+	sets.weapons.Savage = {main="Naegling",sub="Kunimitsu"}
 	sets.weapons.Evisceration = {main="Tauret",sub="Kunimitsu"}
 	sets.weapons.MagicWeapons = {main="Kunimitsu",sub="Tauret"}
-	sets.weapons.ProcDagger = {main="Bronze Dagger",sub=empty}
-	sets.weapons.ProcSword = {main="Excalipoor II",sub=empty}
+	sets.weapons.ProcDagger = {main="Chicken Knife II",sub=empty}
+	sets.weapons.ProcSword = {main="Ark Sword",sub=empty}
 	sets.weapons.ProcGreatSword = {main="Lament",sub=empty}
-	sets.weapons.ProcScythe = {main="Hoe",sub=empty}
-	sets.weapons.ProcPolearm = {main="Pitchfork",sub=empty}
+	sets.weapons.ProcScythe = {main="Ark Scythe",sub=empty}
+	sets.weapons.ProcPolearm = {main="Pitchfork +1",sub=empty}
 	sets.weapons.ProcGreatKatana = {main="Hardwood Katana",sub=empty}
-	sets.weapons.ProcKatana = {main="Kannagi",sub=empty}
-	sets.weapons.ProcClub = {main="Feline Hagoita +1",sub=empty}
-    sets.weapons.ProcStaff = {main="Ram Staff",sub=empty}
+	sets.weapons.ProcKatana = {main="Kanaria",sub=empty}
+	sets.weapons.ProcClub = {main="Dream Bell +1",sub=empty}
+	sets.weapons.ProcStaff = {main="Terra's Staff",sub=empty}
 end
 
 -- Select default macro book on initial load or subjob change.
@@ -346,18 +319,3 @@ function select_default_macro_book()
         set_macro_page(1, 12)
     end
 end
-
-function user_job_lockstyle()
-    windower.chat.input('/lockstyleset 04')
-end
-
-buff_spell_lists = {
-	Auto = {	
---		{Name='Migawari: Ichi',Buff='Migawari',SpellID=510,When='Combat'},
-	},
-	
-	Default = {
-		{Name='Myoshu: Ichi',Buff='Subtle Blow Plus',SpellID=507,Reapply=false},
-		{Name='Kakka: Ichi',Buff='Store TP',SpellID=509,Reapply=false},
-	},
-}
