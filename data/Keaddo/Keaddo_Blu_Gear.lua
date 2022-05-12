@@ -1,3 +1,15 @@
+function user_setup()
+
+	include('Common/BLU_UserSetup_Common.lua')
+
+end
+
+function init_gear_sets()
+
+	include('Common/BLU_Common.lua')
+	
+end
+
 function user_job_setup()
     state.OffenseMode:options('Normal','Acc')
 	state.HybridMode:options('Normal','DT')
@@ -819,41 +831,3 @@ buff_spell_lists = {
 		{Name='Memento Mori',		Buff='Magic Atk. Boost',SpellID=538,	Reapply=false},
 	},
 }
-
-debuff_spell_list = {
-	Auto ={
-		{Name='Reaving Wind',	DeBuff='Steal TP',			SpellID=684,	When='Always'},
-		{Name='Feather Tickle',	DeBuff='Steal TP',			SpellID=573,	When='Always'},
-	}
-}
-
-function check_steal_tp()
-	if state.StealTpMode.value ~= 'Off' and not data.areas.cities:contains(world.area) then
-		local spell_recasts = windower.ffxi.get_spell_recasts()
-		if spell_recasts[684] < spell_latency then
-				windower.send_command('input /ma "Reaving Wind" <t>;pause 18.0;input /ma "Feather Tickle" <t>')
-				tickdelay = os.clock() + 2
-		return true
-		end
-
---		for i in pairs(buff_spell_lists[state.StealTpMode.Value]) do
---			if spell_recasts[buff_spell_lists[state.StealTpMode.Value][i].SpellID] < spell_latency and silent_can_use(buff_spell_lists[state.StealTpMode.Value][i].SpellID) then
---				if not unbridled_spells:contains(buff_spell_lists[state.StealTpMode.Value][i].Name) or unbridled_ready() then
---					windower.chat.input('/ma "'..buff_spell_lists[state.StealTpMode.Value][i].Name..'" <t>')
---					tickdelay = os.clock() + 2
---					return true
---				end
---			end
---		end
-
-		return false
-	end
-end
-
---function job_tick()
---	if check_arts() then return true end
---	if check_buff() then return true end
---	if check_buffup() then return true end
---	if check_steal_tp() then return true end
---	return false
---end
