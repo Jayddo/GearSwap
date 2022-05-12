@@ -1,5 +1,5 @@
 -- 4k is weird
-send_command('wait 10; equipviewer pos 1600 700'))
+send_command('wait 10; equipviewer pos 1600 700')
 
 --Place for settings and custom functions to work across one characters, all jobs.
 latency = .75
