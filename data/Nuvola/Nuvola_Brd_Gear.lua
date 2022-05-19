@@ -53,10 +53,10 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Weapons sets
-	sets.weapons.Aeneas = {main="Aeneas",sub="Genbu Shield"}
+	sets.weapons.Aeneas = {main="Aeneas",sub="Genmei Shield"}
 	sets.weapons.DualWeapons = {main="Aeneas",sub="Blurred Knife +1"}
-	sets.weapons.DualNaegling = {main="Kaja Sword",sub="Blurred Knife +1"}
-	sets.weapons.Naegling = {main="Kaja Sword",sub="Genbu Shield"}
+	sets.weapons.DualNaegling = {main="Naegling",sub="Blurred Knife +1"}
+	sets.weapons.Naegling = {main="Naegling",sub="Genmei Shield"}
 	sets.weapons.DualTauret = {main="Tauret",sub="Blurred Knife +1"}
 	sets.weapons.DualAeolian = {main="Tauret",sub="Malevolence"}
 
@@ -66,7 +66,7 @@ function init_gear_sets()
 	-- Precast Sets
 
 	-- Fast cast sets for spells
-	sets.precast.FC = {main="Kali",sub="Genbu Shield",ammo="Impatiens",
+	sets.precast.FC = {main="Kali",sub="Genmei Shield",ammo="Impatiens",
 		head="Bunzi's Hat",neck="Jeweled Collar",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Inyanga Jubbah +2",hands="Leyline Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
 		back="Swith Cape",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Telchine Pigaches"}
@@ -79,11 +79,11 @@ function init_gear_sets()
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {feet="Vanya Clogs"})
 
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
-	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genbu Shield"})
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
 	
 	sets.precast.FC.BardSong = 
 		{
-		main="Kali",sub="Genbu Shield",range="Gjallarhorn",ammo=empty,
+		main="Kali",sub="Genmei Shield",range="Gjallarhorn",ammo=empty,
 		head="Fili Calot +1",neck="Loricate Torque +1",ear1="Loquac. Earring",ear2="Etiolation Earring",
 		body="Inyanga Jubbah +2",hands="Inyan. Dastanas +2",ring1="Defending Ring",ring2="Kishar Ring",
 		back="Swith Cape",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Telchine Pigaches"
@@ -288,12 +288,12 @@ function init_gear_sets()
 		feet="Inyan. Crackows +2"
 	}
 		
-	sets.idle.NoRefresh = {main="Daybreak",sub="Genbu Shield",ammo="Staunch Tathlum +1",
+	sets.idle.NoRefresh = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Fili Cothurnes +1"}
 
-	sets.idle.DT = {main="Daybreak",sub="Genbu Shield",ammo="Staunch Tathlum +1",
+	sets.idle.DT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
@@ -324,7 +324,7 @@ function init_gear_sets()
 	
 	sets.engaged = {
 		main="Aeneas",
-		sub="Genbu Shield",
+		sub="Genmei Shield",
 		ammo="Coiste Bodhar",
 		head="Aya. Zucchetto +2",
 		neck="Bard's Charm +1",
@@ -343,7 +343,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged,{})
 	sets.engaged.DW = {
 		main="Aeneas",
-		sub="Genbu Shield",
+		sub="Genmei Shield",
 		ammo="Coiste Bodhar",
 		head="Aya. Zucchetto +2",
 		neck="Bard's Charm +1",
@@ -367,9 +367,6 @@ end
 function select_default_macro_book()
 	set_macro_page(10, 10)
 end
-
-state.Weapons:options('None','Naegling','Aeneas','DualWeapons','DualNaegling','DualTauret','DualAeolian')
-
 
 
 autows_list = {['Naegling']='Savage Blade',['Aeneas']="Rudra's Storm",['DualWeapons']="Rudra's Storm",['DualNaegling']='Savage Blade',['DualTauret']='Evisceration',['DualAeolian']='Aeolian Edge'}	
@@ -466,8 +463,3 @@ autows_list = {['Naegling']='Savage Blade',['Aeneas']="Rudra's Storm",['DualWeap
 		return false
 		end
 	end
-
-
-	function user_job_lockstyle()
-		windower.chat.input('/lockstyleset 04')
-end

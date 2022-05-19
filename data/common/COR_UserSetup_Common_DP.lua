@@ -51,5 +51,7 @@ gear.jse_tp_back = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 At
 gear.jse_str_back = { name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
 --Lockstyle
-send_command('wait 15; input /lockstyleset 17')
+function user_job_lockstyle()
+	send_command('wait 15; input /lockstyleset 17')
+end
 select_default_macro_book()

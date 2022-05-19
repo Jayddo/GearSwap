@@ -462,8 +462,3 @@ function init_gear_sets()
 	sets.weapons.Akademos = {main="Akademos",sub="Enki Strap"}
 	sets.weapons.Khatvanga = {main="Khatvanga",sub="Bloodrain Strap"}
 end
-
-
-function user_job_lockstyle()
-	windower.chat.input('/lockstyleset 02')
-end

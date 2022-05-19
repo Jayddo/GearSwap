@@ -17,6 +17,8 @@ gear.telchine_enhancing_hands = "Telchine Gloves"
 gear.telchine_enhancing_legs = "Telchine Braconi"
 gear.telchine_enhancing_feet = "Telchine Pigaches"
 
+gear.rdm_jse_neck = "Dls. Torque +2"
+
 gear.gada_enhancing_club = {name="Gada",augments={'Enh. Mag. eff. dur. +6','STR+3','Mag. Acc.+8','"Mag.Atk.Bns."+17','DMG:+7',}}
 gear.gada_healing_club = {name="Gada",augments={'"Cure" potency +9%','Mag. Acc.+11','"Mag.Atk.Bns."+13','DMG:+3',}}
 gear.grioavolr_nuke_staff = {name="Grioavolr",augments={'Magic burst dmg.+8%','MP+61','Mag. Acc.+16','"Mag.Atk.Bns."+30','Magic Damage +7',}}
@@ -25,6 +27,8 @@ gear.grioavolr_pet_staff = {name="Grioavolr",augments={'Blood Pact Dmg.+8','Pet:
 
 gear.taeon_pet_body = {name="Taeon Tabard",augments={'Pet: Accuracy+15 Pet: Rng. Acc.+15','Pet: "Dbl. Atk."+4','Pet: Damage taken -4%',}}
 gear.taeon_phalanx_body = {name="Taeon Tabard",augments={'Mag. Evasion+15','Spell interruption rate down -10%','Phalanx +3'}}
+
+gear.chironic_enfeeble_legs = "Chironic Hose"
 
 gear.chironic_enfeeble_hands = {name="Chironic Gloves",augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','MND+10','Mag. Acc.+15',}}
 gear.chironic_refresh_hands = {name="Chironic Gloves",augments={'"Counter"+4','DEX+4','"Refresh"+2','Accuracy+19 Attack+19','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}

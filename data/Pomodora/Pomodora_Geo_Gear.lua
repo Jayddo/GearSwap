@@ -49,9 +49,8 @@ function user_job_setup()
 	send_command('bind ^delete input /ma "Aspir III" <t>')
 	send_command('bind @delete input /ma "Sleep" <t>')
 	
-	indi_duration = 290
+	indi_duration = 326
 	
-	select_default_macro_book()
 end
 
 function init_gear_sets()
@@ -389,13 +388,8 @@ function init_gear_sets()
 	sets.weapons.DualWeapons = {main='Maxentius',sub='Nehushtan'}
 end
 
--- Select default macro book on initial load or subjob change.
-function select_default_macro_book()
-	set_macro_page(4, 10)
-end
-
 function user_job_lockstyle()
-	windower.chat.input('/lockstyleset 01')
+	send_command('wait 15; input /lockstyleset 01')
 end
 
 autows_list = {['None']='Hexa Strike',['Maxentius']='Black Halo',['DualWeapons']='Black Halo'}

@@ -292,12 +292,12 @@ function job_self_command(commandArgs, eventArgs)
 					blueflag = false
 					enmitydelay = os.clock() + 2.5
 				end
-				if now > enmitydelay then
+				--[[if now > enmitydelay then
 					windower.chat.input('/ma "Stinking Gas" <t>')
 					tickdelay = os.clock() + 2
 					blueflag = true
 					return true
-				end
+				end]]--
 			elseif not check_auto_tank_ws() then
 				if not state.AutoTankMode.value then add_to_chat(123,'All Enmity Blue Magic on cooldown.') end
 			end

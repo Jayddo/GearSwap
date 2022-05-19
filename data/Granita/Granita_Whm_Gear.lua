@@ -454,7 +454,7 @@ function select_default_macro_book()
 end
 
 function user_job_lockstyle()
-	windower.chat.input('/lockstyleset 01')
+	send_command('wait 15; input /lockstyleset 01')
 end
 
 autows_list = {['Default']='Spirit Taker',['DualWeapons']='Realmrazer',['MeleeWeapons']='Realmrazer'}

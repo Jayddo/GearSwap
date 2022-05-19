@@ -545,34 +545,6 @@ function select_default_macro_book()
     end
 end
 
-function user_job_lockstyle()
-	if player.equipment.main == nil or player.equipment.main == 'empty' then
-		windower.chat.input('/lockstyleset 01')
-	elseif res.items[item_name_to_id(player.equipment.main)].skill == 3 then --Sword in main hand.
-		if player.equipment.sub == nil or player.equipment.sub == 'empty' then --Sword/Nothing.
-				windower.chat.input('/lockstyleset 01')
-		elseif res.items[item_name_to_id(player.equipment.sub)].shield_size then --Sword/Shield
-				windower.chat.input('/lockstyleset 01')
-		elseif res.items[item_name_to_id(player.equipment.sub)].skill == 3 then --Sword/Sword.
-			windower.chat.input('/lockstyleset 01')
-		elseif res.items[item_name_to_id(player.equipment.sub)].skill == 2 then --Sword/Dagger.
-			windower.chat.input('/lockstyleset 01')
-		else
-			windower.chat.input('/lockstyleset 01') --Catchall just in case something's weird.
-		end
-	elseif res.items[item_name_to_id(player.equipment.main)].skill == 2 then --Dagger in main hand.
-		if player.equipment.sub == nil or player.equipment.sub == 'empty' then --Dagger/Nothing.
-			windower.chat.input('/lockstyleset 01')
-		elseif res.items[item_name_to_id(player.equipment.sub)].shield_size then --Dagger/Shield
-				windower.chat.input('/lockstyleset 01')
-		elseif res.items[item_name_to_id(player.equipment.sub)].skill == 2 then --Dagger/Dagger.
-			windower.chat.input('/lockstyleset 01')
-		else
-			windower.chat.input('/lockstyleset 01') --Catchall just in case something's weird.
-		end
-	end
-end
-
 autows_list = {['Default']='Savage Blade',['Evisceration']='Evisceration',['Savage']='Savage Blade',['Ranged']='Last Stand',['RangedDP']='Leaden Salute',['DualWeapons']='Savage Blade',['DualSavageWeapons']='Savage Blade',['DualEvisceration']='Evisceration',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualAeolian']='Aeolian Edge',['DualRanged']='Last Stand',['DualMeleeArmageddon']='Wildfire'}
 
 -- autows_list = {['Default']='Last Stand',['Ranged']='Last Stand',['RangedDP']='Leaden Salute',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualRanged']='Last Stand'}

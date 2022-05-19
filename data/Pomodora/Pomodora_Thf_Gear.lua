@@ -386,57 +386,8 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
-    if player.sub_job == 'DNC' then
         set_macro_page(8, 5)
-    elseif player.sub_job == 'WAR' then
-        set_macro_page(7, 5)
-    elseif player.sub_job == 'NIN' then
-        set_macro_page(10, 5)
-    else
-        set_macro_page(6, 5)
-    end
 end
 
-function user_job_lockstyle()
-	windower.chat.input('/lockstyleset 02')
-end
-
-
---Job Specific Trust Override
-function check_trust()
-	if not moving then
-		if state.AutoTrustMode.value and not data.areas.cities:contains(world.area) and (buffactive['Elvorseal'] or buffactive['Reive Mark'] or not player.in_combat) then
-			local party = windower.ffxi.get_party()
-			if party.p5 == nil then
-				local spell_recasts = windower.ffxi.get_spell_recasts()
-
-				if spell_recasts[993] < spell_latency and not have_trust("ArkEV") then
-					windower.chat.input('/ma "AAEV" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				elseif spell_recasts[955] < spell_latency and not have_trust("Apururu") then
-					windower.chat.input('/ma "Apururu (UC)" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				elseif spell_recasts[952] < spell_latency and not have_trust("Koru-Moru") then
-					windower.chat.input('/ma "Koru-Moru" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				elseif spell_recasts[967] < spell_latency and not have_trust("Qultada") then
-					windower.chat.input('/ma "Qultada" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				elseif spell_recasts[914] < spell_latency and not have_trust("Ulmia") then
-					windower.chat.input('/ma "Ulmia" <me>')
-					tickdelay = os.clock() + 3
-					return true
-				else
-					return false
-				end
-			end
-		end
-	end
-	return false
-end
 
 autows_list = {['Aeneas']="Rudra's Storm",['Aeolian']='Aeolian Edge',['Savage']='Savage Blade',['Throwing']="Rudra's Storm",['SwordThrowing']='Savage Blade',['Evisceration']='Evisceration',['ProcWeapons']='Wasp Sting',['Bow']='Empyreal Arrow'}

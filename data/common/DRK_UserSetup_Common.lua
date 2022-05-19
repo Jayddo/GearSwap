@@ -37,6 +37,10 @@ gear.jse_FC_Back	={ name="Ankou's Mantle", augments={'INT+20','Mag. Acc+20 /Mag.
 gear.jse_TP_Back	={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Accuracy+10','Phys. dmg. taken-10%',}}
 gear.Drain_back		={ name="Niht Mantle", augments={'Attack+7','Dark magic skill +7','"Drain" and "Aspir" potency +25',}}
 
-send_command('wait 15; input /lockstyleset 8;')
+function user_job_lockstyle()
+	send_command('wait 15; input /lockstyleset 8;')
+end
+
+
 
 select_default_macro_book()
