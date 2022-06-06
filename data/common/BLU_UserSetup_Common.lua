@@ -47,6 +47,10 @@ end
 send_command('lua r azuresets')
 
 send_command('wait 5; hb disable cure; hb disable curaga; hb disable na')
-send_command('wait 15; input /lockstyleset 16')
+
+function user_job_lockstyle()
+	send_command('wait 15; input /lockstyleset 16')
+end
+
 
 select_default_macro_book()

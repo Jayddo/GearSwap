@@ -25,6 +25,7 @@ if player.sub_job == "DRG" then
 else
 	send_command('unbind @f8')
 end
-
+function user_job_lockstyle()
 send_command('wait 15; input /lockstyleset 12;')
+end
 select_default_macro_book()

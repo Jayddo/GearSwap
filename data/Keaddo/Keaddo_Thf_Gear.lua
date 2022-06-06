@@ -194,7 +194,8 @@ function init_gear_sets()
         ear2="Odr Earring",
         neck="Fotia Gorget",
         body="Abnoba Kaftan",
-        ring1="Begrudging Ring",
+        ring1="Ilabrat Ring",
+        ring2="Regal Ring",
         waist="Fotia Belt"
     })
     sets.precast.WS['Evisceration'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {ammo="Yetshila +1",head="Adhemar Bonnet +1",ear1="Moonshade Earring",ear2="Odr Earring",neck="Fotia Gorget",body="Abnoba Kaftan",hands="Mummu Wrists +2",ring1="Begrudging Ring",waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"})
@@ -379,7 +380,8 @@ function init_gear_sets()
         head="Malignance Chapeau",
         body="Malignance Tabard",
         legs="Malignance Tights",
-        feet="Malignance Boots"
+        feet="Malignance Boots",
+        waist="Reiki Yotai",
     })
 
     sets.engaged.SomeAcc.DT = set_combine(sets.engaged.SomeAcc, {

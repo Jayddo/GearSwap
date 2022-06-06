@@ -114,18 +114,18 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-		ammo="Amar Cluster",
+		ammo="Knobkierrie",
 		head="Ratri Sallet",
 		body="Ratri Breastplate",
 		hands="Ratri Gadlings",
 		legs="Ratri Cuisses",
 		feet="Sulev. Leggings +2",
-		neck="Fotia Gorget",
+		neck="Abyssal Beads +1",
 		waist="Fotia Belt",
-		left_ear="Brutal Earring",
+		left_ear="Thrud Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		left_ring="Karieyh Ring",
-		right_ring="Petrov Ring",
+		right_ring="Regal Ring",
 		back=gear.da_jse_back,
 	}
 
@@ -274,10 +274,10 @@ function init_gear_sets()
 		main="Apocalypse",
 		sub="Bloodrain Strap",
 		ammo="Amar Cluster",
-		head="Flam. Zucchetto +2",
-		body="Flamma Korazin +2",
-		hands="Sulev. Gauntlets +2",
-		legs="Sulev. Cuisses +2",
+		head="Sakpata's Helm",
+		body="Sakpata's Plate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
 		feet="Flam. Gambieras +2",
 		neck="Abyssal Beads +1",
 		waist="Ioskeha Belt",
@@ -430,10 +430,6 @@ function select_default_macro_book()
     else
         set_macro_page(5, 15)
     end
-end
-
-function user_job_lockstyle()
-	windower.chat.input('/lockstyleset 04')
 end
 
 autows_list = {['Apocalypse']="Catastrophe"}

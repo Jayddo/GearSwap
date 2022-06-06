@@ -14,11 +14,14 @@ function init_gear_sets()
 sets.weapons.DualClubs = {main="Maxentius",sub="Bunzi's Rod"}
 sets.weapons.DualSavagebhron = {main="Naegling",sub="Machaera +2"}
 
+autows_list = {['DualCrocea']='Sanguine Blade',['DualCroDay']='Sanguine Blade',['DualSavage']='Savage Blade',['DualSavagebhron']='Savage Blade',
+['DualEvis']='Evisceration',['DualClubs']='Black Halo',['Crocea']='Sanguine Blade',['Naegling']='Savage Blade'}	
+
 sets.precast.FC = {
 	ammo={name="Impatiens", priority=1},													-- QC 2
 	ranged=empty,
 	head=gear.merlinic_fc_head,																-- 15
-	body="Vitiation Tabard +1",																-- 15
+	body="Viti. Tabard +3",																-- 15
 	neck="Loricate torque +1",																-- 
 	legs="Aya. Cosciales +1",																-- 6	
 	waist="Embla Sash",																		-- 5
@@ -31,27 +34,44 @@ sets.precast.FC = {
 
 sets.precast.WS['Savage Blade'] = {
 	range=empty,
-	ammo="Crepuscular Pebble",
+	ammo="Coiste Bodhar",
 	head="Viti. Chapeau +3",
 	body="Nyame Mail",
-	hands="Nyame Gauntlets",
+	hands="Jhakri Cuffs +2",
 	legs="Nyame Flanchard",
 	feet="Nyame Sollerets",
-	neck="Fotia Gorget",
+	neck="Dls. Torque +2",
 	waist="Sailfi Belt +1",
-	left_ear="Ishvara Earring",
+	left_ear="Regal Earring",
 	right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-	left_ring="Petrov Ring",
-	right_ring="Rufescent Ring",
+	left_ring="Metamor. Ring +1",
+	right_ring="Karieyh Ring",
 	back=gear.jse_str_back,
+}
+
+sets.precast.WS['Sanguine Blade'] = {
+	range=empty,
+	ammo="Pemphredo Tathlum",
+	head="Pixie Hairpin +1",
+	body="Nyame Mail",
+	hands="Jhakri Cuffs +2",
+	legs="Nyame Flanchard",
+	feet="Nyame Sollerets",
+	neck="Sanctity Necklace",
+	waist="Yamabuki-no-Obi",
+	left_ear="Regal Earring",
+	right_ear="Malignance Earring",
+	left_ring="Metamor. Ring +1",
+	right_ring="Karieyh Ring",
+	back=gear.jse_mab_back,
 }
 
 sets.midcast['Enhancing Magic'] = {
 	main=gear.colada_enhancing_sword,												-- 4% 	
 	sub="Ammurapi Shield",															-- 10%
 	head=gear.telchine_enhancing_head,												-- 9%
-	body="Viti. Tabard +1",															-- 15%
-	hands="Atrophy Gloves +1",														-- 20%
+	body="Viti. Tabard +3",															-- 15%
+	hands="Atrophy Gloves +2",														-- 20%
 	legs=gear.telchine_enhancing_legs,												-- 9%
 	feet="Leth. Houseaux +1",														-- 30%
 	neck=gear.rdm_jse_neck,															-- ?
@@ -77,9 +97,9 @@ sets.EnhancingSkill = {
 	range=empty,
 	ammo="Staunch Tathlum",
 	head="Befouled Crown",
-	body="Viti. Tabard +1",
-	hands="Viti. Gloves +1",
-	legs="Atrophy Tights +1",
+	body="Viti. Tabard +3",
+	hands="Viti. Gloves +3",
+	legs="Carmine Cuisses",
 	feet="Leth. Houseaux +1",
 	neck=gear.rdm_jse_neck,
 	waist="Olympus Sash",
@@ -90,7 +110,15 @@ sets.EnhancingSkill = {
 	back=gear.jse_skill_back,
 }
 
-sets.midcast.Refresh = {head="Amalric Coif",body="Atrophy Tabard +1",hands="Atrophy Gloves +1",legs="Leth. Fuseau +1"}
+sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{
+	head="Amalric Coif",
+	body="Atrophy Tabard +2",
+	hands="Atrophy Gloves +2",
+	legs="Leth. Fuseau +1",
+	feet="Leth. Houseaux +1",
+	back="Grapevine Cape",
+	waist="Gishdubar Sash"
+})
 sets.midcast.Aquaveil = {head="Amalric Coif",hands="Regal Cuffs"}
 
 sets.midcast['Phalanx'] = {
@@ -125,7 +153,7 @@ sets.midcast['Enfeebling Magic'] = {
 	body="Lethargy Sayon +1",
 	hands="Regal Cuffs",
 	legs=gear.chironic_enfeeble_legs,
-	feet="Vitiation Boots +1",
+	feet="Vitiation Boots +3",
 	neck=gear.rdm_jse_neck,
 	waist="Luminary Sash",
 	left_ear="Regal Earring",
@@ -141,7 +169,7 @@ sets.midcast['Enfeebling Magic'] = {
 sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {
 	range={name="Ullr", priority=1},
 	ammo=empty,
-	body="Atrophy Tabard +1",
+	body="Atrophy Tabard +2",
 	hands={ name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mag. Acc.+20',}},
 	left_ring="Metamor. Ring +1",
 	right_ring="Stikini Ring +1",
@@ -155,18 +183,18 @@ sets.midcast['Enfeebling Magic'].Resistant.INT = set_combine(sets.midcast['Enfee
 sets.midcast.DurationOnlyEnfeebling = set_combine(sets.midcast['Enfeebling Magic'], {
 	range={name="Ullr", priority=1},
 	ammo=empty,
-	body="Atrophy Tabard +1", 
+	body="Atrophy Tabard +2", 
 })
 
 sets.midcast.DurationOnlyEnfeebling.INT = set_combine(sets.midcast['Enfeebling Magic'], {
 	range={name="Ullr", priority=1},
 	ammo=empty,
 	main="Bunzi's Rod", 
-	body="Atrophy Tabard +1", 
+	body="Atrophy Tabard +2", 
 })	
 
 sets.midcast.DurationOnlyEnfeebling.Melee = set_combine(sets.midcast['Enfeebling Magic'], {
-	body="Atrophy Tabard +1", 
+	body="Atrophy Tabard +2", 
 })
 
 -- Idle sets
@@ -225,8 +253,21 @@ sets.engaged = {
 	right_ring="Ilabrat Ring",
 	back=gear.jse_da_back,
 }
-	
-sets.engaged.DW = set_combine(sets.engaged, {waist="Reiki Yotai", right_ear="Suppanomimi"})		
 
+sets.engaged.Crocea = set_combine(sets.engaged,{
+	neck="Sanctity Necklace",
+	hands="Aya. Manopolas +2"
+})
+	
+sets.engaged.DW = set_combine(sets.engaged, {
+	waist="Reiki Yotai", 
+	--right_ear="Suppanomimi"
+})		
+
+sets.engaged.DW.DualCrocea = set_combine(sets.engaged, {
+	waist="Reiki Yotai",
+	neck="Sanctity Necklace",
+	hands="Aya. Manopolas +2"
+})
 	
 end

@@ -791,10 +791,6 @@ end
 autows_list = {['Tizbron']='Expiacion',['Tizalmace']='Expiacion',['Almace']='Chant Du Cygne',['MeleeClubs']='Black Halo',
 ['HybridWeapons']='Sanguine Blade',['Naegbron']='Savage Blade',['Naegmace']='Savage Blade',['MaccWeapons']='Expiacion'}	
 
-function user_job_lockstyle()
-		windower.chat.input('/lockstyleset 01')
-end
-
 buff_spell_lists = {
 	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
 		{Name='Erratic Flutter',	Buff='Haste',			SpellID=710,	When='Always'},

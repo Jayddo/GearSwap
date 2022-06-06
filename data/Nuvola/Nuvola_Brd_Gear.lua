@@ -2,52 +2,45 @@ function user_setup()
 
 	include('Common/BRD_UserSetup_Common.lua')
 
+		-- Options: Override default values
+		state.OffenseMode:options('Normal','Acc')
+		state.HybridMode:options('Normal','DT')
+		state.CastingMode:options('Normal','Melee')
+		state.IdleMode:options('Normal','DT')
+		-- state.Weapons:options('None','Naegling','Aeneas','DualWeapons','DualNaegling','DualTauret','DualAeolian')
+		state.Weapons:options('None','Naegling','DualNaegling')
+	--	state.SongMode = M{['description'] ='SongMode','Melee','Cleave','Mage',' Minnone'}
+	--	state.SongMode:options('Melee','Cleave','Mage','Odyssey','Minnone')
+	
+		gear.melee_jse_back = {name="Intarabus's Cape",augments={'Accuracy+20 Attack+20'}}
+		gear.magic_jse_back = {name="Intarabus's Cape",augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Damage taken-5%',}}
+		gear.idle_jse_back = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}}
+	
+		-- Adjust this if using the Terpander (new +song instrument)
+		info.ExtraSongInstrument = 'Terpander'
+		-- How many extra songs we can keep from Daurdabla/Terpander
+		info.ExtraSongs = 1
+		
+		-- Set this to false if you don't want to use custom timers.
+		state.UseCustomTimers = M(false, 'Use Custom Timers')
+		
+		-- Additional local binds
+		send_command('bind ^` gs c cycle ExtraSongsMode')
+		send_command('bind !` input /ma "Chocobo Mazurka" <me>')
+		send_command('bind @` gs c cycle MagicBurstMode')
+		send_command('bind @f10 gs c cycle RecoverMode')
+		send_command('bind @f8 gs c toggle AutoNukeMode')
+		--send_command('bind !r gs c weapons None;gs c update')
+		--send_command('bind !q gs c weapons NukeWeapons;gs c update')
+		--send_command('bind ^q gs c weapons Swords;gs c update')
+	
+		select_default_macro_book()
 end
 
 function init_gear_sets()
 
 	include('Common/BRD_Common.lua')
 	
-end
-
-function user_job_setup()
-	-- Options: Override default values
-    state.OffenseMode:options('Normal','Acc')
-	state.HybridMode:options('Normal','DT')
-    state.CastingMode:options('Normal','Resistant','AoE')
-    state.IdleMode:options('Normal','NoRefresh','DT')
-	-- state.Weapons:options('None','Naegling','Aeneas','DualWeapons','DualNaegling','DualTauret','DualAeolian')
-	state.Weapons:options('None','Naegling','DualNaegling')
-	state.SongMode = M{['description'] ='SongMode','Melee','Cleave','Mage',' Minnone'}
-	state.SongMode:options('Melee','Cleave','Mage','Odyssey','Minnone')
-
-	gear.melee_jse_back = {name="Intarabus's Cape",augments={'Accuracy+20 Attack+20'}}
-	gear.magic_jse_back = {name="Intarabus's Cape",augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Damage taken-5%',}}
-	gear.idle_jse_back = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}}
-
-	-- Adjust this if using the Terpander (new +song instrument)
-    info.ExtraSongInstrument = 'Terpander'
-	-- How many extra songs we can keep from Daurdabla/Terpander
-    info.ExtraSongs = 1
-	
-	-- Set this to false if you don't want to use custom timers.
-    state.UseCustomTimers = M(false, 'Use Custom Timers')
-	
-	-- Additional local binds
-    send_command('bind ^` gs c cycle ExtraSongsMode')
-	send_command('bind !` input /ma "Chocobo Mazurka" <me>')
-	send_command('bind @` gs c cycle MagicBurstMode')
-	send_command('bind @f10 gs c cycle RecoverMode')
-	send_command('bind @f8 gs c toggle AutoNukeMode')
-	--send_command('bind !r gs c weapons None;gs c update')
-	--send_command('bind !q gs c weapons NukeWeapons;gs c update')
-	--send_command('bind ^q gs c weapons Swords;gs c update')
-
-	select_default_macro_book()
-end
-
-function init_gear_sets()
-
 	--------------------------------------
 	-- Start defining the sets
 	--------------------------------------
@@ -462,4 +455,5 @@ autows_list = {['Naegling']='Savage Blade',['Aeneas']="Rudra's Storm",['DualWeap
 		else
 		return false
 		end
-	end
+
+end

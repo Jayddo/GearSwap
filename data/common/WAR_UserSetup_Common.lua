@@ -36,5 +36,7 @@ end
 
 send_command('bind @f6 gs c toggle AutoZergMode')
 
+function user_job_lockstyle()
 send_command('wait 15; input /lockstyleset 1;')
+end
 select_default_macro_book()

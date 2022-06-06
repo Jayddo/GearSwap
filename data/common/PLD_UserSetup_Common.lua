@@ -39,7 +39,10 @@ send_command('bind @f7 gs c toggle AutoBuffMode;')
 send_command('bind @f8 gs c toggle AutoTankMode;')
 send_command('bind @f10 gs c toggle TankAutoDefense')
 
-send_command('wait 15; input /lockstyleset 7;')
+function user_job_lockstyle()
+    send_command('wait 15; input /lockstyleset 7;')
+end
+
 send_command('hb mincure 4;')
 
 select_default_macro_book()

@@ -39,7 +39,7 @@ function user_job_setup()
 	send_command('bind !delete input /ja "Addendum: Black" <me>')
 	send_command('bind @delete input /ja "Manifestation" <me>')
     
-	select_default_macro_book()
+	--select_default_macro_book()
 end
 
 function init_gear_sets()
@@ -277,7 +277,7 @@ function init_gear_sets()
         back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Merlinic Shalwar",feet="Agwu's Pigaches"}
 		
 	sets.midcast['Elemental Magic'].HighTierNuke = {
-		main="Mpaca's Staff",
+		--[[main="Mpaca's Staff",
 		sub="Enki Strap",
 		ammo="Ghastly Tathlum +1",
 		head="Agwu's Cap",
@@ -291,6 +291,21 @@ function init_gear_sets()
 		back=gear.nuke_jse_back,
 		waist="Acuity Belt +1",
 		legs="Agwu's Slops",
+		feet="Agwu's Pigaches"]]--
+		main="Mpaca's Staff",
+		sub="Enki Strap",
+		ammo="Ghastly Tathlum +1",
+		head="Agwu's Cap",
+		neck="Mizukage-no-Kubikazari",
+		ear1="Malignance Earring",
+		ear2="Barkaro. Earring",
+		body="Ea Houppelande",
+		hands="Ea Cuffs",
+		ring1="Metamor. Ring +1",
+		ring2="Mujin Band",
+		back=gear.nuke_jse_back,
+		waist="Acuity Belt +1",
+		legs="Ea Slops",
 		feet="Agwu's Pigaches"
 	}
 	

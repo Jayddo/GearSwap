@@ -42,6 +42,9 @@ send_command('bind @f10 gs c cycle RecoverMode')
 
 send_command('exec RDMDebuff.txt')
 
-send_command('wait 15; input /lockstyleset 5; wait 3; lua load dressup')
+function user_job_lockstyle()
+    send_command('wait 15; input /lockstyleset 5; wait 3; lua load dressup')
+end
+
 
 select_default_macro_book()

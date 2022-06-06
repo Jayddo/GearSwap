@@ -32,4 +32,4 @@ send_command('gs c set RecoverMode 35%')
 send_command('wait 20; hb disable cure; hb disable curaga; hb disable na')
 send_command('wait 15; input /lockstyleset 4;')
 
-select_default_macro_book()
+--select_default_macro_book()

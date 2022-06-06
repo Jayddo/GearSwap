@@ -23,5 +23,7 @@ send_command('bind ^backspace input /ja "Mantra" <me>')
 send_command('bind @` input /ja "Perfect Counter" <me>')
 send_command('bind ^\\\\ input /ja "Provoke" <t>')
 
+function user_job_lockstyle()
 send_command('wait 15; input /lockstyleset 2;')
+end
 select_default_macro_book()

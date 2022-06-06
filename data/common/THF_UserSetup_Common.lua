@@ -25,5 +25,9 @@ send_command('bind !\\\\ input /ja "Mug" <t>')
 gear.jse_tp_back = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
 gear.jse_wsd_back = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
-send_command('wait 15; input /lockstyleset 6;')
+
+function user_job_lockstyle()
+    send_command('wait 15; input /lockstyleset 6;')
+end
+
 select_default_macro_book()
