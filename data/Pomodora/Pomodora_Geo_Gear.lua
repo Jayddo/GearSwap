@@ -123,7 +123,7 @@ function init_gear_sets()
 	body="Vanir Cotehardie", ring1="Weatherspoon Ring", hands="Amalric gages",
 	back="Lifestream Cape",waist="Cetl Belt",legs="Geomancy Pants +1",feet="Regal Pumps +1"}
 
-	sets.midcast.Geomancy = {main="Solstice", sub="Genbu's Shield",  range="Dunna", 
+	sets.midcast.Geomancy = {main="Idris", sub="Genbu's Shield",  range="Dunna", 
 	head="Azimuth Hood +1", body="Bagua Tunic", hands="Geomancy Mitaines +1", ear1="Influx Earring", ear2="Gifted Earring", 
 	neck="Bagua Charm +1", ring2="Renaye Ring", legs="Azimuth Tights +1", feet="Azimuth Gaiters +1", back="Lifestream Cape"}
 
@@ -157,10 +157,10 @@ function init_gear_sets()
 	
 	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {main=gear.grioavolr_fc_staff,sub="Clemency Grip"})
 	
-    sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-        head=gear.merlinic_nuke_head,neck="Saevus Pendant +1",ear1="Crematio Earring",ear2="Friomisi Earring",
-        body=gear.merlinic_nuke_body,hands="Mallquis Cuffs +2",ring1="Shiva Ring +1",ring2="Freke Ring",
-        back=gear.nuke_jse_back,waist=gear.ElementalObi,legs="Merlinic Shalwar",feet="Amalric Nails +1"}
+    sets.midcast['Elemental Magic'] = {main="Daybreak",sub="Culminus",ammo="Ghastly Tathlum +1",
+        head=gear.merlinic_nuke_head,neck="Sanctity Necklace",ear1="Malignance Earring",ear2="Strophadic Earring",
+        body="Geomancy Tunic +2",hands="Geomancy Mitaines +3",ring1="Shiva Ring",ring2="Vertigo Ring",
+        back="Izdubar Mantle",waist="Eschan Stone",legs="Bagua Pants +3",feet="Bagua Sandals +3"}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head=gear.merlinic_nuke_head,neck="Sanctity Necklace",ear1="Regal Earring",ear2="Malignance Earring",
@@ -297,7 +297,7 @@ function init_gear_sets()
 
 	-- .Pet sets are for when Luopan is present.
 	sets.idle.Pet = {
-		main="Daybreak",sub="Genmei Shield",range="Dunna",
+		main="Idris",sub="Genmei Shield",range="Dunna",
 		head="Azimuth Hood +1",neck="Bagua Charm +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
 		body="Geomancy Tunic +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
 		back=gear.idle_jse_back,waist="Isa Belt",legs="Assiduity Pants +1",feet="Bagua Sandals +3"

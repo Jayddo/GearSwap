@@ -457,7 +457,7 @@ function init_gear_sets()
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub=gear.rostam_melee,range="Anarchy +2"}
 	sets.weapons.DualEvisceration = {main="Tauret",sub=gear.rostam_melee,range="Anarchy +2"}
 	sets.weapons.DualLeadenRanged = {main=gear.rostam_melee,sub="Tauret",range="Death Penalty"}
-	sets.weapons.DualLeadenMelee = {main="Naegling",sub=gear.rostam_melee,range="Death Penalty"}
+	sets.weapons.DualLeadenMelee = {main=gear.rostam_melee,sub="Tauret",range="Death Penalty"}
 	sets.weapons.DualAeolian = {main=gear.rostam_melee,sub="Tauret",range="Anarchy +2"}
 	sets.weapons.DualLeadenMeleeAcc = {main="Naegling",sub=gear.rostam_melee,range="Death Penalty"}
 	sets.weapons.DualRanged = {main=gear.rostam_melee,sub="Kustawi +1",range="Fomalhaut"}

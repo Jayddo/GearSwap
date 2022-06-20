@@ -11,6 +11,7 @@ function init_gear_sets()
 
 	state.Weapons:options('None','DualCrocea','DualCroDay','DualSavage','DualSavagebhron','DualEvis','DualClubs','Crocea','Naegling')
 
+sets.weapons.DualCrocea = {main="Crocea Mors",sub="Crepuscular Knife"}
 sets.weapons.DualClubs = {main="Maxentius",sub="Bunzi's Rod"}
 sets.weapons.DualSavagebhron = {main="Naegling",sub="Machaera +2"}
 
