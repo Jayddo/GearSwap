@@ -168,6 +168,7 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS,{
         helm="Nyame Helm",
         ear1="Friomisi Earring",
+        waist="Orpheus's Sash"
     })
 
     sets.precast.WS['Apex Arrow'] = {

@@ -59,7 +59,7 @@ sets.precast.WS['Sanguine Blade'] = {
 	legs="Nyame Flanchard",
 	feet="Nyame Sollerets",
 	neck="Sanctity Necklace",
-	waist="Yamabuki-no-Obi",
+	waist="Orpheus's Sash",
 	left_ear="Regal Earring",
 	right_ear="Malignance Earring",
 	left_ring="Metamor. Ring +1",
@@ -257,7 +257,8 @@ sets.engaged = {
 
 sets.engaged.Crocea = set_combine(sets.engaged,{
 	neck="Sanctity Necklace",
-	hands="Aya. Manopolas +2"
+	hands="Aya. Manopolas +2",
+	waist="Orpheus's Sash"
 })
 	
 sets.engaged.DW = set_combine(sets.engaged, {
@@ -265,10 +266,11 @@ sets.engaged.DW = set_combine(sets.engaged, {
 	--right_ear="Suppanomimi"
 })		
 
-sets.engaged.DW.DualCrocea = set_combine(sets.engaged, {
-	waist="Reiki Yotai",
+sets.engaged.DualCrocea = set_combine(sets.engaged, {
+	waist="Orpheus's Sash",
 	neck="Sanctity Necklace",
-	hands="Aya. Manopolas +2"
+	hands="Aya. Manopolas +2",
+	ear2="Suppanomimi"
 })
 	
 end

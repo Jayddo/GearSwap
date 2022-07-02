@@ -1,0 +1,17 @@
+sets.exported={
+    main={ name="Crocea Mors", augments={'Path: C',}},
+    sub="Crepuscular Knife",
+    ammo="Coiste Bodhar",
+    head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+    body="Jhakri Robe +2",
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs="Malignance Tights",
+    feet="Malignance Boots",
+    neck={ name="Dls. Torque +2", augments={'Path: A',}},
+    waist="Orpheus's Sash",
+    left_ear="Infused Earring",
+    right_ear="Telos Earring",
+    left_ring="Defending Ring",
+    right_ring="Ilabrat Ring",
+    back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+}

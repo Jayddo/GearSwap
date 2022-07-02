@@ -275,7 +275,7 @@ sets.midcast['Phalanx'] = {
 	neck="Incanter's Torque",			-- 10
 	waist=gear.dt_waist,
 	left_ear="Andoaa Earring",			-- 5
-	right_ear="Mimir Earring",			-- 10
+	right_ear="Mimir Eararing",			-- 10
 	left_ring="Defending Ring",
 	right_ring=gear.stikini_ring,		-- 8
 	back=gear.jse_macc_back,
@@ -558,3 +558,5 @@ sets.engaged = {
 }
 	
 sets.engaged.DW = set_combine(sets.engaged, {waist="Reiki Yotai", right_ear="Suppanomimi"})		
+
+

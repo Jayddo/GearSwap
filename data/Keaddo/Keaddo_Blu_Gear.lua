@@ -287,7 +287,7 @@ function init_gear_sets()
 		ring1="Metamor. Ring +1",
 		ring2="Shiva Ring +1",
 		back=gear.nuke_jse_back,
-		waist="Yamabuki-no-Obi",
+		waist="Orpheus's Sash",
 		legs="Luhlaza Shalwar +3",
 		feet="Nyame Sollerets"
 	}
@@ -397,7 +397,7 @@ function init_gear_sets()
 		ring1="Metamor. Ring +1",
 		ring2="Shiva Ring +1",
 		back=gear.nuke_jse_back,
-		waist="Yamabuki-no-Obi",
+		waist="Orpheus's Sash",
 		legs="Luhlaza Shalwar +3",
 		feet="Jhakri Pigaches +2"
 		}

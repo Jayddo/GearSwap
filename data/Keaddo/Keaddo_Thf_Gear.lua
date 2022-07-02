@@ -232,7 +232,7 @@ function init_gear_sets()
     sets.precast.WS['Aeolian Edge'] = {ammo="Seeth. Bomblet +1",
         head="Nyame Helm",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Moonshade Earring",
         body="Nyame Mail",hands="Nyame Gauntlets",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
-        back=gear.wsd_jse_back,waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+        back=gear.wsd_jse_back,waist="Orpheus's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
     sets.precast.WS['Aeolian Edge'].DT = set_combine(sets.precast.WS['Aeolian Edge'], {})
 
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
