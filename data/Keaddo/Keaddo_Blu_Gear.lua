@@ -248,7 +248,7 @@ function init_gear_sets()
 		body="Assim. Jubbah +3",
 		hands="Jhakri Cuffs +2",
 		ring1="Karieyh ring",
-		ring2="Shukuyu Ring",
+		ring2="Epaminondas's Ring",
 		back=gear.wsd_jse_back,
 		waist="Sailfi Belt +1",
 		legs="Luhlaza Shalwar +3",

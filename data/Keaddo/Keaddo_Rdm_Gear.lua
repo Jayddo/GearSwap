@@ -45,8 +45,8 @@ sets.precast.WS['Savage Blade'] = {
 	waist="Sailfi Belt +1",
 	left_ear="Regal Earring",
 	right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-	left_ring="Metamor. Ring +1",
-	right_ring="Karieyh Ring",
+	left_ring="Karieyh Ring",
+	right_ring="Epaminondas's Ring",
 	back=gear.jse_str_back,
 }
 
