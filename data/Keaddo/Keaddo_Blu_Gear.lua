@@ -240,7 +240,7 @@ function init_gear_sets()
 	sets.precast.WS['Chant du Cygne'].Fodder = set_combine(sets.precast.WS['Chant du Cygne'], {})
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-		ammo="Amar Cluster",
+		ammo="Coiste Bodhar",
 		head="Nyame Helm",
 		neck="Mirage Stole +2",
 		ear1="Moonshade earring",
@@ -280,12 +280,12 @@ function init_gear_sets()
 		ammo="Pemphredo Tathlum",
 		head="Nyame Helm",
 		neck="Sanctity Necklace",
-		ear1="Hecate's Earring",
+		ear1="Regal Earring",
 		ear2="Friomisi Earring",
 		body="Jhakri Robe +2",
 		hands="Jhakri Cuffs +2",
-		ring1="Metamor. Ring +1",
-		ring2="Shiva Ring +1",
+		ring1="Karieyh Ring",
+		ring2="Epaminondas's Ring",
 		back=gear.nuke_jse_back,
 		waist="Orpheus's Sash",
 		legs="Luhlaza Shalwar +3",
@@ -316,7 +316,9 @@ function init_gear_sets()
 		feet="Luhlaza Charuqs +2",
         neck="Mirage Stole +2",
 		back="Cornflower Cape",
-		ear1="Njordr Earring"
+		ear1="Njordr Earring",
+		ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1"
 	}
 
 	-- Physical Spells --
@@ -390,7 +392,7 @@ function init_gear_sets()
 		ammo="Pemphredo Tathlum",
 		head=None,
 		neck="Sanctity Necklace",
-		ear1="Hecate's Earring",
+		ear1="Regal Earring",
 		ear2="Friomisi Earring",
 		body="Cohort Cloak +1",
 		hands="Jhakri Cuffs +2",
@@ -432,15 +434,15 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		neck="Mirage Stole +2",
 		ear1="Digni. Earring",
-		ear2="Gwati Earring",
+		ear2="Regal Earring",
 		body="Malignance Tabard",
 		hands="Nyame Gauntlets",
-		ring1="Kishar Ring",
-		ring2="Metamor. Ring +1",
+		ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
 		waist="Luminary Sash",
 		legs="Malignance Tights",
-		feet="Nyame Sollerets"
+		feet="Jhakri Pigaches +2"
 	})
 
 	sets.midcast['Blue Magic'].Magical.FullMacc = sets.midcast['Blue Magic'].MagicAccuracy
@@ -561,12 +563,12 @@ function init_gear_sets()
 		ear2="Gwati Earring",
 		body="Malignance Tabard",
 		hands="Nyame Gauntlets",
-		ring1="Kishar Ring",
-		ring2="Metamor. Ring +1",
+		ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
 		waist="Luminary Sash",
 		legs="Malignance Tights",
-		feet="Nyame Sollerets"
+		feet="Jhakri Pigaches +2"
 	}
 
 	sets.midcast['Blue Magic']['White Wind'] = {
@@ -602,7 +604,9 @@ function init_gear_sets()
         neck="Mirage Stole +2",
 		back="Cornflower Cape",
 		ear1="Njordr Earring",
-		legs="Hashishin Tayt +1"
+		legs="Hashishin Tayt +1",
+		ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1"
 
 	}
 

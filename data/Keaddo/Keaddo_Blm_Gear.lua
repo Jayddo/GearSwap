@@ -231,10 +231,10 @@ function init_gear_sets()
         body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Freke Ring",ring2="Archon Ring",
         back=gear.nuke_jse_back,waist="Yamabuki-no-Obi",legs="Merlinic Shalwar",feet="Amalric Nails +1"}
 	
-	    sets.midcast.Stun = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
-        head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-        body="Zendik Robe",hands="Volte Gloves",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
-        back=gear.nuke_jse_back,waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}
+	sets.midcast.Stun = {main="Mpaca's Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
+        head="Agwu's Cap",neck="Src. Stole +2",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
+        body="Agwu's Robe",hands="Agwu's Gages",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+        back=gear.nuke_jse_back,waist="Witful Belt",legs="Psycloth Lappas",feet="Agwu's Pigaches"}
 		
     sets.midcast.Stun.Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Amalric Coif +1",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",

@@ -85,7 +85,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Sakonji Domaru +3",
         hands="Nyame Gauntlets",
-        ring1="Regal Ring",
+        ring1="Epaminondas's Ring",
         ring2="Karieyh Ring",
         back=gear.ws_jse_back,
         waist="Fotia Belt",

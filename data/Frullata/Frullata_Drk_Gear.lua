@@ -80,9 +80,9 @@ function init_gear_sets()
 	-- Specific spells
  
 	sets.midcast['Dark Magic'] = {ammo="Pemphredo Tathlum",
-		head="Carmine Mask +1",neck="Erra Pendant",ear1="Digni. Earring",ear2="Malignance Earring",
-		body="Flamma Korazin +2",hands="Flam. Manopolas +2",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Toro Cape",waist="Eschan Stone",legs="Eschite Cuisses",feet="Flam. Gambieras +2"}
+		head="Nyame Helm",neck="Erra Pendant",ear1="Gwati Earring",ear2="Malignance Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Sangoma Ring",ring2="Metamor. Ring +1",
+		back="Toro Cape",waist="Eschan Stone",legs="Nyame Flanchard",feet="Nyame Sollerets"}
            
 	sets.midcast['Enfeebling Magic'] = {ammo="Pemphredo Tathlum",
 		head="Carmine Mask +1",neck="Erra Pendant",ear1="Digni. Earring",ear2="Malignance Earring",
