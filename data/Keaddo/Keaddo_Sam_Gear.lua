@@ -106,18 +106,35 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         waist="Sailfi Belt +1"
     })
-    sets.precast.WS['Tachi: Fudo'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Tachi: Fudo'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Tachi: Fudo'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+    sets.precast.WS['Tachi: Fudo'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS.Acc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Fudo'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Fudo'].Fodder = set_combine(sets.precast.WS.Fodder, {
+        waist="Sailfi Belt +1"
+    })
 	
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         waist="Sailfi Belt +1"
     })
-    sets.precast.WS['Tachi: Shoha'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Tachi: Shoha'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Tachi: Shoha'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+    sets.precast.WS['Tachi: Shoha'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Shoha'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+        waist="Sailfi Belt +1"
+    })
+    waist="Sailfi Belt +1"
+    sets.precast.WS['Tachi: Shoha'].Fodder = set_combine(sets.precast.WS.Fodder, {
+        waist="Sailfi Belt +1"
+    })
 
     sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Tachi: Rana'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
@@ -128,10 +145,18 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {
         waist="Sailfi Belt +1"
     })
-    sets.precast.WS['Tachi: Kasha'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Tachi: Kasha'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Tachi: Kasha'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Tachi: Kasha'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+    sets.precast.WS['Tachi: Kasha'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Kasha'].Acc = set_combine(sets.precast.WS.Acc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Kasha'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Kasha'].Fodder = set_combine(sets.precast.WS.Fodder, {
+        waist="Sailfi Belt +1"
+    })
 
     sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {
         waist="Sailfi Belt +1"
@@ -139,17 +164,31 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Gekko'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {
         waist="Sailfi Belt +1"
     })
-    sets.precast.WS['Tachi: Gekko'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Tachi: Gekko'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Tachi: Gekko'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+    sets.precast.WS['Tachi: Gekko'].Acc = set_combine(sets.precast.WS.Acc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Gekko'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Gekko'].Fodder = set_combine(sets.precast.WS.Fodder, {
+        waist="Sailfi Belt +1"
+    })
 
     sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {
         waist="Sailfi Belt +1"
     })
-    sets.precast.WS['Tachi: Yukikaze'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Tachi: Yukikaze'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Tachi: Yukikaze'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Tachi: Yukikaze'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+    sets.precast.WS['Tachi: Yukikaze'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Yukikaze'].Acc = set_combine(sets.precast.WS.Acc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Yukikaze'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+        waist="Sailfi Belt +1"
+    })
+    sets.precast.WS['Tachi: Yukikaze'].Fodder = set_combine(sets.precast.WS.Fodder, {
+        waist="Sailfi Belt +1"
+    })
 
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS['Tachi: Fudo'],{})
 
@@ -160,7 +199,7 @@ function init_gear_sets()
         ear1="Digni. Earring",
         ear2="Moonshade Earring",
         ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
-        waist="Eschan Stone"
+        waist="Orpheus's Sash"
     })
 		
     sets.precast.WS['Tachi: Hobaku'] = set_combine(sets.precast.WS['Tachi: Jinpu'],{})
@@ -230,7 +269,7 @@ function init_gear_sets()
 	sets.Skillchain = {}
 	
     sets.idle = {
-        ammo="Staunch Tathlum",
+        ammo="Staunch Tathlum +1",
         head="Wakido Kabuto +2",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",
@@ -295,57 +334,51 @@ function init_gear_sets()
         ammo="Coiste Bodhar",
         head="Flam. Zucchetto +2",
         neck="Sam. Nodowa +2",
-        ear1="Telos Earring",
-        ear2="Cessance Earring",
-        body="Mpaca's Doublet",
-        hands="Wakido Kote +3",
+        ear1="Dedition Earring",
+        ear2="Telos Earring",
+        body="Kasuga Domaru +2",
+        hands="Tatena. Gote +1",
         ring1="Niqmaddu Ring",
         ring2="Chirich Ring +1",
         back=gear.stp_jse_back,
         waist="Ioskeha Belt +1",
-        legs="Mpaca's Hose",
+        legs="Kasuga Haidate +2",
         feet="Ryuo Sune-Ate +1"
     }
     sets.engaged.SomeAcc = set_combine(sets.engaged,{
-        ear2="Digni. Earring"
+        ear1="Digni. Earring"
     })
     sets.engaged.Acc = set_combine(sets.engaged,{
-        ear2="Digni. Earring",
-        feet="Mpaca's Boots"
+        ear1="Digni. Earring",
     })
     sets.engaged.FullAcc = set_combine(sets.engaged,{})
     sets.engaged.Fodder = set_combine(sets.engaged,{})
     sets.engaged.PDT = set_combine(sets.engaged,{
-        ammo="Staunch Tathlum",
-        neck="Loricate Torque +1",
+        head="Kasuga Kabuto +2",
         ring2="Defending Ring",
-        feet="Mpaca's Boots"
     })
     sets.engaged.SomeAcc.PDT = set_combine(sets.engaged,{
-        ammo="Staunch Tathlum",
-        neck="Loricate Torque +1",
+        head="Kasuga Kabuto +2",
         ring2="Defending Ring",
-        ear2="Digni. Earring"
+        ear1="Digni. Earring"
     })
     sets.engaged.Acc.PDT = set_combine(sets.engaged,{
-        ear2="Digni. Earring",
-        ring1="Defending Ring"
+        head="Kasuga Kabuto +2",
+        ear1="Digni. Earring",
+        ring2="Defending Ring"
     })
     sets.engaged.FullAcc.PDT = set_combine(sets.engaged,{})
     sets.engaged.Fodder.PDT = set_combine(sets.engaged,{})
 	sets.engaged.DTLite = set_combine(sets.engaged,{
-        ring2="Defending Ring",
-        feet="Mpaca's Boots"
+        head="Kasuga Kabuto +2",
     })
     sets.engaged.SomeAcc.DTLite = set_combine(sets.engaged,{
-        ear2="Digni. Earring",
-        ring1="Defending Ring",
-        feet="Mpaca's Boots"
+        ear1="Digni. Earring",
+        head="Kasuga Kabuto +2",
     })
     sets.engaged.Acc.DTLite = set_combine(sets.engaged,{
-        ear2="Digni. Earring",
-        ring1="Defending Ring",
-        feet="Mpaca's Boots"
+        head="Kasuga Kabuto +2",
+        ear1="Digni. Earring",
     })
     sets.engaged.FullAcc.DTLite = set_combine(sets.engaged,{})
     sets.engaged.Fodder.DTLite = set_combine(sets.engaged,{})
@@ -417,7 +450,7 @@ function init_gear_sets()
 	sets.Cure_Received = {hands="Buremte Gloves",waist="Gishdubar Sash",legs="Flamma Dirs +2"}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {neck="Vim Torque +1"}
-	sets.buff.Hasso = {hands="Wakido Kote +3"}
+	sets.buff.Hasso = {legs="Kasuga Haidate +2"}
 	sets.buff['Third Eye'] = {} --legs="Sakonji Haidate +3"
     sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
     sets.buff.Sengikori = {feet="Kas. Sune-Ate +1"}

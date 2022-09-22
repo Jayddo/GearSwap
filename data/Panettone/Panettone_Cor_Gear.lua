@@ -94,7 +94,7 @@ function init_gear_sets()
         ear1="Genmei Earring",
         ear2="Eabani Earring",
         body="Nyame Mail",
-        hands="Chasseur's Gants +1",
+        hands="Chasseur's Gants +2",
         ring1="Defending Ring",
         ring2="Dark Ring",
         back=gear.tp_jse_back,
@@ -109,7 +109,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +1"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +1"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
     
     sets.precast.CorsairShot = {
         ammo=gear.QDbullet,

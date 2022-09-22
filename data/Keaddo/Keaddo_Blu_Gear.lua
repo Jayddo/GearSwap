@@ -633,7 +633,7 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head="Rawhide Mask",
 		neck="Sanctity Necklace", 
 		ear1="Infused Earring", 
@@ -651,7 +651,7 @@ function init_gear_sets()
 	-- sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
 
 	sets.idle.PDT = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head="Nyame Helm",
 		neck="Loricate Torque +1", 
 		ear1="Etiolation Earring", 
@@ -671,7 +671,7 @@ function init_gear_sets()
 	-- sets.idle.DTHippo = set_combine(sets.idle.PDT, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
 
 	-- Defense sets
-	sets.defense.PDT = {main="Sakpata's Sword",sub="Genmei Shield",ammo="Staunch Tathlum",
+	sets.defense.PDT = {main="Sakpata's Sword",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 	head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Eabani Earring",
 	body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
 	back="Shadow Cape",waist="Flume Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
@@ -754,7 +754,7 @@ function init_gear_sets()
 	sets.engaged.Fodder = set_combine(sets.engaged,{})
 	sets.engaged.Fodder.AM = set_combine(sets.engaged.AM,{})
 	sets.engaged.DT = {
-			ammo="Staunch Tathlum", -- 2 dt
+			ammo="Staunch Tathlum +1", -- 2 dt
 			head="Malignance Chapeau", -- 6 dt
 			neck="Mirage Stole +2",
 			ear1="Telos Earring",

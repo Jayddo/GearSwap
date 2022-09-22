@@ -64,7 +64,7 @@ function init_gear_sets()
 	sets.precast.JA['Life Cycle'] = {body="Geomancy Tunic +2",back=gear.idle_jse_back}
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 	sets.precast.JA['Mending Halation'] = {legs="Bagua Pants +3"}
-	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands="Bagua Mitaines"}
+	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +2",hands="Bagua Mitaines"}
 	
 	-- Indi Duration in slots that would normally have skill here to make entrust more efficient.
 	sets.buff.Entrust = {}
@@ -124,15 +124,15 @@ function init_gear_sets()
 	back="Lifestream Cape",waist="Cetl Belt",legs="Geomancy Pants +1",feet="Regal Pumps +1"}
 
 	sets.midcast.Geomancy = {main="Idris", sub="Genbu's Shield",  range="Dunna", 
-	head="Azimuth Hood +1", body="Bagua Tunic", hands="Geomancy Mitaines +1", ear1="Influx Earring", ear2="Gifted Earring", 
-	neck="Bagua Charm +1", ring2="Renaye Ring", legs="Azimuth Tights +1", feet="Azimuth Gaiters +1", back="Lifestream Cape"}
+	head="Azimuth Hood +2", body="Bagua Tunic", hands="Geo. Mitaines +3", ear1="Influx Earring", ear2="Gifted Earring", 
+	neck="Bagua Charm +1", ring2="Renaye Ring", legs="Azimuth Tights +1", feet="Azimuth Gaiters +2", back="Lifestream Cape"}
 
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
 		main="Solstice", sub="Genbu's Shield", range="Dunna", 
-		head="Azimuth Hood +1", body="Bagua Tunic", ear1="Influx Earring", ear2="Gifted Earring", neck="Bagua Charm +1",
-		legs="Bagua Pants +3", hands="Geomancy Mitaines +1", feet="Azimuth Gaiters +1", back="Lifestream Cape"
+		head="Azimuth Hood +2", body="Bagua Tunic", ear1="Influx Earring", ear2="Gifted Earring", neck="Bagua Charm +1",
+		legs="Bagua Pants +3", hands="Geo. Mitaines +3", feet="Azimuth Gaiters +2", back="Lifestream Cape"
 	})
 		
     sets.midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield", ear1="Novia Earring", ear2="Gifted Earring",
@@ -285,7 +285,7 @@ function init_gear_sets()
 
 	sets.idle = {
 		main="Daybreak", sub="Genbu's Shield", 
-		range="Dunna",head="Azimuth Hood +1",
+		range="Dunna",head="Azimuth Hood +2",
 			neck="Sanctity Necklace", ear1="Etiolation Earring", ear2="Ethereal Earring",
 			body="Geomancy Tunic +2",hands="Geo. Mitaines +3", ring1="Defending Ring", ring2="Vertigo Ring",
 			back="Lifestream Cape",waist="Fucho-no-obi",legs="Assiduity Pants +1",feet="Bagua Sandals +3"
@@ -298,13 +298,13 @@ function init_gear_sets()
 	-- .Pet sets are for when Luopan is present.
 	sets.idle.Pet = {
 		main="Idris",sub="Genmei Shield",range="Dunna",
-		head="Azimuth Hood +1",neck="Bagua Charm +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
+		head="Azimuth Hood +2",neck="Bagua Charm +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
 		body="Geomancy Tunic +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
 		back=gear.idle_jse_back,waist="Isa Belt",legs="Assiduity Pants +1",feet="Bagua Sandals +3"
 	}
 
 	sets.idle.PDT.Pet = {main="Malignance Pole",sub="Umbra Strap",range="Dunna",
-		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
+		head="Azimuth Hood +2",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
 		body="Jhakri Robe +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
 		back=gear.idle_jse_back,waist="Isa Belt",legs="Nyame Flanchard",feet="Bagua Sandals +3"}
 

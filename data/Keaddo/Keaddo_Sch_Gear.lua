@@ -443,7 +443,7 @@ function init_gear_sets()
     sets.idle.PDT = set_combine(sets.idle, {
         main="Malignance Pole",
         sub="Umbra Strap",
-        ammo="Staunch Tathlum",
+        ammo="Staunch Tathlum +1",
         head="Nyame Helm",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",
@@ -466,7 +466,7 @@ function init_gear_sets()
     sets.defense.PDT = {
         main="Malignance Pole",
         sub="Umbra Strap",
-        ammo="Staunch Tathlum",
+        ammo="Staunch Tathlum +1",
         head="Nyame Helm",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",
@@ -483,7 +483,7 @@ function init_gear_sets()
     sets.defense.MDT = {
         main="Malignance Pole",
         sub="Umbra Strap",
-        ammo="Staunch Tathlum",
+        ammo="Staunch Tathlum +1",
         head="Nyame Helm",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",
@@ -500,7 +500,7 @@ function init_gear_sets()
     sets.defense.MEVA = {
         main="Malignance Pole",
         sub="Umbra Strap",
-        ammo="Staunch Tathlum",
+        ammo="Staunch Tathlum +1",
         head="Nyame Helm",
         neck="Loricate Torque +1",
         ear1="Etiolation Earring",

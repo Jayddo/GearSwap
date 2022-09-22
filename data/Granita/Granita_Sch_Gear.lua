@@ -289,15 +289,37 @@ function init_gear_sets()
         body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Mujin Band",
         back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Agwu's Slops",feet="Amalric Nails +1"}
 
-    sets.HelixBurst = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-        head="Agwu's Cap",neck="Mizukage-no-Kubikazari",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Mujin Band",
-        back=gear.nuke_jse_back,waist="Refoccilation Stone",legs="Agwu's Slops",feet="Amalric Nails +1"}
+    sets.HelixBurst = {
+        main="Bunzi's Rod",
+        sub="Ammurapi Shield",
+        ammo="Ghastly Tathlum +1",
+        head="Agwu's Cap",
+        neck="Argute Stole +2",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
+        body="Agwu's Robe",
+        hands="Agwu's Gages",
+        ring1="Kishar Ring",
+        ring2="Mujin Band",
+        back=gear.nuke_jse_back,
+        waist="Rumination Sash",legs="Agwu's Slops",feet="Agwu's Pigaches"
+    }
 		
-    sets.ResistantHelixBurst = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-        head="Agwu's Cap",neck="Mizukage-no-Kubikazari",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Mujin Band",ring2="Metamorph Ring +1",
-        back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Agwu's Slops",feet="Agwu's Pigaches"}
+    sets.ResistantHelixBurst = {
+        main="Bunzi's Rod",
+        sub="Ammurapi Shield",
+        ammo="Ghastly Tathlum +1",
+        head="Agwu's Cap",
+        neck="Argute Stole +2",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
+        body="Agwu's Robe",
+        hands="Agwu's Gages",
+        ring1="Kishar Ring",
+        ring2="Mujin Band",
+        back=gear.nuke_jse_back,
+        waist="Rumination Sash",legs="Agwu's Slops",feet="Agwu's Pigaches"
+    }
 		
     -- Custom refinements for certain nuke tiers
 	sets.midcast['Elemental Magic'].HighTierNuke = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
@@ -310,15 +332,37 @@ function init_gear_sets()
         body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Freke Ring",ring2="Metamorph Ring +1",
         back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Merlinic Shalwar",feet="Jhakri Pigaches +2"}
 
-	sets.midcast.Helix = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-        head="Merlinic Hood",neck="Saevus Pendant +1",ear1="Crematio Earring",ear2="Friomisi Earring",
-        body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Freke Ring",
-        back=gear.nuke_jse_back,waist="Refoccilation Stone",legs="Merlinic Shalwar",feet="Amalric Nails +1"}
+	sets.midcast.Helix = {
+        main="Bunzi's Rod",
+        sub="Ammurapi Shield",
+        ammo="Ghastly Tathlum +1",
+        head="Agwu's Cap",
+        neck="Argute Stole +2",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
+        body="Agwu's Robe",
+        hands="Agwu's Gages",
+        ring1="Kishar Ring",
+        ring2="Mujin Band",
+        back=gear.nuke_jse_back,
+        waist="Rumination Sash",legs="Agwu's Slops",feet="Agwu's Pigaches"
+    }
 	
-	sets.midcast.Helix.Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head=gear.merlinic_nuke_head,neck="Sanctity Necklace",ear1="Malignance Earring",ear2="Friomisi Earring",
-        body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Freke Ring",
-        back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Merlinic Shalwar",feet="Amalric Nails +1"}
+	sets.midcast.Helix.Resistant = {
+        main="Bunzi's Rod",
+        sub="Ammurapi Shield",
+        ammo="Ghastly Tathlum +1",
+        head="Agwu's Cap",
+        neck="Argute Stole +2",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
+        body="Agwu's Robe",
+        hands="Agwu's Gages",
+        ring1="Kishar Ring",
+        ring2="Mujin Band",
+        back=gear.nuke_jse_back,
+        waist="Rumination Sash",legs="Agwu's Slops",feet="Agwu's Pigaches"
+    }
 		
 	sets.midcast.Helix.Proc = {main=empty, sub=empty,ammo="Impatiens",
         head="Vanya Hood",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",

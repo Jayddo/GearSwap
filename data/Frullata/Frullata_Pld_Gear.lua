@@ -200,7 +200,7 @@ function init_gear_sets()
     
     sets.precast.FC = {
 		ammo="Incantor Stone",
-		head="Chevalier's Armet +1",
+		head="Chev. Armet +2",
 		neck="Unmoving Collar +1",
 		ear1="Etiolation Earring",
 		ear2="Loquac. Earring",
@@ -311,7 +311,7 @@ function init_gear_sets()
 
     sets.midcast.FastRecast = {
 		ammo="Incantor Stone",
-		head="Chevalier's Armet +1",
+		head="Chev. Armet +2",
 		neck="Unmoving Collar +1",
 		ear1="Etiolation Earring",
 		ear2="Loquac. Earring",
@@ -483,7 +483,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Homiliary", -- MDB 4 --
-		head="Sakpata's Helm", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +2",-- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
@@ -493,7 +493,7 @@ function init_gear_sets()
 		ring2="Shadow Ring",
 		back=gear.enmity_jse_back, -- 4 MDT --
 		waist="Flume Belt",
-		legs="Sakpata's Cuisses", -- MDB 4 --
+		legs="Chev. Cuisses +2", -- MDB 4 --
 		feet="Sakpata's Leggings"
 	}
 		
@@ -501,7 +501,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Sakpata's Helm", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
@@ -511,7 +511,7 @@ function init_gear_sets()
 		ring2="Shadow Ring",
 		back=gear.enmity_jse_back, -- 4 MDT --
 		waist="Flume Belt",
-		legs="Sakpata's Cuisses", -- MDB 4 --
+		legs="Chev. Cuisses +2", -- MDB 4 --
 		feet="Sakpata's Leggings"
 	}
 		
@@ -519,7 +519,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Sakpata's Helm", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
@@ -529,7 +529,7 @@ function init_gear_sets()
 		ring2="Shadow Ring",
 		back=gear.enmity_jse_back, -- 4 MDT --
 		waist="Flume Belt",
-		legs="Sakpata's Cuisses", -- MDB 4 --
+		legs="Chev. Cuisses +2", -- MDB 4 --
 		feet="Sakpata's Leggings"
 	}
 		
@@ -555,7 +555,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Sakpata's Helm", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
 		neck={name="Unmoving Collar +1", priority=200}, -- 5 DT --
 		ear1={name="Tuisto Earring", priority=150}, -- MDT 2 --
 		ear2="Cryptic Earring", 
@@ -565,7 +565,7 @@ function init_gear_sets()
 		ring2="Shadow Ring",
 		back=gear.enmity_jse_back, -- 4 MDT --
 		waist="Flume Belt",
-		legs={name="Sakpata's Cuisses", priority=114}, -- MDB 4 --
+		legs={name="Chev. Cuisses +2", priority=114}, -- MDB 4 --
 		feet="Sakpata's Leggings"
 	}
 		
@@ -601,7 +601,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Sakpata's Helm", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
@@ -611,7 +611,7 @@ function init_gear_sets()
 		ring2="Shadow Ring",
 		back=gear.enmity_jse_back, -- 4 MDT --
 		waist="Flume Belt",
-		legs="Sakpata's Cuisses", -- MDB 4 --
+		legs="Chev. Cuisses +2",-- MDB 4 --
 		feet="Sakpata's Leggings"
 	}
 		
@@ -619,7 +619,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Sakpata's Helm", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
@@ -629,7 +629,7 @@ function init_gear_sets()
 		ring2="Shadow Ring",
 		back=gear.enmity_jse_back, -- 4 MDT --
 		waist="Flume Belt",
-		legs="Sakpata's Cuisses", -- MDB 4 --
+		legs="Chev. Cuisses +2", -- MDB 4 --
 		feet="Sakpata's Leggings"
 	}
 		
@@ -639,7 +639,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Sakpata's Helm", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +2",-- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
@@ -649,7 +649,7 @@ function init_gear_sets()
 		ring2="Shadow Ring",
 		back=gear.enmity_jse_back, -- 4 MDT --
 		waist="Flume Belt",
-		legs="Sakpata's Cuisses", -- MDB 4 --
+		legs="Chev. Cuisses +2", -- MDB 4 --
 		feet="Sakpata's Leggings"
 	}
 		
@@ -691,7 +691,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum +1", -- MDB 4 --
-		head="Sakpata's Helm", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
@@ -701,7 +701,7 @@ function init_gear_sets()
 		ring2="Shadow Ring",
 		back=gear.enmity_jse_back, -- 4 MDT --
 		waist="Flume Belt",
-		legs="Sakpata's Cuisses", -- MDB 4 --
+		legs="Chev. Cuisses +2", -- MDB 4 --
 		feet="Sakpata's Leggings"
 	}
 		

@@ -310,7 +310,7 @@ function init_gear_sets()
         back="Engulfer Cape +1",waist="Engraved Belt",legs="Malignance Tights",feet="Malignance Boots"}
 		
 	sets.defense.MEVA = {
-        ammo="Staunch Tathlum",
+        ammo="Staunch Tathlum +1",
         head="Malignance Chapeau",
         neck="Loricate Torque +1",
         ear1="Suppanomimi",

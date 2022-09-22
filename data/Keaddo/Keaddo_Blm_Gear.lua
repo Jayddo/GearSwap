@@ -48,7 +48,7 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
 	
-	sets.EaStuff = {head="Ea Hat", body="Ea Houppelande", legs="Ea Slops"}
+	sets.EaStuff = {head="Ea Hat +1", body="Ea Houppe. +1", legs="Ea Slops +1"}
 
 	-- Weapons sets
 	sets.weapons.BurstWeapons = {main=gear.grioavolr_nuke_staff,sub="Enki Strap"}
@@ -80,15 +80,15 @@ function init_gear_sets()
 		sub="Clerisy Strap +1",
 		ammo="Impatiens",
 		head=gear.merlinic_fc_head,
-		ear1="Loquac. Earring",
-		ear2="Malignance Earring",
+		ear1="Malignance Earring",
+		ear2="Loquac. Earring",
 		body="Agwu's Robe",
 		hands="Agwu's Gages",
 		ring1="Kishar Ring",
 		ring2="Rahab Ring",
 		back="Perimede Cape",
 		waist="Witful Belt",
-		legs="Psycloth Lappas",
+		legs="Agwu's Slops",
 		feet=gear.merlinic_fc_feet
 	}
 		
@@ -96,7 +96,7 @@ function init_gear_sets()
 	
 	sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ammo="Staunch Tathlum +1",ear1="Malignance Earring",ring2="Prolix Ring",back="Swith Cape +1",waist="Siegel Sash"})
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ear1="Malignance Earring"})
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {main="Serenity",sub="Clerisy Strap +1",body="Heka's Kalasiris"})
 
@@ -200,17 +200,24 @@ function init_gear_sets()
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'], {})
 
     sets.midcast['Dark Magic'] = {
-		main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Amalric Coif",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Merlinic Jubbah",hands="Merlinic Dastanas",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
-        back="Aurist's Cape +1",waist="Acuity Belt +1",legs=gear.merlinic_aspir_legs,feet=gear.merlinic_aspir_feet
+		main="Rubicundity",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+        head="Agwu's Cap",neck="Erra Pendant",ear1="Hirudinea Earring",ear2="Regal Earring",
+        body="Agwu's Robe",
+		hands="Agwu's Gages",
+		ring1="Stikini Ring +1",
+		ring2="Metamor. Ring +1",
+        back="Aurist's Cape +1",
+		waist="Acuity Belt +1",
+		legs=gear.merlinic_aspir_legs,
+		feet="Agwu's Pigaches"
 	}
 
     sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'],{
 		ear1="Hirudinea Earring",
         ring1="Evanescence Ring",
 		ring2="Archon Ring",
-        waist="Fucho-no-obi",
 		feet="Agwu's Pigaches"
 	})
     
@@ -257,17 +264,17 @@ function init_gear_sets()
 		main="Mpaca's Staff",
 		sub="Enki Strap",
 		ammo="Ghastly Tathlum +1",
-		head="Agwu's Cap",
-		neck="Mizukage-no-Kubikazari",
+		head="Ea Hat +1",
+		neck="Src. Stole +2",
 		ear1="Malignance Earring",
-		ear2="Barkaro. Earring",
-		body=gear.merlinic_nuke_body,
-		hands="Agwu's Gages",
-		ring1="Metamor. Ring +1",
-		ring2="Mujin Band",
+		ear2="Regal Earring",
+		body="Ea Houppe. +1",
+		hands="Ea Cuffs",
+		ring1="Mujin Band",
+		ring2="Freke ring",
 		back=gear.nuke_jse_back,
 		waist="Acuity Belt +1",
-		legs="Agwu's Slops",
+		legs="Ea Slops +1",
 		feet="Agwu's Pigaches"
 	}
 		
@@ -295,17 +302,17 @@ function init_gear_sets()
 		main="Mpaca's Staff",
 		sub="Enki Strap",
 		ammo="Ghastly Tathlum +1",
-		head="Agwu's Cap",
-		neck="Mizukage-no-Kubikazari",
+		head="Ea Hat +1",
+		neck="Src. Stole +2",
 		ear1="Malignance Earring",
-		ear2="Barkaro. Earring",
-		body="Ea Houppelande",
+		ear2="Regal Earring",
+		body="Ea Houppe. +1",
 		hands="Ea Cuffs",
-		ring1="Metamor. Ring +1",
-		ring2="Mujin Band",
+		ring1="Mujin Band",
+		ring2="Freke ring",
 		back=gear.nuke_jse_back,
 		waist="Acuity Belt +1",
-		legs="Ea Slops",
+		legs="Ea Slops +1",
 		feet="Agwu's Pigaches"
 	}
 	
@@ -338,24 +345,37 @@ function init_gear_sets()
 		main="Mpaca's Staff",
 		sub="Enki Strap",
 		ammo="Ghastly Tathlum +1",
-		head="Agwu's Cap",
-		neck="Mizukage-no-Kubikazari",
+		head="Ea Hat +1",
+		neck="Src. Stole +2",
 		ear1="Malignance Earring",
-		ear2="Barkaro. Earring",
-		body="Ea Houppelande",
+		ear2="Regal Earring",
+		body="Ea Houppe. +1",
 		hands="Ea Cuffs",
-		ring1="Metamor. Ring +1",
-		ring2="Mujin Band",
+		ring1="Mujin Band",
+		ring2="Freke ring",
 		back=gear.nuke_jse_back,
 		waist="Acuity Belt +1",
-		legs="Ea Slops",
+		legs="Ea Slops +1",
 		feet="Agwu's Pigaches"
 	}
 
-	sets.ResistantMagicBurst = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-		head="Ea Hat +1",neck="Mizukage-no-Kubikazari",ear1="Malignance Earring",ear2="Regal Earring",
-		body="Ea Houppe. +1",hands="Amalric Gages +1",ring1="Mujin Band",ring2="Metamor. Ring +1",
-		back=gear.nuke_jse_back,waist="Acuity Belt +1",legs="Ea Slops +1",feet="Amalric Nails +1"}
+	sets.ResistantMagicBurst = {
+		main="Mpaca's Staff",
+		sub="Enki Strap",
+		ammo="Ghastly Tathlum +1",
+		head="Ea Hat +1",
+		neck="Src. Stole +2",
+		ear1="Malignance Earring",
+		ear2="Regal Earring",
+		body="Ea Houppe. +1",
+		hands="Ea Cuffs",
+		ring1="Mujin Band",
+		ring2="Freke ring",
+		back=gear.nuke_jse_back,
+		waist="Acuity Belt +1",
+		legs="Ea Slops +1",
+		feet="Agwu's Pigaches"
+	}
 	
     -- Sets to return to when not performing an action.
     
@@ -371,7 +391,7 @@ function init_gear_sets()
     sets.idle = {
 		main="Mpaca's Staff",
 		sub="Umbra Strap",
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head="Nyame Helm",
 		neck="Loricate Torque +1",
 		ear1="Infused Earring",
@@ -387,10 +407,21 @@ function init_gear_sets()
 	}
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
-    sets.idle.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-        head="Nyame Helm",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-        body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-        back="Shadow Mantle",waist="Carrier's Sash",legs="Assid. Pants +1",feet="Mallquis Clogs +2"}
+    sets.idle.PDT = {
+		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		neck="Loricate Torque +1",
+		ear1="Infused Earring",
+		ear2="Etiolation Earring",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Solemnity Cape",
+		waist="Carrier's Sash",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets"
+	}
 		
 	sets.idle.MDT = {main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
@@ -455,10 +486,17 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {ammo="Staunch Tathlum +1",
-        head="Jhakri Coronal +2",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Telos Earring",
-		body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=gear.stp_jse_back,waist="Olseni Belt",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
+    sets.engaged = {
+		ammo="Amar Cluster",
+        head="Nyame Helm",
+		neck="Combatant's Torque",
+		ear1="Cessance Earring",
+		ear2="Telos Earring",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back=gear.stp_jse_back,waist="Olseni Belt",legs="Nyame Flanchard",
+		feet="Nyame Sollerets"
+	}
 		
     sets.engaged.DT = {ammo="Staunch Tathlum +1",
         head="Nyame Helm",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Telos Earring",

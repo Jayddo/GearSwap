@@ -77,7 +77,7 @@ function init_gear_sets()
 	sets.precast.FC.BardSong = 
 		{
 		main="Kali",sub="Genmei Shield",range="Gjallarhorn",ammo=empty,
-		head="Fili Calot +1",neck="Loricate Torque +1",ear1="Loquac. Earring",ear2="Etiolation Earring",
+		head="Fili Calot +2",neck="Loricate Torque +1",ear1="Loquac. Earring",ear2="Etiolation Earring",
 		body="Inyanga Jubbah +2",hands="Inyan. Dastanas +2",ring1="Defending Ring",ring2="Kishar Ring",
 		back="Swith Cape",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Telchine Pigaches"
 	}
@@ -149,14 +149,14 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'] = {range="Gjallarhorn"}
 	sets.midcast['Horde Lullaby II'].Resistant = {range="Gjallarhorn"}
 	sets.midcast['Horde Lullaby II'].AoE = {range="Gjallarhorn"}
-	sets.midcast.Madrigal = {head="Fili Calot +1"}
+	sets.midcast.Madrigal = {head="Fili Calot +2"}
 	sets.midcast.Paeon = {}
 	sets.midcast.March = {hands="Fili Manchettes +1"}
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March,{range="Marsyas"})
-	sets.midcast.Minuet = {body="Fili Hongreline +1"}
+	sets.midcast.Minuet = {body="Fili Hongreline +2"}
 	sets.midcast.Minne = {}
 	sets.midcast.Carol = {}
-	sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +1"}
+	sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +2"}
 	sets.midcast['Magic Finale'] = {range="Gjallarhorn"}
 	sets.midcast.Mazurka = {range="Gjallarhorn"}
 	
@@ -165,9 +165,9 @@ function init_gear_sets()
 	-- For song buffs (duration and AF3 set bonus)
 	sets.midcast.SongEffect = {
 		main="Kali",
-		head="Fili Calot +1",
-		neck="Moonbow Whistle",
-		body="Fili Hongreline +1",
+		head="Fili Calot +2",
+		neck="Mnbw. Whistle +1",
+		body="Fili Hongreline +2",
 		hands="Fili Manchettes +1",
 		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +3"
@@ -183,7 +183,7 @@ function init_gear_sets()
 		neck="Mnbw. Whistle +1",
 		ear1="Regal Earring",
 		ear2="Digni. Earring",
-		body="Fili Hongreline +1",hands="Inyan. Dastanas +2",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
+		body="Fili Hongreline +2",hands="Inyan. Dastanas +2",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
 		back=gear.magic_jse_back,waist="Acuity Belt +1",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
 		
 	sets.midcast.SongDebuff.DW = {main="Kali",sub="Kali"}
@@ -284,7 +284,7 @@ function init_gear_sets()
 	sets.idle.NoRefresh = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Fili Cothurnes +1"}
+		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Fili Cothurnes +2"}
 
 	sets.idle.DT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
@@ -303,7 +303,7 @@ function init_gear_sets()
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
-	sets.Kiting = {feet="Fili Cothurnes +1"}
+	sets.Kiting = {feet="Fili Cothurnes +2"}
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}
