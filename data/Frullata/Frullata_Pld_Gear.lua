@@ -25,7 +25,7 @@ function user_job_setup()
     state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Tank','Kiting','PDT','Block','MDT','Normal')
-	state.Weapons:options('None','SakpataAegis','SakpataOchain','NaeglingBlurred')
+	state.Weapons:options('None','SakpataAegis','SakpataOchain','NaeglingBlurred','NaegChain')
 	
     state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP','Twilight'}
 	
@@ -239,12 +239,12 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-		ammo="Amar Cluster",
-		head="Flamma Zucchetto +2",
-		body="Sakpata's Breastplate",
-		hands="Sakpata's Gauntlets",
-		legs="Sakpata's Cuisses",
-		feet="Sulev. Leggings +2",
+		ammo="Coiste Bodhar",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Brutal Earring",
@@ -254,12 +254,12 @@ function init_gear_sets()
 	}
 		
     sets.precast.WS.DT = {
-		ammo="Amar Cluster",
-		head="Ratri Sallet",
-		body="Ratri Breastplate",
-		hands="Ratri Gadlings",
-		legs="Ratri Cuisses",
-		feet="Sulev. Leggings +2",
+		ammo="Coiste Bodhar",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Brutal Earring",
@@ -281,7 +281,7 @@ function init_gear_sets()
     sets.precast.WS['Chant du Cygne'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget",ear1="Mache Earring +1",ear2="Moonshade Earring"})
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-		neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring"
+		neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring", waist="Sailfi Belt +1"
 	})
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {ear1="Mache Earring +1",ear2="Telos Earring"})
 	
@@ -596,6 +596,7 @@ function init_gear_sets()
 	sets.weapons.NaeglingBlurred = {main="Naegling",sub="Blurred Shield +1"}
 	sets.weapons.SakpataOchain = {main="Sakpata's Sword",sub="Ochain"}
 	sets.weapons.DualWeapons = {main="Naegling",sub="Demersal Degen +1"}
+	sets.weapons.NaegChain = {main="Naegling", sub="Ochain"}
     
     sets.defense.Block = {
 		main="Sakpata's Sword",

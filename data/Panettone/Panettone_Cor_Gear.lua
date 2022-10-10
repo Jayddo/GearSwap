@@ -250,17 +250,17 @@ function init_gear_sets()
 
 	sets.precast.WS['Savage Blade'] = {
         ammo=gear.WSbullet,
-        head=gear.herculean_wsd_head,
+        head="Nyame Helm",
         neck="Comm. Charm +2",
         ear1="Moonshade Earring",
         ear2="Ishvara Earring",
         body="Laksa. Frac +3",
         hands="Meg. Gloves +2",
-        ring1="Shukuyu Ring",
+        ring1="Karieyh Ring",
         ring2="Regal Ring",
         back=gear.str_wsd_jse_back,
         waist="Sailfi Belt +1",
-        legs=gear.herculean_wsd_legs,
+        legs="Nyame Flanchard",
         feet="Lanun Bottes +3"}
 
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'],{})
@@ -454,8 +454,8 @@ function init_gear_sets()
 	sets.weapons.Evisceration = {main="Tauret",sub="Nusku Shield",range="Anarchy +2"}
 	sets.weapons.Savage = {main="Naegling",sub="Nusku Shield",range="Anarchy +2"}
 	sets.weapons.DualWeapons = {main="Naegling",sub=gear.rostam_melee,range="Fomalhaut"}
-	sets.weapons.DualSavageWeapons = {main="Naegling",sub=gear.rostam_melee,range="Anarchy +2"}
-	sets.weapons.DualEvisceration = {main="Tauret",sub=gear.rostam_melee,range="Anarchy +2"}
+	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Gleti's Knife",range="Anarchy +2"}
+	sets.weapons.DualEvisceration = {main="Tauret",sub="Gleti's Knife",range="Anarchy +2"}
 	sets.weapons.DualLeadenRanged = {main=gear.rostam_melee,sub="Tauret",range="Death Penalty"}
 	sets.weapons.DualLeadenMelee = {main=gear.rostam_melee,sub="Tauret",range="Death Penalty"}
 	sets.weapons.DualAeolian = {main=gear.rostam_melee,sub="Tauret",range="Anarchy +2"}

@@ -114,15 +114,17 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.	
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
 		ammo="Coiste Bodhar",
+		head="Nyame Helm",
 		neck="War. Beads +1",
 		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
+		body="Nyame Mail",
 		hands="Sulev. Gauntlets +2",
 		ring1="Niqmaddu Ring",
 		ring2="Karieyh Ring",
 		back="Cichol's Mantle",
 		waist="Sailfi Belt +1",
-		legs="Sulev. Cuisses +2",
+		legs="Nyame Flanchard",
 		feet="Sulev. Leggings +2"
 	})
     sets.precast.WS['Savage Blade'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
@@ -198,18 +200,18 @@ function init_gear_sets()
 		main="Naegling",
 		sub="Blurred Shield +1",
 		ammo="Staunch Tathlum",
-		head="Flam. Zucchetto +2",
+		head="Sakpata's Helm",
 		neck="War. Beads +1",
 		ear1="Mache Earring",
 		ear2="Brutal Earring",
-		body="Flamma Korazin +2",
-		hands="Sulev. Gauntlets +2",
+		body="Sakpata's Plate",
+		hands="Sakpata's Gauntlets",
 		ring1="Defending Ring",
 		ring2="Petrov Ring",
 		back="Cichol's Mantle",
 		waist="Ioskeha Belt",
-		legs="Sulev. Cuisses +2",
-		feet="Sulev. Leggings +2"
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings"
 	}
 		
 	sets.idle.Weak = set_combine(sets.idle, {head="Twilight Helm",body="Twilight Mail"})
@@ -267,18 +269,21 @@ function init_gear_sets()
 		main="Naegling",
 		sub="Blurred Shield +1",
 		ammo="Coiste Bodhar",
-		head="Flam. Zucchetto +2",
+		head="Sakpata's Helm",
 		neck="War. Beads +1",
 		ear1="Mache Earring",
 		ear2="Brutal Earring",
-		body="Flamma Korazin +2",
-		hands="Sulev. Gauntlets +2",
+		body="Sakpata's Plate",
+		hands="Sakpata's Gauntlets",
 		ring1="Niqmaddu Ring",
 		ring2="Petrov Ring",
-		back=gear.da_jse_back,
 		waist="Ioskeha Belt",
-		legs="Sulev. Cuisses +2",
-		feet="Flam. Gambieras +2"
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+		ring1="Niqmaddu Ring",
+		ring2="Petrov Ring",
+		back=gear.da_jse_back
+
 	}
 	sets.engaged.NaegBlur.Acc = set_combine(sets.engaged.NaegBlur,{})
 

@@ -38,7 +38,7 @@ sets.precast.WS['Savage Blade'] = {
 	ammo="Coiste Bodhar",
 	head="Viti. Chapeau +3",
 	body="Nyame Mail",
-	hands="Jhakri Cuffs +2",
+	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
 	feet="Nyame Sollerets",
 	neck="Dls. Torque +2",
@@ -153,7 +153,7 @@ sets.midcast['Enfeebling Magic'] = {
 	head="Viti. Chapeau +3",
 	body="Lethargy Sayon +1",
 	hands="Regal Cuffs",
-	legs=gear.chironic_enfeeble_legs,
+	legs="Chironic Hose",
 	feet="Vitiation Boots +3",
 	neck=gear.rdm_jse_neck,
 	waist="Luminary Sash",
@@ -174,6 +174,7 @@ sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeeblin
 	hands={ name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mag. Acc.+20',}},
 	left_ring="Metamor. Ring +1",
 	right_ring="Stikini Ring +1",
+	back="Aurist's Cape +1"
 })
 
 sets.midcast['Enfeebling Magic'].Resistant.INT = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {

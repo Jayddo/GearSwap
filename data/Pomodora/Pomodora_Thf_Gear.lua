@@ -73,11 +73,11 @@ function init_gear_sets()
 	sets.Ambush = {} --body="Plunderer's Vest +1"
 	
 	-- Weapons sets
-	sets.weapons.Aeneas = {main="Aeneas",sub="Shijo"}
+	sets.weapons.Aeneas = {main="Aeneas",sub="Gleti's Knife"}
 	sets.weapons.Aeolian = {main="Malevolence",sub="Malevolence"}
 	sets.weapons.Savage = {main="Naegling",sub="Gleti's Knife"}
 	sets.weapons.ProcWeapons = {main="Blurred Knife +1",sub="Atoyac"}
-	sets.weapons.Evisceration = {main="Tauret",sub="Shijo"}
+	sets.weapons.Evisceration = {main="Tauret",sub="Gleti's Knife"}
 	sets.weapons.Throwing = {main="Aeneas",sub="Gleti's Knife",range="Raider's Bmrng.",ammo=empty}
 	sets.weapons.SwordThrowing = {main="Naegling",sub="Gleti's Knife",range="Raider's Bmrng.",ammo=empty}
 	sets.weapons.Bow = {main="Aeneas",sub="Kustawi +1",range="Kaja Bow",ammo="Chapuli Arrow"}
@@ -145,11 +145,11 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         ammo="Yetshila",
-        head="Mummu Bonnet +2",
-        body="Abnoba Kaftan",
-        hands="Meg. Gloves +2",
-        legs="Mummu Kecks +2",
-        feet="Mummu Gamash. +2",
+        head="Gleti's Mask",
+        body="Gleti's Cuirass",
+        hands="Gleti's Gauntlets",
+        legs="Gleti's Breeches",
+        feet="Gleti's Boots",
         neck="Asn. Gorget +1",
         waist="Sailfi Belt",
         left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -165,11 +165,11 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
         ammo="Yetshila",
-        head="Mummu Bonnet +2",
-        body="Abnoba Kaftan",
-        hands="Meg. Gloves +2",
-        legs="Mummu Kecks +2",
-        feet="Mummu Gamash. +2",
+        head="Gleti's Mask",
+        body="Gleti's Cuirass",
+        hands="Gleti's Gauntlets",
+        legs="Gleti's Breeches",
+        feet="Gleti's Boots",
         neck="Asn. Gorget +1",
         waist="Sailfi Belt",
         left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -207,11 +207,11 @@ function init_gear_sets()
 	
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
         ammo="Yetshila",
-        head="Mummu Bonnet +2",
-        body="Abnoba Kaftan",
-        hands="Mummu Wrists +2",
-        legs="Mummu Kecks +2",
-        feet="Mummu Gamash. +2",
+        head="Gleti's Mask",
+        body="Gleti's Cuirass",
+        hands="Gleti's Gauntlets",
+        legs="Gleti's Breeches",
+        feet="Gleti's Boots",
         neck="Asn. Gorget +1",
         waist="Sailfi Belt",
         left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -224,6 +224,22 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {ammo="Yetshila +1",head="Mummu Bonnet +2",ring1="Begrudging Ring",neck="Fotia Gorget",body="Sayadio's Kaftan",hands="Mummu Wrists +2",waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"})
 	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, {ammo="Yetshila +1",head="Mummu Bonnet +2",body="Mummu Jacket +2",hands="Mummu Wrists +2",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"})
 	sets.precast.WS['Evisceration'].Fodder = set_combine(sets.precast.WS['Evisceration'], {})
+
+    sets.precast.WS['Extenterator'] = set_combine(sets.precast.WS, {
+        ammo="Yetshila",
+        head="Gleti's Mask",
+        body="Gleti's Cuirass",
+        hands="Meg. Gloves +2",
+        legs="Meg. Chausses +2",
+        feet="Gleti's Boots",
+        neck="Asn. Gorget +1",
+        waist="Sailfi Belt",
+        left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+        right_ear="Odr Earring",
+        left_ring="Karieyh Ring",
+        right_ring="Ilabrat Ring",
+        back=gear.stp_jse_back
+    })
 	
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS, {neck="Caro Necklace",ear1="Moonshade Earring",ear2="Ishvara Earring",body="Adhemar Jacket +1",back=gear.wsd_jse_back,waist="Sailfi Belt +1"})
     sets.precast.WS["Savage Blade"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {neck="Caro Necklace",ear1="Moonshade Earring",body="Meg. Cuirie +2",back=gear.wsd_jse_back})
@@ -303,7 +319,7 @@ function init_gear_sets()
     sets.idle = {
         ammo="Hagneia Stone",
         head="Mummu Bonnet +2",
-        body="Meg. Cuirie +2",
+        body="Malignance Tabard",
         hands="Meg. Gloves +2",
         legs="Mummu Kecks +2",
         feet="Mummu Gamash. +2",
@@ -350,7 +366,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo="Hagneia Stone",
         head="Skulker's Bonnet +1",
-        body="Mummu Jacket +2",
+        body="Malignance Tabard",
         hands="Mummu Wrists +2",
         legs="Meg. Chausses +2",
         feet="Mummu Gamash. +2",

@@ -18,14 +18,21 @@ function init_gear_sets()
 
 	include('Common/WAR_Common.lua')
 
-
-	sets.precast.WS = {ammo="Knobkierrie",
-head="Nyame Helm",neck="Fotia Gorget",ear1="Thrud Earring",ear2="Moonshade Earring",
-body="Nyame Mail",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Karieyh Ring",
-back="Cichol's Mantle",waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
-sets.precast.WS.Enmity = set_combine(sets.precast.WS, {
-	left_ear="Schere Earring",	
-})
+	sets.precast.WS = {
+		ammo="Knobkierrie",
+		head="Nyame Helm",
+		neck="Sanctity Necklace",
+		ear1="Thrud Earring",
+		ear2="Moonshade Earring",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		ring1="Regal Ring",
+		ring2="Karieyh Ring",
+		back="Cichol's Mantle",
+		waist="Fotia Belt",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets"
+	}
 
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
@@ -50,14 +57,14 @@ sets.precast.WS.Enmity = set_combine(sets.precast.WS, {
 
 	sets.engaged.Naegling = {
 		ammo="Coiste Bodhar",
-		head="Flam. Zucchetto +2",
+		head="Flam. Zucchetto +1",
 		neck="Sanctity Necklace",
 		ear1="Brutal Earring",
 		ear2="Suppanomimi",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
-		ring1="Petrov Ring",
-		ring2="Rajas Ring",
+		ring1="Niqmaddu Ring",
+		ring2="Flamma Ring",
 		back="Cichol Mantle",
 		waist="Sailfi Belt +1",
 		legs="Sakpata's Cuisses",

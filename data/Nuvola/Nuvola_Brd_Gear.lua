@@ -111,17 +111,28 @@ function init_gear_sets()
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {ammo="Aurgelmir Orb +1",
-		head="Aya. Zucchetto +2",neck="Bard's Charm +1",ear1="Moonshade Earring",ear2="Mache Earring",
-		body="Ayanmo Corazza +2",hands="Aya. Manopolas +2",ring1="Petrov Ring",ring2="Karieyh Ring",
-		back=gear.melee_jse_back,waist="Prosilio Belt",legs="Aya. Cosciales +2",feet="Aya. Gambieras +2"}
+	sets.precast.WS = {
+		ammo="Coiste Bodhar",
+		head="Nyame Helm",
+		neck="Bard's Charm +1",
+		ear1="Moonshade Earring",
+		ear2="Mache Earring +1",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		ring1="Petrov Ring",
+		ring2="Karieyh Ring",
+		back=gear.melee_jse_back,
+		waist="Sailfi Belt +1",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets"
+	}
 		
 	sets.precast.WS.Acc = set_combine(sets.precast.WS,{})
 		
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS,{
 		ear2="Ishvara Earring",
-		ring1="Rufescent Ring",
-		ring2="Ilabrat Ring",
+		ring1="Shukuyu Ring",
+		ring2="Karieyh Ring",
 		back=gear.melee_jse_back,
 	})
 		
@@ -151,7 +162,7 @@ function init_gear_sets()
 	sets.midcast['Horde Lullaby II'].AoE = {range="Gjallarhorn"}
 	sets.midcast.Madrigal = {head="Fili Calot +2"}
 	sets.midcast.Paeon = {}
-	sets.midcast.March = {hands="Fili Manchettes +1"}
+	sets.midcast.March = {hands="Fili Manchettes +2"}
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March,{range="Marsyas"})
 	sets.midcast.Minuet = {body="Fili Hongreline +2"}
 	sets.midcast.Minne = {}
@@ -168,7 +179,7 @@ function init_gear_sets()
 		head="Fili Calot +2",
 		neck="Mnbw. Whistle +1",
 		body="Fili Hongreline +2",
-		hands="Fili Manchettes +1",
+		hands="Fili Manchettes +2",
 		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +3"
 	}
@@ -328,7 +339,7 @@ function init_gear_sets()
 		ring1="Petrov Ring",
 		ring2="Ilabrat Ring",
 		back=gear.melee_jse_back,
-		waist="Windbuffet Belt",
+		waist="Sailfi Belt +1",
 		legs="Aya. Cosciales +2",
 		feet="Aya. Gambieras +2"
 	}
@@ -347,7 +358,7 @@ function init_gear_sets()
 		ring1="Petrov Ring",
 		ring2="Ilabrat Ring",
 		back=gear.melee_jse_back,
-		waist="Windbuffet Belt",
+		waist="Sailfi Belt +1",
 		legs="Aya. Cosciales +2",
 		feet="Aya. Gambieras +2"
 	}

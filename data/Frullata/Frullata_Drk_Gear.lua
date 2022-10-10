@@ -115,11 +115,11 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
 		ammo="Knobkierrie",
-		head="Ratri Sallet",
-		body="Ratri Breastplate",
-		hands="Ratri Gadlings",
-		legs="Ratri Cuisses",
-		feet="Sulev. Leggings +2",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 		neck="Abyssal Beads +1",
 		waist="Fotia Belt",
 		left_ear="Thrud Earring",
@@ -135,7 +135,10 @@ function init_gear_sets()
 	sets.precast.WS.Fodder = set_combine(sets.precast.WS, {})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.	
-    sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {
+		waist="Sailfi Belt +1",
+		ear1="Niqmaddu Ring"
+	})
     sets.precast.WS['Catastrophe'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {})
     sets.precast.WS['Catastrophe'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
@@ -273,7 +276,7 @@ function init_gear_sets()
 	sets.engaged = {
 		main="Apocalypse",
 		sub="Bloodrain Strap",
-		ammo="Amar Cluster",
+		ammo="Coiste Bodhar",
 		head="Sakpata's Helm",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
