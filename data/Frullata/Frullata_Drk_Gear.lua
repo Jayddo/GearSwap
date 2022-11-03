@@ -126,7 +126,7 @@ function init_gear_sets()
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		left_ring="Karieyh Ring",
 		right_ring="Regal Ring",
-		back=gear.da_jse_back,
+		back=gear.jse_STR_Back,
 	}
 
 	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {})
@@ -137,7 +137,6 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.	
     sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {
 		waist="Sailfi Belt +1",
-		ear1="Niqmaddu Ring"
 	})
     sets.precast.WS['Catastrophe'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {})

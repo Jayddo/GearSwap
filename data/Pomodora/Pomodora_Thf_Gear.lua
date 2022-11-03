@@ -55,7 +55,7 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
 
-	sets.TreasureHunter = {hands="Plunderer's Armlets +1",waist="Chaac Belt",feet="Skulk. Poulaines +1"}
+	sets.TreasureHunter = {hands="Plunderer's Armlets +1",waist="Chaac Belt",feet="Skulk. Poulaines +3"}
     sets.Kiting = {feet="Jute Boots +1"}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
@@ -101,14 +101,14 @@ function init_gear_sets()
     --------------------------------------
 
     -- Precast sets to enhance JAs
-    sets.precast.JA['Collaborator'] = {"Skulker's Bonnet"}
-    sets.precast.JA['Accomplice'] = {"Skulker's Bonnet"}
+    sets.precast.JA['Collaborator'] = {"Skulker's Bonnet +2"}
+    sets.precast.JA['Accomplice'] = {"Skulker's Bonnet +2"}
     sets.precast.JA['Flee'] = {} --feet="Pillager's Poulaines +1"
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Skulker's Vest"} 
     sets.precast.JA['Steal'] = {} --feet="Pillager's Poulaines +1"
 	sets.precast.JA['Mug'] = {}
-    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes",feet="Skulk. Poulaines +1"}
+    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes",feet="Skulk. Poulaines +3"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
     sets.precast.JA['Feint'] = {} -- {legs="Assassin's Culottes +2"}
 
@@ -365,7 +365,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         ammo="Hagneia Stone",
-        head="Skulker's Bonnet +1",
+        head="Skulker's Bonnet +2",
         body="Malignance Tabard",
         hands="Mummu Wrists +2",
         legs="Meg. Chausses +2",

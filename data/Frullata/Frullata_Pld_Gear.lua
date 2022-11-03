@@ -2,16 +2,6 @@ function user_setup()
 
 	include('Common/PLD_UserSetup_Common.lua')
 
-end
-
-function init_gear_sets()
-
-	include('Common/PLD_Common.lua')
-	
-end
-
-function user_job_setup()
-
     -- Options: Override default values	
 	state.OffenseMode:options('Normal','Acc')
     state.HybridMode:options('Tank','DDTank','Normal')
@@ -55,12 +45,14 @@ function user_job_setup()
     update_defense_mode()
 
 	autows="Savage Blade"
+
 end
 
-
 function init_gear_sets()
-	
-	--------------------------------------
+
+	include('Common/PLD_Common.lua')
+
+		--------------------------------------
 	-- Precast sets
 	--------------------------------------
 	
@@ -72,52 +64,35 @@ function init_gear_sets()
 		ammo="Incantor Stone",
 		head="Loess Barbuta +1", -- 19-24
 		neck="Moonlight Necklace", -- 10
-		ear1="Cryptic Earring", -- 5 
-		ear2="Trux Earring", -- 5 
+		ear1="Trux Earring", -- 5 
+		ear2="Cryptic Earring", -- 5 
 		body="Souv. Cuirass +1", -- 12
 		hands="Souv. Handsch. +1", -- 14
-		ring1="Petrov Ring",
+		ring1="Vexer Ring +1",
 		ring2="Eihwaz Ring", -- 4
 		back=gear.enmity_jse_back, -- 5
-		waist="Flume Belt",
-		legs="Souveran Diechlings", -- 7
-		feet="Yorium Sabatons" -- 15
+		waist="Creed Baudrier",
+		legs="Souveran Diechlings +1", -- 7
+		feet="Chev. Sabatons +2" -- 15
 	}
 		
     sets.Enmity.SIRD = {
-		main="Sakpata's Sword",
-		sub="Sacro Bulwark",
 		ammo="Staunch Tathlum",
 		head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+		body="Chev. Cuirass +3",
 		hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		legs={ name="Carmine Cuisses +1", augments={'HP+80','STR+12','INT+12',}},
+		legs="Souveran Diechlings +1",
 		feet="Odyssean Greaves",
 		neck="Moonlight Necklace",
 		waist="Audumbla Sash",
-		left_ear="Knightly Earring",
+		left_ear="Trux Earring",
 		right_ear="Cryptic Earring",
-		left_ring="Petrov Ring",
+		left_ring="Vexer Ring +1",
 		ring2="Eihwaz Ring",
 		back=gear.fastcast_jse_back
 	}
 		
     sets.Enmity.DT = set_combine(sets.Enmity,{
-		main="Sakpata's Sword",
-		sub="Sacro Bulwark",
-		ammo="Staunch Tathlum",
-		head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		legs={ name="Carmine Cuisses +1", augments={'HP+80','STR+12','INT+12',}},
-		feet="Odyssean Greaves",
-		neck="Moonlight Necklace",
-		waist="Audumbla Sash",
-		left_ear="Knightly Earring",
-		right_ear="Cryptic Earring",
-		left_ring="Petrov Ring",
-		ring2="Eihwaz Ring",
-		back=gear.enmity_jse_back
 	})
 		
     -- Precast sets to enhance JAs
@@ -200,7 +175,7 @@ function init_gear_sets()
     
     sets.precast.FC = {
 		ammo="Incantor Stone",
-		head="Chev. Armet +2",
+		head="Chev. Armet +3",
 		neck="Unmoving Collar +1",
 		ear1="Etiolation Earring",
 		ear2="Loquac. Earring",
@@ -210,24 +185,24 @@ function init_gear_sets()
 		--ring2="Kishar Ring",
 		back=gear.fastcast_jse_back,
 		waist="Flume Belt",
-		legs="Souveran Diechlings", -- 
-		feet="Odyssean Greaves" -- hp68 DT6
+		legs="Souveran Diechlings +1", -- 
+		feet="Chev. Sabatons +2" -- hp68 DT6
 	}
 		
     sets.precast.FC.DT = {
 		ammo="Incantor Stone",
-		head="Loess Barbuta +1",
+		head="Chev. Armet +3",
 		neck="Unmoving Collar +1",
 		ear1="Etiolation Earring",
 		ear2="Loquac. Earring",
-		body="Rev. Surcoat +3",
+		body={name="Rev. Surcoat +3", priority=254},
 		hands="Leyline Gloves",
 		ring1="Defending Ring",
 		--ring2="Kishar Ring",
 		back=gear.fastcast_jse_back,
 		waist="Flume Belt",
-		legs="Souveran Diechlings", -- 
-		feet="Odyssean Greaves" -- hp68 DT6
+		legs="Souveran Diechlings +1", -- 
+		feet="Chev. Sabatons +2" -- hp68 DT6
 	}
 		
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
@@ -251,6 +226,7 @@ function init_gear_sets()
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		left_ring="Karieyh Ring",
 		right_ring="Petrov Ring",
+		back=gear.jse_wsd_back
 	}
 		
     sets.precast.WS.DT = {
@@ -266,6 +242,7 @@ function init_gear_sets()
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		left_ring="Karieyh Ring",
 		right_ring="Petrov Ring",
+		back=gear.jse_wsd_back
 	}
 
     sets.precast.WS.Acc = {ammo="Hasty Pinion +1",
@@ -281,7 +258,7 @@ function init_gear_sets()
     sets.precast.WS['Chant du Cygne'].Acc = set_combine(sets.precast.WS.Acc, {neck="Fotia Gorget",ear1="Mache Earring +1",ear2="Moonshade Earring"})
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-		neck="Fotia Gorget",ear1="Ishvara Earring",ear2="Moonshade Earring", waist="Sailfi Belt +1"
+		neck="Fotia Gorget",ear1="Thrud Earring",ear2="Moonshade Earring", waist="Sailfi Belt +1"
 	})
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {ear1="Mache Earring +1",ear2="Telos Earring"})
 	
@@ -311,52 +288,50 @@ function init_gear_sets()
 
     sets.midcast.FastRecast = {
 		ammo="Incantor Stone",
-		head="Chev. Armet +2",
+		head="Chev. Armet +3",
 		neck="Unmoving Collar +1",
 		ear1="Etiolation Earring",
 		ear2="Loquac. Earring",
-		body="Rev. Surcoat +3",
+		body={name="Rev. Surcoat +3", priority=254},
 		hands="Leyline Gloves",
 		ring1="Defending Ring",
 		--ring2="Kishar Ring",
 		back=gear.fastcast_jse_back,
 		waist="Flume Belt",
-		legs="Souveran Diechlings", -- 
-		feet="Odyssean Greaves" -- hp68 DT6
+		legs="Souveran Diechlings +1", -- 
+		feet="Chev. Sabatons +2" -- hp68 DT6
 	}
 		
 	sets.midcast.FastRecast.DT = {
 		ammo="Incantor Stone",
-		head="Loess Barbuta +1",
+		head="Chev. Armet +3",
 		neck="Unmoving Collar +1",
 		ear1="Etiolation Earring",
 		ear2="Loquac. Earring",
-		body="Rev. Surcoat +3",
+		body={name="Rev. Surcoat +3", priority=254},
 		hands="Leyline Gloves",
 		ring1="Defending Ring",
 		--ring2="Kishar Ring",
 		back=gear.fastcast_jse_back,
 		waist="Flume Belt",
-		legs="Souveran Diechlings", -- 
-		feet="Odyssean Greaves" -- hp68 DT6
+		legs="Souveran Diechlings +1", -- 
+		feet="Chev. Sabatons +2" -- hp68 DT6
 	}
 
 	sets.midcast.FastRecast.SIRD = {
-		main="Sakpata's Sword",
-		sub="Sacro Bulwark",
-		ammo="Staunch Tathlum",
-		head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		body="Rev. Surcoat +3",
-		hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		legs={ name="Carmine Cuisses +1", augments={'HP+80','STR+12','INT+12',}},
-		feet="Odyssean Greaves",
-		neck="Moonlight Necklace",
-		waist="Audumbla Sash",
-		left_ear="Knightly Earring",
-		right_ear="Cryptic Earring",
-		left_ring="Defending Ring",
-		ring2="Eihwaz Ring",
-		back=gear.fastcast_jse_back
+		ammo="Incantor Stone",
+		head="Chev. Armet +3",
+		neck="Unmoving Collar +1",
+		ear1="Etiolation Earring",
+		ear2="Loquac. Earring",
+		body={name="Rev. Surcoat +3", priority=254},
+		hands="Leyline Gloves",
+		ring1="Defending Ring",
+		--ring2="Kishar Ring",
+		back=gear.fastcast_jse_back,
+		waist="Flume Belt",
+		legs="Souveran Diechlings +1", -- 
+		feet="Chev. Sabatons +2" -- hp68 DT6
 	}
 
     sets.midcast.Flash = set_combine(sets.Enmity, {
@@ -365,7 +340,8 @@ function init_gear_sets()
 	})
 	sets.midcast.Flash.SIRD = set_combine(sets.Enmity.SIRD, {
 		body="Rev. Surcoat +3",
-		back=gear.fastcast_jse_back
+		back=gear.fastcast_jse_back,
+		ear2="Knightly Earring"
 	})
     sets.midcast.Stun = set_combine(sets.Enmity, {})
 	sets.midcast.Stun.SIRD = set_combine(sets.Enmity.SIRD, {})
@@ -376,7 +352,7 @@ function init_gear_sets()
     sets.midcast.Cure = {
 		ammo="Impatiens",
 		head="Loess Barbuta +1",
-		neck="Unmoving Collar +1",
+		neck="Moonlight Necklace",
 		ear1="Nourish. Earring +1",
 		ear2="Cryptic Earring",
 		body="Souv. Cuirass +1",
@@ -385,8 +361,8 @@ function init_gear_sets()
 		ring2="Eihwaz Ring",
 		back=gear.enmity_jse_back,
 		waist="Audumbla Sash",
-		legs="Souveran Diechlings",
-		feet="Odyssean Greaves"
+		legs="Souveran Diechlings +1",
+		feet="Chev. Sabatons +2"
 	}
 		
     sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure,{
@@ -422,7 +398,7 @@ function init_gear_sets()
 		
 	--sets.Self_Healing.DT = set_combine(sets.Self_Healing,{})
 
-	sets.Cure_Received = {hands="Souv. Handsch. +1",body="Souv. Cuirass +1"}
+	sets.Cure_Received = {hands="Souv. Handsch. +1",body="Souv. Cuirass +1",legs="Souveran Diechlings +1"}
 	sets.Self_Refresh = {waist="Gishdubar Sash"}
 
     sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast,{
@@ -483,11 +459,11 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Homiliary", -- MDB 4 --
-		head="Chev. Armet +2",-- MDB 2 / MDT 5 --
+		head="Chev. Armet +3",-- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
-		body="Sakpata's Breastplate", -- 9 DT --
+		body="Sakpata's Plate", -- 9 DT --
 		hands="Sakpata's Gauntlets", -- MDB 1 / MDT 5 --
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -501,11 +477,11 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +3", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
-		body="Sakpata's Breastplate", -- 9 DT --
+		body="Sakpata's Plate", -- 9 DT --
 		hands="Sakpata's Gauntlets", -- MDB 1 / MDT 5 --
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -519,11 +495,11 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +3", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
-		body="Sakpata's Breastplate", -- 9 DT --
+		body="Sakpata's Plate", -- 9 DT --
 		hands="Sakpata's Gauntlets", -- MDB 1 / MDT 5 --
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -555,7 +531,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +3", -- MDB 2 / MDT 5 --
 		neck={name="Unmoving Collar +1", priority=200}, -- 5 DT --
 		ear1={name="Tuisto Earring", priority=150}, -- MDT 2 --
 		ear2="Cryptic Earring", 
@@ -602,11 +578,11 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +3", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
-		body="Sakpata's Breastplate", -- 9 DT --
+		body="Sakpata's Plate", -- 9 DT --
 		hands="Sakpata's Gauntlets", -- MDB 1 / MDT 5 --
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -620,11 +596,11 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +3", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
-		body="Sakpata's Breastplate", -- 9 DT --
+		body="Sakpata's Plate", -- 9 DT --
 		hands="Sakpata's Gauntlets", -- MDB 1 / MDT 5 --
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -640,11 +616,11 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum", -- MDB 4 --
-		head="Chev. Armet +2",-- MDB 2 / MDT 5 --
+		head="Chev. Armet +3",-- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
-		body="Sakpata's Breastplate", -- 9 DT --
+		body="Sakpata's Plate", -- 9 DT --
 		hands="Sakpata's Gauntlets", -- MDB 1 / MDT 5 --
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -670,7 +646,7 @@ function init_gear_sets()
 	sets.engaged = {
 		ammo="Amar Cluster",
 		head="Flam. Zucchetto +2",
-		body="Sakpata's Breastplate",
+		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
 		legs="Sulev. Cuisses +2",
 		feet="Flam. Gambieras +2",
@@ -692,11 +668,11 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		sub="Aegis",
 		ammo="Staunch Tathlum +1", -- MDB 4 --
-		head="Chev. Armet +2", -- MDB 2 / MDT 5 --
+		head="Chev. Armet +3", -- MDB 2 / MDT 5 --
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
-		body="Sakpata's Breastplate", -- 9 DT --
+		body="Sakpata's Plate", -- 9 DT --
 		hands="Sakpata's Gauntlets", -- MDB 1 / MDT 5 --
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -712,7 +688,7 @@ function init_gear_sets()
 		neck="Unmoving Collar +1", -- 5 DT --
 		ear1="Tuisto Earring", -- MDT 2 --
 		ear2="Cryptic Earring", 
-		body="Sakpata's Breastplate", -- 9 DT --
+		body="Sakpata's Plate", -- 9 DT --
 		hands="Sakpata's Gauntlets", -- MDB 1 / MDT 5 --
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -737,4 +713,5 @@ function init_gear_sets()
 	})
 	sets.buff.Sleep = {neck="Vim Torque +1"}
     sets.buff.Cover = {body="Cab. Surcoat +1"}
+	
 end

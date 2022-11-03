@@ -12,7 +12,8 @@ function user_setup()
 	--	state.SongMode = M{['description'] ='SongMode','Melee','Cleave','Mage',' Minnone'}
 	--	state.SongMode:options('Melee','Cleave','Mage','Odyssey','Minnone')
 	
-		gear.melee_jse_back = {name="Intarabus's Cape",augments={'Accuracy+20 Attack+20'}}
+		gear.ws_str_back ={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+		gear.melee_jse_back = {name="Intarabus's Cape",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 		gear.magic_jse_back = {name="Intarabus's Cape",augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Damage taken-5%',}}
 		gear.idle_jse_back = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}}
 	
@@ -48,7 +49,7 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Aeneas = {main="Aeneas",sub="Genmei Shield"}
 	sets.weapons.DualWeapons = {main="Aeneas",sub="Blurred Knife +1"}
-	sets.weapons.DualNaegling = {main="Naegling",sub="Blurred Knife +1"}
+	sets.weapons.DualNaegling = {main="Naegling",sub="Gleti's Knife"}
 	sets.weapons.Naegling = {main="Naegling",sub="Genmei Shield"}
 	sets.weapons.DualTauret = {main="Tauret",sub="Blurred Knife +1"}
 	sets.weapons.DualAeolian = {main="Tauret",sub="Malevolence"}
@@ -79,7 +80,7 @@ function init_gear_sets()
 		main="Kali",sub="Genmei Shield",range="Gjallarhorn",ammo=empty,
 		head="Fili Calot +2",neck="Loricate Torque +1",ear1="Loquac. Earring",ear2="Etiolation Earring",
 		body="Inyanga Jubbah +2",hands="Inyan. Dastanas +2",ring1="Defending Ring",ring2="Kishar Ring",
-		back="Swith Cape",waist="Witful Belt",legs="Aya. Cosciales +2",feet="Telchine Pigaches"
+		back=gear.idle_jse_back,waist="Witful Belt",legs="Aya. Cosciales +2",feet="Telchine Pigaches"
 	}
 
 	sets.precast.FC.SongDebuff = set_combine(sets.precast.FC.BardSong,{range="Gjallarhorn"})
@@ -121,7 +122,7 @@ function init_gear_sets()
 		hands="Nyame Gauntlets",
 		ring1="Petrov Ring",
 		ring2="Karieyh Ring",
-		back=gear.melee_jse_back,
+		back=gear.ws_str_back,
 		waist="Sailfi Belt +1",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets"
@@ -131,9 +132,9 @@ function init_gear_sets()
 		
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS,{
 		ear2="Ishvara Earring",
-		ring1="Shukuyu Ring",
+		ring1="Epaminondas's Ring",
 		ring2="Karieyh Ring",
-		back=gear.melee_jse_back,
+		back=gear.ws_str_back,
 	})
 		
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS,{})
@@ -164,10 +165,10 @@ function init_gear_sets()
 	sets.midcast.Paeon = {}
 	sets.midcast.March = {hands="Fili Manchettes +2"}
 	sets.midcast['Honor March'] = set_combine(sets.midcast.March,{range="Marsyas"})
-	sets.midcast.Minuet = {body="Fili Hongreline +2"}
+	sets.midcast.Minuet = {body="Fili Hongreline +3"}
 	sets.midcast.Minne = {}
 	sets.midcast.Carol = {}
-	sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +2"}
+	sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +3"}
 	sets.midcast['Magic Finale'] = {range="Gjallarhorn"}
 	sets.midcast.Mazurka = {range="Gjallarhorn"}
 	
@@ -178,7 +179,7 @@ function init_gear_sets()
 		main="Kali",
 		head="Fili Calot +2",
 		neck="Mnbw. Whistle +1",
-		body="Fili Hongreline +2",
+		body="Fili Hongreline +3",
 		hands="Fili Manchettes +2",
 		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +3"
@@ -190,12 +191,18 @@ function init_gear_sets()
 	sets.midcast.SongDebuff = {
 		main="Kali",
 		sub="Ammurapi Shield",
-		head="Inyanga Tiara +2",
+		head="Brioso Roundlet +2",
 		neck="Mnbw. Whistle +1",
-		ear1="Regal Earring",
+		ear1="Gwati Earring",
 		ear2="Digni. Earring",
-		body="Fili Hongreline +2",hands="Inyan. Dastanas +2",ring1="Metamorph Ring +1",ring2="Stikini Ring +1",
-		back=gear.magic_jse_back,waist="Acuity Belt +1",legs="Inyanga Shalwar +2",feet="Brioso Slippers +3"}
+		body="Brioso Justau. +2",
+		hands="Brioso Cuffs +2",
+		ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1",
+		back=gear.magic_jse_back,
+		waist="Eschan Stone",
+		legs="Brioso Cannions +2",
+		feet="Brioso Slippers +3"}
 		
 	sets.midcast.SongDebuff.DW = {main="Kali",sub="Kali"}
 
@@ -295,7 +302,7 @@ function init_gear_sets()
 	sets.idle.NoRefresh = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Fili Cothurnes +2"}
+		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Fili Cothurnes +3"}
 
 	sets.idle.DT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
@@ -314,7 +321,7 @@ function init_gear_sets()
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Moonlight Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
-	sets.Kiting = {feet="Fili Cothurnes +2"}
+	sets.Kiting = {feet="Fili Cothurnes +3"}
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}

@@ -19,8 +19,8 @@ function user_job_setup()
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal','DT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	--state.Weapons:options('Default','Ranged','Savage','Evisceration','DualWeapons','DualSavageWeapons','DualEvisceration','DualLeadenRanged','DualLeadenMelee','DualAeolian','DualLeadenMeleeAcc','DualRanged','DualProcWeapons','None')
-	state.Weapons:options('Default','Ranged','RangedDP','RangedArmageddon','Savage','Evisceration','DualWeapons','DualSavageWeapons','DualLeadenRanged','DualLeadenMelee','DualEvisceration','DualAeolian','DualRanged','DualMeleeArmageddon','None')
+	--state.Weapons:options('Default','Ranged','Savage','Evisceration','DualWeapons','DualSavage','DualEvisceration','DualLeadenRanged','DualLeadenMelee','DualAeolian','DualLeadenMeleeAcc','DualRanged','DualProcWeapons','None')
+    state.Weapons:options('DualLeaden','DualLeadenRanged','DualSavage','DualWildfire','DualWildfireRanged','DualLastStand','DualLastStandRanged','DeathPenalty','Armageddon','Fomalhaut','Naegling','None')
     state.CompensatorMode:options('Always','300','1000','Never')
 
     gear.RAbullet = "Chrono Bullet"
@@ -60,9 +60,9 @@ function user_job_setup()
 	send_command('bind ^@!\\\\ gs c toggle LuzafRing')
 	send_command('bind @f7 gs c toggle RngHelper')
 
-	send_command('bind !r gs c weapons DualSavageWeapons;gs c update')
-    send_command('bind @r gs c weapons DualLeadenMelee;gs c update')
-    send_command('bind @q gs c weapons DualMeleeArmageddon;gs c update')
+	send_command('bind !r gs c weapons DualSavage;gs c update')
+    send_command('bind @r gs c weapons DualLeaden;gs c update')
+    send_command('bind @q gs c weapons DualWildfire;gs c update')
 	send_command('bind ^q gs c weapons DualRanged;gs c update')
 	send_command('bind !q gs c weapons DualLeadenRanged;gs c update')
 	send_command('bind @pause roller roll')
@@ -80,7 +80,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
 
-	sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
+	sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +3"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
@@ -94,7 +94,7 @@ function init_gear_sets()
         ear1="Genmei Earring",
         ear2="Eabani Earring",
         body="Nyame Mail",
-        hands="Chasseur's Gants +2",
+        hands="Chasseur's Gants +3",
         ring1="Defending Ring",
         ring2="Dark Ring",
         back=gear.tp_jse_back,
@@ -108,8 +108,8 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +1"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +1"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +1"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +3"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +3"})
     
     sets.precast.CorsairShot = {
         ammo=gear.QDbullet,
@@ -193,17 +193,17 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         ammo=gear.WSbullet,
-        head="Lanun Tricorne +3",
+        head="Nyame Mail",
         neck="Fotia Gorget",
         ear1="Moonshade Earring",
         ear2="Ishvara Earring",
         body="Laksa. Frac +3",
-        hands="Meg. Gloves +2",
+        hands="Chasseur's Gants +3",
         ring1="Dingir Ring",
         ring2="Regal Ring",
         back=gear.ranger_wsd_jse_back,
         waist="Fotia Belt",
-        legs="Meg. Chausses +2",
+        legs="Nyame Flanchard",
         feet="Lanun Bottes +3"
     }
 		
@@ -255,9 +255,9 @@ function init_gear_sets()
         ear1="Moonshade Earring",
         ear2="Ishvara Earring",
         body="Laksa. Frac +3",
-        hands="Meg. Gloves +2",
-        ring1="Karieyh Ring",
-        ring2="Regal Ring",
+        hands="Chasseur's Gants +3",
+        ring1="Epaminondas's Ring",
+        ring2="Karieyh Ring",
         back=gear.str_wsd_jse_back,
         waist="Sailfi Belt +1",
         legs="Nyame Flanchard",
@@ -267,17 +267,17 @@ function init_gear_sets()
 	
     sets.precast.WS['Last Stand'] = {
         ammo=gear.WSbullet,
-        head="Lanun Tricorne +3",
-        neck="Fotia Gorget",
+        head="Nyame Helm",
+        neck="Comm. Charm +2",
         ear1="Moonshade Earring",
         ear2="Ishvara Earring",
         body="Laksa. Frac +3",
-        hands="Meg. Gloves +2",
-        ring1="Dingir Ring",
-        ring2="Regal Ring",
+        hands="Chasseur's Gants +3",
+        ring1="Epaminondas's Ring",
+        ring2="Karieyh Ring",
         back=gear.ranger_wsd_jse_back,
         waist="Fotia Belt",
-        legs="Meg. Chausses +2",
+        legs="Nyame Flanchard",
         feet="Lanun Bottes +3"
     }
 
@@ -301,12 +301,12 @@ function init_gear_sets()
         ear1="Moonshade Earring",
         ear2="Friomisi Earring",
         body="Lanun Frac +3",
-        hands="Carmine Fin. Ga. +1",
+        hands="Chasseur's Gants +3",
         ring1="Archon Ring",
         ring2="Dingir Ring",
         back=gear.magic_agi_wsd_jse_back,
-        waist="Svelt. Gouriz +1",
-        legs=gear.herculean_wsd_legs,
+        waist="Orpheus's Sash",
+        legs="Nyame Flanchard",
         feet="Lanun Bottes +3"
     }
 		
@@ -319,28 +319,28 @@ function init_gear_sets()
         ear1="Moonshade Earring",
         ear2="Friomisi Earring",
         body="Lanun Frac +3",
-        hands="Carmine Fin. Ga. +1",
+        hands="Chasseur's Gants +3",
         ring1="Metamor. Ring +1",
         ring2="Dingir Ring",
         back=gear.magic_wsd_jse_back,
         waist="Eschan Stone",
-        legs=gear.herculean_nuke_legs,
+        legs="Nyame Flanchard",
         feet="Lanun Bottes +3"
     }
 
     sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
-        head=gear.herculean_nuke_head,
+        head="Nyame Helm",
         neck="Comm. Charm +2",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
         body="Lanun Frac +3",
-        hands="Carmine Fin. Ga. +1",
+        hands="Chasseur's Gants +3",
         ring1="Dingir Ring",
-        ring2="Regal Ring",
+        ring2="Karieyh Ring",
         back=gear.magic_agi_wsd_jse_back,
-        waist="Eschan Stone",
-        legs=gear.herculean_wsd_legs,
+        waist="Orpheus's Sash",
+        legs="Nyame Flanchard",
         feet="Lanun Bottes +3"
     }
 
@@ -397,7 +397,7 @@ function init_gear_sets()
 
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA,{})
 		
-	sets.buff['Triple Shot'] = {body="Chasseur's Frac +1"}
+	sets.buff['Triple Shot'] = {body="Chasseur's Frac +3"}
     
     -- Sets to return to when not performing an action.
 	
@@ -447,21 +447,17 @@ function init_gear_sets()
 	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai"}
 
 	-- Weapons sets
-	sets.weapons.Default = {main="Naegling",sub="Nusku Shield",range="Fomalhaut"}
-    sets.weapons.RangedDP = {main=gear.rostam_melee,sub="Nusku Shield",range="Death Penalty"}
-	sets.weapons.Ranged = {main=gear.rostam_melee,sub="Nusku Shield",range="Fomalhaut"}
-    sets.weapons.RangedArmageddon = {main=gear.rostam_melee,sub="Nusku Shield",range="Armageddon"}
-	sets.weapons.Evisceration = {main="Tauret",sub="Nusku Shield",range="Anarchy +2"}
-	sets.weapons.Savage = {main="Naegling",sub="Nusku Shield",range="Anarchy +2"}
-	sets.weapons.DualWeapons = {main="Naegling",sub=gear.rostam_melee,range="Fomalhaut"}
-	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Gleti's Knife",range="Anarchy +2"}
-	sets.weapons.DualEvisceration = {main="Tauret",sub="Gleti's Knife",range="Anarchy +2"}
-	sets.weapons.DualLeadenRanged = {main=gear.rostam_melee,sub="Tauret",range="Death Penalty"}
-	sets.weapons.DualLeadenMelee = {main=gear.rostam_melee,sub="Tauret",range="Death Penalty"}
-	sets.weapons.DualAeolian = {main=gear.rostam_melee,sub="Tauret",range="Anarchy +2"}
-	sets.weapons.DualLeadenMeleeAcc = {main="Naegling",sub=gear.rostam_melee,range="Death Penalty"}
-	sets.weapons.DualRanged = {main=gear.rostam_melee,sub="Kustawi +1",range="Fomalhaut"}
-    sets.weapons.DualMeleeArmageddon = {main=gear.rostam_melee,sub="Kustawi +1",range="Armageddon"}
+    sets.weapons.DualSavage = 				{main="Naegling",sub="Gleti's Knife" ,range="Anarchy +2"}
+    sets.weapons.DualLeaden = 				{main=gear.rostam_melee,sub="Gleti's Knife",range="Death Penalty"}
+    sets.weapons.DualLeadenRanged = 		{main=gear.rostam_melee,sub="Tauret",range="Death Penalty"}
+    sets.weapons.DualWildfire = 			{main=gear.rostam_melee,sub="Gleti's Knife",range="Armageddon"}
+    sets.weapons.DualWildfireRanged = 		{main=gear.rostam_melee,sub="Tauret",range="Armageddon"}
+    sets.weapons.DualLastStand = 			{main=gear.rostam_melee,sub="Gleti's Knife",range="Fomalhaut"}
+    sets.weapons.DualLastStandRanged = 		{main=gear.rostam_melee,sub="Kustawi +1",range="Fomalhaut"}
+    sets.weapons.DeathPenalty = 			{main=gear.rostam_melee,sub="Nusku Shield",range="Death Penalty"}
+    sets.weapons.Armageddon =				{main=gear.rostam_melee,sub="Nusku Shield",range="Armageddon"}
+    sets.weapons.Fomalhaut = 				{main=gear.rostam_melee,sub="Nusku Shield",range="Fomalhaut"}
+    sets.weapons.Naegling = 				{main="Naegling",sub="Nusku Shield",range="Anarchy +2"}
 	
     -- Engaged sets
 
@@ -545,6 +541,6 @@ function select_default_macro_book()
     end
 end
 
-autows_list = {['Default']='Savage Blade',['Evisceration']='Evisceration',['Savage']='Savage Blade',['Ranged']='Last Stand',['RangedDP']='Leaden Salute',['DualWeapons']='Savage Blade',['DualSavageWeapons']='Savage Blade',['DualEvisceration']='Evisceration',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualAeolian']='Aeolian Edge',['DualRanged']='Last Stand',['DualMeleeArmageddon']='Wildfire'}
+autows_list = {['Default']='Savage Blade',['Evisceration']='Evisceration',['Naegling']='Savage Blade',['Ranged']='Last Stand',['RangedDP']='Leaden Salute',['DualWeapons']='Savage Blade',['DualSavage']='Savage Blade',['DualEvisceration']='Evisceration',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualAeolian']='Aeolian Edge',['DualRanged']='Last Stand',['DualMeleeArmageddon']='Wildfire',['DualLastStand']='Last Stand'}
 
 -- autows_list = {['Default']='Last Stand',['Ranged']='Last Stand',['RangedDP']='Leaden Salute',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualRanged']='Last Stand'}

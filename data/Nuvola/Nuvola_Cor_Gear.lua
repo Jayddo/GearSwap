@@ -171,9 +171,9 @@ function init_gear_sets()
         back=gear.tp_jse_back,waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
 
 	sets.precast.WS['Savage Blade'] = {ammo=gear.WSbullet,
-        head="Meg. Visor +2",neck="Comm. Charm +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Laksa. Frac +3",hands="Meg. Gloves +2",ring1="Petrov Ring",ring2="Karieyh Ring",
-        back=gear.str_wsd_jse_back,waist="Sailfi Belt +1",legs="Meg. Chausses +2",feet="Lanun Bottes +1"}
+        head="Nyame Helm",neck="Comm. Charm +1",ear1="Moonshade Earring",ear2="Ishvara Earring",
+        body="Nyame Mail",hands="Nyame Gauntlets",ring1="Petrov Ring",ring2="Karieyh Ring",
+        back=gear.str_wsd_jse_back,waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
     sets.precast.WS['Savage Blade'].Acc = {ammo=gear.WSbullet,
         head="Carmine Mask +1",neck="Combatant's Torque",ear1="Moonshade Earring",ear2="Telos Earring",
@@ -323,7 +323,7 @@ function init_gear_sets()
 	sets.weapons.Ranged = {main="Lanun Knife",sub="Nusku Shield",range="Fomalhaut"}
 	sets.weapons.Evisceration = {main="Tauret",sub="Nusku Shield",range="Anarchy +2"}
 	sets.weapons.DualWeapons = {main="Naegling",sub="Blurred Knife +1",range="Fomalhaut"}
-	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Blurred Knife +1",range="Anarchy +2"}
+	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Gleti's Knife",range="Anarchy +2"}
 	sets.weapons.DualEvisceration = {main="Tauret",sub="Blurred Knife +1",range="Anarchy +2"}
 	sets.weapons.Savage = {main="Naegling",sub="Nusku Shield",range="Anarchy +2"}
 	sets.weapons.DualLeadenRanged = {main="Lanun Knife",sub="Tauret",range="Fomalhaut"}

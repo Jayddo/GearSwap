@@ -19,7 +19,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Tizbron','MeleeClubs','Tizalmace','Tizclub','Naegbron','MaccWeapons','None')
+	state.Weapons:options('Tizbron','Magic','Tizalmace','Tizclub','Naegbron','MaccWeapons','None')
 	state.AutoWSRestore = M(false, 'AutoWSRestore')
 	state.AutoBLUSpam = M(false, 'AutoBLUSpam')
 	state.AutoJumpMode = M(false, 'AutoJumpMode')
@@ -68,7 +68,7 @@ function init_gear_sets()
 	sets.weapons.Tizalmace = {main="Tizona",sub="Almace"}
 	sets.weapons.Tizclub = {main="Tizona",sub="Maxentius"}
 	sets.weapons.Tizbron = {main="Tizona",sub="Machaera +2"}
-	sets.weapons.MeleeClubs = {main="Maxentius",sub="Bunzi's Rod"}
+	sets.weapons.Magic = {main="Maxentius",sub="Bunzi's Rod"}
 	sets.weapons.Almace = {main="Almace",sub="Sequence"}
 	sets.weapons.Naegbron = {main="Naegling",sub="Machaera +2"}
 	sets.weapons.Naegmace = {main="Naegling",sub="Almace"}
@@ -76,12 +76,12 @@ function init_gear_sets()
 	sets.weapons.HybridWeapons = {main="Vampirism",sub="Vampirism"}
 
 
-	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3",feet="Hashi. Basmak +1"}
+	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3",feet="Hashi. Basmak +2"}
 	sets.buff['Chain Affinity'] = {feet="Assim. Charuqs +2"}
 	sets.buff.Convergence = {head="Luh. Keffiyeh +2"}
 	sets.buff.Diffusion = {feet="Luhlaza Charuqs +2"}
 	sets.buff.Enchainment = {}
-	sets.buff.Efflux = {back=gear.da_jse_back,legs="Hashishin Tayt +1"}
+	sets.buff.Efflux = {back=gear.da_jse_back,legs="Hashishin Tayt +2"}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
 	sets.HPDown = {}
@@ -149,7 +149,7 @@ function init_gear_sets()
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
-	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Hashishin Mintan +1"})
+	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Hashishin Mintan +2"})
 
 
 	-- Weaponskill sets
@@ -241,7 +241,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
 		ammo="Coiste Bodhar",
-		head="Nyame Helm",
+		head="Hashishin Kavuk +3",
 		neck="Mirage Stole +2",
 		ear1="Moonshade earring",
 		ear2="Ishvara earring",
@@ -319,7 +319,7 @@ function init_gear_sets()
 		waist="Flume Belt +1",
 		ear1="Njordr Earring",
 		ear2="Hashi. Earring +2",
-		legs="Hashishin Tayt +1",
+		legs="Hashishin Tayt +2",
 		feet="Luhlaza Charuqs +3",
 		ring1="Stikini Ring +1",
 		ring2="Stikini Ring +1"
@@ -610,7 +610,7 @@ function init_gear_sets()
 		waist="Flume Belt +1",
 		ear1="Njordr Earring",
 		ear2="Hashi. Earring +2",
-		legs="Hashishin Tayt +1",
+		legs="Hashishin Tayt +2",
 		feet="Luhlaza Charuqs +3",
 		ring1="Stikini Ring +1",
 		ring2="Stikini Ring +1"
@@ -782,7 +782,7 @@ function init_gear_sets()
 	sets.Phalanx_Received = {hands=gear.herculean_phalanx_hands,feet=gear.herculean_nuke_feet}
 end
 
-autows_list = {['Tizbron']='Expiacion',['Tizalmace']='Expiacion',['Almace']='Chant Du Cygne',['MeleeClubs']='Black Halo',
+autows_list = {['Tizbron']='Expiacion',['Tizalmace']='Expiacion',['Almace']='Chant Du Cygne',['Magic']='Black Halo',
 ['HybridWeapons']='Sanguine Blade',['Naegbron']='Savage Blade',['Naegmace']='Savage Blade',['MaccWeapons']='Expiacion'}	
 
 buff_spell_lists = {

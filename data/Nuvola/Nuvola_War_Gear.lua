@@ -119,13 +119,13 @@ function init_gear_sets()
 		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
 		body="Nyame Mail",
-		hands="Sulev. Gauntlets +2",
-		ring1="Niqmaddu Ring",
+		hands="Nyame Gauntlets",
+		ring1="Epaminondas's Ring",
 		ring2="Karieyh Ring",
 		back="Cichol's Mantle",
 		waist="Sailfi Belt +1",
 		legs="Nyame Flanchard",
-		feet="Sulev. Leggings +2"
+		feet="Nyame Sollerets"
 	})
     sets.precast.WS['Savage Blade'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -202,14 +202,14 @@ function init_gear_sets()
 		ammo="Staunch Tathlum",
 		head="Sakpata's Helm",
 		neck="War. Beads +1",
-		ear1="Mache Earring",
+		ear1="Mache Earring +1",
 		ear2="Brutal Earring",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
 		ring1="Defending Ring",
 		ring2="Petrov Ring",
 		back="Cichol's Mantle",
-		waist="Ioskeha Belt",
+		waist="Flume Belt +1",
 		legs="Sakpata's Cuisses",
 		feet="Sakpata's Leggings"
 	}
@@ -271,17 +271,15 @@ function init_gear_sets()
 		ammo="Coiste Bodhar",
 		head="Sakpata's Helm",
 		neck="War. Beads +1",
-		ear1="Mache Earring",
-		ear2="Brutal Earring",
+		ear1="Mache Earring +1",
+		ear2="Boii Earring +1",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
 		ring1="Niqmaddu Ring",
 		ring2="Petrov Ring",
-		waist="Ioskeha Belt",
+		waist="Sailfi Belt +1",
 		legs="Sakpata's Cuisses",
 		feet="Sakpata's Leggings",
-		ring1="Niqmaddu Ring",
-		ring2="Petrov Ring",
 		back=gear.da_jse_back
 
 	}
@@ -1311,7 +1309,7 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	-- Weapons sets
-	sets.weapons.NaegBlur = {main="Kaja Sword", sub="Blurred Shield +1"}
+	sets.weapons.NaegBlur = {main="Naegling", sub="Blurred Shield +1"}
 	sets.weapons.Chango = {main="Chango",sub="Utu Grip"}
 	sets.weapons.DualWeapons = {main="Firangi",sub="Reikiko"}
 	sets.weapons.Greatsword = {main="Montante +1",sub="Utu Grip"}

@@ -84,7 +84,7 @@ function init_gear_sets()
         ear1="Thrud Earring",
         ear2="Moonshade Earring",
         body="Sakonji Domaru +3",
-        hands="Nyame Gauntlets",
+        hands="Kasuga Kote +3",
         ring1="Epaminondas's Ring",
         ring2="Karieyh Ring",
         back=gear.ws_jse_back,
@@ -452,7 +452,7 @@ function init_gear_sets()
 	sets.buff.Sleep = {neck="Vim Torque +1"}
 	sets.buff.Hasso = {legs="Kasuga Haidate +2"}
 	sets.buff['Third Eye'] = {} --legs="Sakonji Haidate +3"
-    sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
+    sets.buff.Sekkanoki = {hands="Kasuga Kote +3"}
     sets.buff.Sengikori = {feet="Kas. Sune-Ate +1"}
     sets.buff['Meikyo Shisui'] = {feet="Sak. Sune-Ate +1"}
 end

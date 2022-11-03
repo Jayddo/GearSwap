@@ -2,6 +2,8 @@ function user_setup()
 
 	include('Common/RDM_UserSetup_Common.lua')
 
+	gear.jse_sanguine_back = {name="Sucellos's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+
 end
 
 function init_gear_sets()
@@ -9,7 +11,7 @@ function init_gear_sets()
 	include('Common/RDM_Common.lua')
 
 
-	state.Weapons:options('None','DualCrocea','DualCroDay','DualSavage','DualSavagebhron','DualEvis','DualClubs','Crocea','Naegling')
+state.Weapons:options('None','DualCrocea','DualCroDay','DualSavage','DualSavagebhron','DualEvis','DualClubs','Crocea','Naegling')
 
 sets.weapons.DualCrocea = {main="Crocea Mors",sub="Crepuscular Knife"}
 sets.weapons.DualClubs = {main="Maxentius",sub="Bunzi's Rod"}
@@ -40,7 +42,7 @@ sets.precast.WS['Savage Blade'] = {
 	body="Nyame Mail",
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
-	feet="Nyame Sollerets",
+	feet="Leth. Houseaux +2",
 	neck="Dls. Torque +2",
 	waist="Sailfi Belt +1",
 	left_ear="Regal Earring",
@@ -57,14 +59,14 @@ sets.precast.WS['Sanguine Blade'] = {
 	body="Nyame Mail",
 	hands="Jhakri Cuffs +2",
 	legs="Nyame Flanchard",
-	feet="Nyame Sollerets",
+	feet="Leth. Houseaux +2",
 	neck="Sanctity Necklace",
 	waist="Orpheus's Sash",
 	left_ear="Regal Earring",
 	right_ear="Malignance Earring",
 	left_ring="Metamor. Ring +1",
 	right_ring="Karieyh Ring",
-	back=gear.jse_mab_back,
+	back=gear.jse_sanguine_back,
 }
 
 sets.midcast['Enhancing Magic'] = {
@@ -74,14 +76,14 @@ sets.midcast['Enhancing Magic'] = {
 	body="Viti. Tabard +3",															-- 15%
 	hands="Atrophy Gloves +2",														-- 20%
 	legs=gear.telchine_enhancing_legs,												-- 9%
-	feet="Leth. Houseaux +1",														-- 30%
+	feet="Leth. Houseaux +2",														-- 30%
 	neck=gear.rdm_jse_neck,															-- ?
 	waist="Embla Sash",																-- 10%
 	left_ear="Genmei Earring",
 	right_ear="Etiolation Earring",
 	left_ring="Defending Ring",
 	right_ring="Gelatinous Ring +1",
-	back=gear.jse_macc_back,														-- 20%
+	back=gear.jse_da_back,														-- 20%
 }
 
 sets.buff.ComposureOther = --set_combine(sets.midcast['Enhancing Magic'], {
@@ -90,7 +92,7 @@ sets.buff.ComposureOther = --set_combine(sets.midcast['Enhancing Magic'], {
 	body="Lethargy Sayon +1",
 	--hands="Leth. Gantherots +1",
 	legs="Leth. Fuseau +1",
-	feet="Leth. Houseaux +1",
+	feet="Leth. Houseaux +2",
 }
 
 sets.EnhancingSkill = {
@@ -101,22 +103,22 @@ sets.EnhancingSkill = {
 	body="Viti. Tabard +3",
 	hands="Viti. Gloves +3",
 	legs="Carmine Cuisses",
-	feet="Leth. Houseaux +1",
+	feet="Leth. Houseaux +2",
 	neck=gear.rdm_jse_neck,
 	waist="Olympus Sash",
 	left_ear="Andoaa Earring",			-- 5
 	right_ear="Mimir Earring",			-- 10
 	left_ring="Defending Ring",
 	right_ring="Stikini Ring +1",
-	back=gear.jse_skill_back,
+	back=gear.jse_da_back,
 }
 
 sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{
-	head="Amalric Coif",
+	head="Amalric Coif +1",
 	body="Atrophy Tabard +2",
 	hands="Atrophy Gloves +2",
 	legs="Leth. Fuseau +1",
-	feet="Leth. Houseaux +1",
+	feet="Leth. Houseaux +2",
 	back="Grapevine Cape",
 	waist="Gishdubar Sash"
 })
@@ -137,7 +139,7 @@ sets.midcast['Phalanx'] = {
 	right_ear="Mimir Earring",			-- 10
 	left_ring="Stikini Ring +1",
 	right_ring="Stikini Ring +1",		-- 8
-	back=gear.jse_macc_back,
+	back=gear.jse_da_back,
 }
 
 -- Main enfeebling with duration/potency
@@ -161,7 +163,7 @@ sets.midcast['Enfeebling Magic'] = {
 	right_ear="Snotra Earring",
 	left_ring={name="Kishar Ring", priority=15},
 	right_ring="Stikini Ring +1",
-	back=gear.jse_macc_back,
+	back="Aurist's Cape +1",
 }
 	
 -- -20% Duration

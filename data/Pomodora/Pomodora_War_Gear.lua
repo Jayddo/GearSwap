@@ -26,9 +26,9 @@ function init_gear_sets()
 		ear2="Moonshade Earring",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
-		ring1="Regal Ring",
+		ring1="Epaminondas's Ring",
 		ring2="Karieyh Ring",
-		back="Cichol's Mantle",
+		back=gear.jse_str_back,
 		waist="Fotia Belt",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets"
@@ -38,6 +38,12 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
 		waist="Sailfi Belt +1"
 	})
+
+	sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS['Savage Blade'],{})
+
+	sets.precast.WS['Judgment'] = set_combine(sets.precast.WS['Savage Blade'],{})
+
+	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'],{})
 
 	sets.idle = {
 		ammo="Staunch Tathlum",
@@ -49,7 +55,7 @@ function init_gear_sets()
 		hands="Sakpata's Gauntlets",
 		ring1="Defending Ring",
 		ring2="Dark Ring",
-		back="Shadow Mantle",
+		back="Cichol's Mantle",
 		waist="Flume Belt",
 		legs="Sakpata's Cuisses",
 		feet="Sakpata's Leggings"
@@ -60,22 +66,57 @@ function init_gear_sets()
 		head="Flam. Zucchetto +1",
 		neck="Sanctity Necklace",
 		ear1="Brutal Earring",
-		ear2="Suppanomimi",
+		ear2="Boii Earring +1",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
 		ring1="Niqmaddu Ring",
 		ring2="Flamma Ring",
-		back="Cichol Mantle",
+		back=gear.jse_da_back,
 		waist="Sailfi Belt +1",
 		legs="Sakpata's Cuisses",
 		feet="Flam. Gambieras +2"
 	}
+
+	sets.engaged.Loxotic = {
+		ammo="Coiste Bodhar",
+		head="Flam. Zucchetto +1",
+		neck="Sanctity Necklace",
+		ear1="Brutal Earring",
+		ear2="Boii Earring +1",
+		body="Sakpata's Plate",
+		hands="Sakpata's Gauntlets",
+		ring1="Niqmaddu Ring",
+		ring2="Flamma Ring",
+		back=gear.jse_da_back,
+		waist="Sailfi Belt +1",
+		legs="Sakpata's Cuisses",
+		feet="Flam. Gambieras +2"
+	}
+
+	sets.engaged.ShiningOne = {
+		ammo="Coiste Bodhar",
+		head="Flam. Zucchetto +1",
+		neck="Sanctity Necklace",
+		ear1="Brutal Earring",
+		ear2="Boii Earring +1",
+		body="Sakpata's Plate",
+		hands="Sakpata's Gauntlets",
+		ring1="Niqmaddu Ring",
+		ring2="Flamma Ring",
+		back=gear.jse_da_back,
+		waist="Sailfi Belt +1",
+		legs="Sakpata's Cuisses",
+		feet="Flam. Gambieras +2"
+	}
+
 
 	sets.engaged.Naegling.DT = set_combine(sets.engaged.Naegling,{
 		head="Sakpata's Helm",
 		feet="Sakpata's Leggings"
 	})
 	
-	autows_list = {['NaegBlur']='Savage Blade',['DualWeapons']='Savage Blade'}
+
+	sets.weapons.ShiningOne = {main="Shining One",sub="Flanged Grip"}
+	autows_list = {['Naegling']='Savage Blade',['DualWeapons']='Savage Blade',['Loxotic']='Judgment',['ShiningOne']='Impulse Drive'}
 
 end

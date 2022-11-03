@@ -125,14 +125,14 @@ function init_gear_sets()
 
 	sets.midcast.Geomancy = {main="Idris", sub="Genbu's Shield",  range="Dunna", 
 	head="Azimuth Hood +2", body="Bagua Tunic", hands="Geo. Mitaines +3", ear1="Influx Earring", ear2="Gifted Earring", 
-	neck="Bagua Charm +1", ring2="Renaye Ring", legs="Azimuth Tights +1", feet="Azimuth Gaiters +2", back="Lifestream Cape"}
+	neck="Bagua Charm +1", ring2="Renaye Ring", legs="Azimuth Tights +1", feet="Azimuth Gaiters +3", back="Lifestream Cape"}
 
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
 		main="Solstice", sub="Genbu's Shield", range="Dunna", 
 		head="Azimuth Hood +2", body="Bagua Tunic", ear1="Influx Earring", ear2="Gifted Earring", neck="Bagua Charm +1",
-		legs="Bagua Pants +3", hands="Geo. Mitaines +3", feet="Azimuth Gaiters +2", back="Lifestream Cape"
+		legs="Bagua Pants +3", hands="Geo. Mitaines +3", feet="Azimuth Gaiters +3", back="Lifestream Cape"
 	})
 		
     sets.midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield", ear1="Novia Earring", ear2="Gifted Earring",
@@ -389,7 +389,7 @@ function init_gear_sets()
 end
 
 function user_job_lockstyle()
-	send_command('wait 15; input /lockstyleset 01')
+	send_command('wait 15; input /lockstyleset 20')
 end
 
 autows_list = {['None']='Hexa Strike',['Maxentius']='Black Halo',['DualWeapons']='Black Halo'}

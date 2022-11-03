@@ -1,0 +1,17 @@
+sets.exported={
+    main="Naegling",
+    sub="Blurred Shield +1",
+    ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head="Sakpata's Helm",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Hermes' Sandals",
+    neck="Loricate Torque",
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Brutal Earring",
+    right_ear={ name="Boii Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','Crit.hit rate+3',}},
+    left_ring="Defending Ring",
+    right_ring="Flamma Ring",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+}

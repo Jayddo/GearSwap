@@ -17,14 +17,14 @@ function init_gear_sets()
 	sets.precast.FC = {
 		ammo={name="Impatiens", priority=1},													-- QC 2
 		ranged=empty,
-		head=gear.merlinic_fc_head,																-- 15
-		body="Viti. Tabard +3",																-- 15
-		neck="Baetyl Pendant",  																-- 4
+		head="Bunzi's Hat",																-- 15
+		body="Zendik Robe",
+		hands="Gende. Gages +1",																-- 15  																-- 4
 		legs="Aya. Cosciales +2",																-- 6	
 		waist="Embla Sash",																		-- 5
 		left_ear="Loquac. Earring",																-- 2
 		right_ear="Etiolation Earring",															-- 1
-		left_ring=gear.weather_ring,															-- 4
+		left_ring="Kishar Ring",															-- 4
 		right_ring="Lebeche Ring",																-- QC 2
 		back="Perimede Cape",																	-- QC 4
 	}
@@ -46,6 +46,27 @@ function init_gear_sets()
 		back=gear.jse_str_back,
 	}
 
+
+	sets.midcast.Cure = {
+		main="Bunzi's Rod",										-- 30
+		sub="Ammurapi Shield",
+		range=empty,
+		ammo="Hydrocera",
+		head="Kaykaus Mitra +1",
+		body="Bunzi's Robe",
+		hands="Bunzi's Gloves",								-- 11
+		legs="Vanya Slops",
+		feet="Kaykaus Boots +1",
+		neck="Incanter's Torque",
+		waist="Luminary Sash",
+		left_ear="Meili Earring",
+		right_ear="Mendi. Earring",								-- 5
+		left_ring="Janniston Ring",
+		right_ring={name="Lebeche Ring",priority=500},
+	}
+
+		sets.midcast.Curaga = sets.midcast.Cure
+
 	sets.midcast['Enhancing Magic'] = {
 		main=gear.colada_enhancing_sword,												-- 4% 	
 		sub="Ammurapi Shield",															-- 10%
@@ -66,18 +87,18 @@ function init_gear_sets()
 	sets.idle = {
 		main="Daybreak",
 		sub="Genmei Shield",
-		ammo="Staunch Tathlum",
-		head="Nyame Helm",
-		body="Witching Robe",
+		ammo="Homiliary",
+		head="Malignance Chapeau",
+		body="Shamash Robe",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck="Sanctity Necklace",
+		feet="Malignance Boots",
+		neck="Loricate Torque",
 		waist=gear.dt_waist,
-		left_ear="Infused Earring",
+		left_ear="Eabani Earring",
 		right_ear="Etiolation Earring",
-		left_ring={name="Defending Ring",priority=50},
-		right_ring=gear.stikini_ring,
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back=gear.jse_macc_back,
 	}
 
@@ -92,7 +113,7 @@ function init_gear_sets()
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",
 		right_ear="Telos Earring",
-		left_ring="Chirich Ring +1",
+		left_ring="Petrov Ring",
 		right_ring="Ilabrat Ring",
 		back=gear.jse_da_back,
 	}
