@@ -21,7 +21,7 @@ function init_gear_sets()
 
 	sets.precast.WS = {ammo="Knobkierrie",
 head="Nyame Helm",neck="Fotia Gorget",ear1="Thrud Earring",ear2="Moonshade Earring",
-body="Nyame Mail",hands="Nyame Gauntlets",ring1="Regal Ring",ring2="Karieyh Ring",
+body="Nyame Mail",hands="Nyame Gauntlets",ring1="Epaminondas' Ring",ring2="Karieyh Ring",
 back="Cichol's Mantle",waist="Fotia Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 sets.precast.WS.Enmity = set_combine(sets.precast.WS, {
 	left_ear="Schere Earring",	

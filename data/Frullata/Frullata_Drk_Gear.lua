@@ -19,7 +19,7 @@ function user_job_setup()
     state.MagicalDefenseMode:options('MDT', 'MDTReraise')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'PDT','Refresh','Reraise')
-	state.Weapons:options('Apocalypse')
+	state.Weapons:options('Apocalypse','Naegling')
 --	state.Weapons:options('Montante','Anguta')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
@@ -125,7 +125,7 @@ function init_gear_sets()
 		left_ear="Thrud Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		left_ring="Karieyh Ring",
-		right_ring="Regal Ring",
+		right_ring="Epaminondas' Ring",
 		back=gear.jse_STR_Back,
 	}
 
@@ -160,6 +160,14 @@ function init_gear_sets()
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {})
     sets.precast.WS['Resolution'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
     sets.precast.WS['Resolution'].Fodder = set_combine(sets.precast.WS.Fodder, {})     
+
+
+    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Catastrophe'], {})
+    sets.precast.WS['Resolution'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+    sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {})
+    sets.precast.WS['Resolution'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+    sets.precast.WS['Resolution'].Fodder = set_combine(sets.precast.WS.Fodder, {})     
+
            
      -- Sets to return to when not performing an action.
            
@@ -282,7 +290,7 @@ function init_gear_sets()
 		legs="Sakpata's Cuisses",
 		feet="Flam. Gambieras +2",
 		neck="Abyssal Beads +1",
-		waist="Ioskeha Belt",
+		waist="Sailfi Belt +1",
 		left_ear="Brutal Earring",
 		right_ear="Trux Earring",
 		left_ring="Rajas Ring",
@@ -414,7 +422,7 @@ function init_gear_sets()
 	sets.weapons.Apocalypse = {main="Apocalypse",sub="Bloodrain Strap"}
 	sets.weapons.Montante = {main="Montante +1",sub="Utu Grip"}
 	sets.weapons.Anguta = {main="Anguta",sub="Utu Grip"}
-	sets.weapons.Naegling = {main="Naegling"}
+	sets.weapons.Naegling = {main="Naegling",sub="Blurred Shield +1"}
 	
     end
 	
@@ -434,4 +442,4 @@ function select_default_macro_book()
     end
 end
 
-autows_list = {['Apocalypse']="Catastrophe"}
+autows_list = {['Apocalypse']="Catastrophe",['Naegling']="Savage Blade"}

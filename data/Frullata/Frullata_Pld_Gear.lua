@@ -79,7 +79,7 @@ function init_gear_sets()
     sets.Enmity.SIRD = {
 		ammo="Staunch Tathlum",
 		head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		body="Chev. Cuirass +3",
+		body="Souv. Cuirass +1", --temporary,
 		hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		legs="Souveran Diechlings +1",
 		feet="Odyssean Greaves",
@@ -225,7 +225,7 @@ function init_gear_sets()
 		left_ear="Brutal Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		left_ring="Karieyh Ring",
-		right_ring="Petrov Ring",
+		right_ring="Epaminondas' Ring",
 		back=gear.jse_wsd_back
 	}
 		
@@ -241,7 +241,7 @@ function init_gear_sets()
 		left_ear="Brutal Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		left_ring="Karieyh Ring",
-		right_ring="Petrov Ring",
+		right_ring="Epaminondas' Ring",
 		back=gear.jse_wsd_back
 	}
 
