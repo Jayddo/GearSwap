@@ -8,6 +8,14 @@ else
 	gear.jse_ws_body = 'Laksa. Frac +2'
 end
 
+if item_available('Crepuscular Knife') then
+	gear.offhand_melee_dagger = "Crepuscular Knife"
+    gear.offhand_savage = "Crepuscular Knife"
+else
+	gear.offhand_melee_dagger = "Gleti's Knife"
+    gear.offhand_savage = "Gleti's Knife"
+end
+
 if item_available("Chas. Earring +2") then
 	gear.empy_earring = "Chas. Earring +2"
 elseif item_available("Chas. Earring +1") then
@@ -17,32 +25,57 @@ else
 end
 
 
-sets.weapons.DualSavage = 			{main="Naegling",sub="Gleti's Knife",range="Anarchy +2"}
-sets.weapons.DualLeaden = 			{main="Naegling",sub="Gleti's Knife",range="Fomalhaut"}
+if item_available("Chasseur's Frac +3") then
+	gear.jse_empy_body = "Chasseur's Frac +3"
+elseif item_available("Chasseur's Frac +2") then
+	gear.jse_empy_body = "Chasseur's Frac +2"
+else
+	gear.jse_empy_body = "Chasseur's Frac +1"
+end
+
+if item_available("Chasseur's Gants +3") then
+	gear.jse_empy_hands = "Chasseur's Gants +3"
+elseif item_available("Chasseur's Gants +2") then
+	gear.jse_empy_hands = "Chasseur's Gants +2"
+else
+	gear.jse_empy_hands = "Chasseur's Gants +1"
+end
+
+if item_available("Chass. Bottes +3") then
+	gear.jse_empy_feet = "Chass. Bottes +3"
+elseif item_available("Chass. Bottes +2") then
+	gear.jse_empy_feet = "Chass. Bottes +2"
+else
+	gear.jse_empy_feet = "Chass. Bottes +1"
+end
+
+
+sets.weapons.DualSavage = 			{main="Naegling",sub=gear.offhand_melee_dagger,range="Anarchy +2"}
+sets.weapons.DualLeaden = 			{main="Naegling",sub=gear.offhand_melee_dagger,range="Fomalhaut"}
 sets.weapons.DualLeadenRanged = 	{main="Naegling",sub="Tauret",range="Fomalhaut"}
-sets.weapons.DualLastStand = 		{main="Kustawi +1",sub="Gleti's Knife",range="Fomalhaut"}
-sets.weapons.DualLastStandRanged = 	{main="Kustawi +1",sub="Gleti's Knife",range="Fomalhaut"}
+sets.weapons.DualLastStand = 		{main="Kustawi +1",sub=gear.offhand_melee_dagger,range="Fomalhaut"}
+sets.weapons.DualLastStandRanged = 	{main="Kustawi +1",sub=gear.offhand_melee_dagger,range="Fomalhaut"}
 sets.weapons.DeathPenalty =			{main="Naegling",sub="Nusku Shield",range="Fomalhaut"}
 sets.weapons.Fomalhaut = 			{main="Kustawi +1",sub="Nusku Shield",range="Fomalhaut"}
 sets.weapons.Naegling = 			{main="Naegling",sub="Nusku Shield",range="Anarchy +2"}
 
 -- Precast sets to enhance JAs
 
-sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
+sets.precast.JA['Triple Shot'] = {body=gear.jse_empy_body}
 sets.precast.JA['Snake Eye'] = {} --{legs="Comm. Trews +2"}
 sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
 sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
 sets.precast.FoldDoubleBust = {} --{hands="Lanun Gants +3"}
 
 
-sets.precast.CorsairRoll = {head="Lanun Tricorne",back="Camulus's Mantle",neck="Regal Necklace",hands="Chasseur's Gants +2"}
+sets.precast.CorsairRoll = {head="Lanun Tricorne",back="Camulus's Mantle",neck="Regal Necklace",hands=gear.jse_empy_hands}
 
 -- sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +2"})
-sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
+sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet=gear.jse_empy_feet})
 -- sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +2"})
 
-sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
-sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
+sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body=gear.jse_empy_body})
+sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands=gear.jse_empy_hands})
 
 sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
  
@@ -52,7 +85,7 @@ sets.precast.CorsairShot = {
 	body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
-	feet="Chass. Bottes +2",
+	feet=gear.jse_empy_feet,
 	neck="Baetyl Pendant",
 	waist="Eschan Stone",
 	left_ear="Friomisi Earring",
@@ -63,7 +96,7 @@ sets.precast.CorsairShot = {
 }
 	
 sets.precast.CorsairShot.Damage = sets.precast.CorsairShot
-sets.precast.CorsairShot.Resistant = set_combine({sets.precast.CorsairShot, feet="Chass. Bottes +2",})
+sets.precast.CorsairShot.Resistant = set_combine({sets.precast.CorsairShot, feet=gear.jse_empy_feet,})
 
 sets.precast.CorsairShot['Light Shot'] = {
 	ammo=gear.QDbullet,
@@ -135,7 +168,7 @@ sets.precast.WS = {
 	body="Nyame Mail",
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
-	feet="Lanun Bottes +3",
+	feet="Nyame Sollerets",
 	neck="Fotia Gorget",
 	waist="Fotia Belt",
 	left_ear="Ishvara Earring",
@@ -166,7 +199,7 @@ sets.precast.WS['Evisceration'] = {
 	body="Nyame Mail",
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
-	feet="Lanun Bottes +3",
+	feet="Nyame Sollerets",
 	neck="Fotia Gorget",
 	waist="Fotia Belt",
 	left_ear="Telos Earring",
@@ -183,7 +216,7 @@ sets.precast.WS['Savage Blade'] = {
 	body="Nyame Mail",
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
-	feet="Lanun Bottes +3",
+	feet="Nyame Sollerets",
 	neck="Fotia Gorget",
 	waist="Sailfi Belt +1",
 	left_ear="Ishvara Earring",
@@ -297,7 +330,7 @@ sets.midcast.RA = {
 	back=gear.jse_midshot_back,
 }
 
-sets.buff['Triple Shot'] = {body="Chasseur's Frac +2"}
+sets.buff['Triple Shot'] = {body=gear.jse_empy_body}
 
 -- Sets to return to when not performing an action.
 sets.DayIdle = {}

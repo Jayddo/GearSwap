@@ -39,31 +39,44 @@ end
 
 -- Empy JSE
 
-if item_available("Ebers Pant. +2") then
+if item_available("Ebers Pant. +3") then
+	gear.whm_empy_legs = "Ebers Pant. +3"
+elseif item_available("Ebers Pant. +2") then
 	gear.whm_empy_legs = "Ebers Pant. +2"
 else
 	gear.whm_empy_legs = "Ebers Pant. +1"
 end
 
-if item_available("Ebers Cap +2") then
+if item_available("Ebers Cap +3") then
+	gear.whm_empy_head = "Ebers Cap +3"
+	gear.fc_head = "Ebers Cap +3"
+elseif item_available("Ebers Cap +2") then
 	gear.whm_empy_head = "Ebers Cap +2"
+	gear.fc_head = "Ebers Cap +2"
 else
 	gear.whm_empy_head = "Ebers Cap +1"
+	gear.fc_head = "Vanya Hood"
 end
 
-if item_available("Ebers Duckbills +2") then
+if item_available("Ebers Duckbills +3") then
+	gear.whm_empy_feet = "Ebers Duckbills +3"
+elseif item_available("Ebers Duckbills +2") then
 	gear.whm_empy_feet = "Ebers Duckbills +2"
 else
 	gear.whm_empy_feet = "Ebers Duckbills +1"
 end
 
-if item_available("Ebers Mitts +2") then
+if item_available("Ebers Mitts +3") then
+	gear.whm_empy_hands = "Ebers Mitts +3"
+elseif item_available("Ebers Mitts +2") then
 	gear.whm_empy_hands = "Ebers Mitts +2"
 else
 	gear.whm_empy_hands = "Ebers Mitts +1"
 end
 
-if item_available("Ebers Bliaut +2") then
+if item_available("Ebers Bliaut +3") then
+	gear.whm_empy_body = "Ebers Bliaut +3"
+elseif item_available("Ebers Bliaut +2") then
 	gear.whm_empy_body = "Ebers Bliaut +2"
 else
 	gear.whm_empy_body = "Ebers Bliaut +1"
@@ -134,6 +147,7 @@ end
 sets.weapons.Yagrush = {main="Yagrush",sub="Genmei Shield"}
 sets.weapons.Tishtrya = {main="Tishtrya",sub="Genmei Shield"}
 sets.weapons.Maxentius = {main="Maxentius",sub="Genmei Shield"}
+sets.weapons.DualYag = {main="Yagrush",sub="Vadose Rod"}
 sets.weapons.DualTish = {main="Tishtrya",sub="Daybreak"}
 sets.weapons.DualMaxen = {main="Maxentius",sub="Daybreak"}
 
@@ -145,7 +159,7 @@ sets.precast.FC = {
 	main="C. Palug Hammer",																	-- 7
 	sub="Chanter's Shield",																	-- 3
 	ammo="Impatiens",																		-- QC 2
-	head="Vanya Hood",																		-- 10
+	head=gear.fc_head,																		-- 13 / 10
 	body={name="Inyanga Jubbah +2",priority=100},											-- 14
 	hands="Gende. Gages +1",																-- 7
 	legs="Ayanmo Cosciales +2",																-- 6
@@ -154,7 +168,7 @@ sets.precast.FC = {
 	waist="Embla Sash",																		-- 5
 	left_ear="Loquac. Earring",																-- 2
 	right_ear="Malignance Earring",															-- 4
-	left_ring=gear.macc_fc_ring,															-- 4
+	left_ring=gear.macc_fc_ring,															-- 6 / 4
 	right_ring="Lebeche Ring",																-- QC 2
 	back=gear.jse_macc_fc_back,																-- 10
 }
@@ -172,6 +186,8 @@ sets.precast.FC.Stoneskin.DT = set_combine(sets.precast.FC['Enhancing Magic'].DT
 sets.precast.FC['Healing Magic'].DT = set_combine(sets.precast.FC.DT,  {main=gear.whm_aoe_weapon, legs=gear.whm_empy_legs})
 sets.precast.FC.StatusRemoval.DT = set_combine(sets.precast.FC['Healing Magic'].DT,{main=gear.whm_aoe_weapon})
 --sets.precast.FC['Reraise'].DT = set_combine(sets.precast.FC.DT, {})
+
+sets.precast.FC['Dispelga'] = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
 
 -- Combines FC Set + Healing/Cure casting time set.
 
@@ -577,6 +593,9 @@ sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic
 
 sets.midcast.Stun = sets.midcast['Enfeebling Magic']
 sets.midcast.Stun.Resistant = sets.midcast.Stun 
+
+sets.midcast['Dispelga'] = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {main="Daybreak"})
+sets.midcast['Dispelga'].DT = set_combine(sets.midcast['Enfeebling Magic'].DT, {main="Daybreak"})
 
 sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
 	main="Bunzi's Rod",

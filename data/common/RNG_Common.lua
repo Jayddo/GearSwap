@@ -1,4 +1,4 @@
-autows_list = {['Gastraphetes']='Trueflight',['Armageddon']='Wildfire',['Fomalhaut']='Last Stand',['Annihilator']='Last Stand',['Yoichinoyumi']='Namas Arrow',['FailNot']='Apex Arrow',['Naegling']='Savage Blade',['DualGastra']='Trueflight',['DualArma']='Wildfire',['DualFoma']='Last Stand',['DualAnni']='Last Stand',['DualYoichi']='Namas Arrow',['DualFailNot']='Apex Arrow',['DualSavage']='Savage Blade',}
+--autows_list = {['Gastraphetes']='Trueflight',['Armageddon']='Wildfire',['Fomalhaut']='Last Stand',['Annihilator']='Last Stand',['Yoichinoyumi']='Namas Arrow',['FailNot']='Apex Arrow',['Naegling']='Savage Blade',['DualGastra']='Trueflight',['DualArma']='Wildfire',['DualFoma']='Last Stand',['DualAnni']='Last Stand',['DualYoichi']='Namas Arrow',['DualFailNot']='Apex Arrow',['DualSavage']='Savage Blade',}
 
 if item_available("Amini Earring +2") then
 	gear.empy_earring = "Amini Earring +2"
@@ -9,6 +9,15 @@ elseif item_available("Amini Earring") then
 else
 	gear.empy_earring = "Telos Earring"
 end
+
+if item_available("Nisroch Jerkin") then
+	gear.crit_body = "Nisroch Jerkin"
+	gear.town_body = "Nisroch Jerkin"
+else
+	gear.crit_body = "Meg. Cuirie +2"
+	gear.town_body = "Ikenga's Vest"
+end
+
 
 -- Weapons sets
 sets.weapons.Gastraphetes = {main="Tauret",sub="Nusku Shield",range="Gastraphetes",ammo="Quelling Bolt"}
@@ -97,7 +106,7 @@ sets.precast.RA.Flurry2 = set_combine(sets.precast.RA, {})
 -- Default set for any weaponskill that isn't any more specifically defined
 -- 51% WSD
 sets.precast.WS = {
-	head="Orion Beret +3",																									-- 10
+	head="Nyame Helm",																										-- 10
 	body="Nyame Mail",
 	hands="Nyame Gauntlets",
 	legs={ name="Arc. Braccae +3", augments={'Enhances "Eagle Eye Shot" effect',}},											-- 10
@@ -178,7 +187,7 @@ sets.midcast.RA = {
 
 sets.midcast.RA.AM = {
 	head="Meghanada Visor +2",
-	body="Meg. Cuirie +2",
+	body=gear.crit_body,
 	hands="Malignance Gloves",
 	legs="Malignance Tights",
 	feet="Osh. Leggings +1",
@@ -225,7 +234,7 @@ sets.resting = sets.idle
 
 sets.idle.Town = {
 	head="Nyame Helm",
-	body="Ikenga's Vest",
+	body=gear.town_body,
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
 	feet="Nyame Sollerets",

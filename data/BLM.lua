@@ -60,6 +60,7 @@ function job_setup()
         'Stonega', 'Waterga', 'Aeroga', 'Firaga', 'Blizzaga', 'Thundaga'}
 		
     AutoManawellSpells = S{'Impact'}
+	AutoElementalSealSpells = S{'Shock','Rasp','Choke','Frost','Burn','Drown'}
 	AutoManawellOccultSpells = S{'Impact','Meteor','Thundaja','Blizzaja','Firaja','Thunder VI','Blizzard VI',}
 
 	state.DeathMode = M{['description'] = 'Death Mode', 'Off', 'Single', 'Lock'}
@@ -91,6 +92,14 @@ function job_pretarget(spell, spellMap, eventArgs)
 				eventArgs.cancel = true
 				cancel_spell()
 				send_command('@input /ja "Manawell" <me>;wait 1;input /ma '..spell.english..' '..spell.target.raw..'')
+				return
+			end
+		elseif AutoElementalSealSpells:contains(spell.english) and actual_cost(spell) < player.mp then
+			local abil_recasts = windower.ffxi.get_ability_recasts()
+			if abil_recasts[38] < latency and not buffactive['amnesia'] then
+				eventArgs.cancel = true
+				cancel_spell()
+				send_command('@input /ja "Elemental Seal" <me>;wait 1;input /ma '..spell.english..' '..spell.target.raw..'')
 				return
 			end
 		end
@@ -147,7 +156,9 @@ function job_post_midcast(spell, spellMap, eventArgs)
 
 		elseif is_nuke(spell, spellMap) then
 			if state.MagicBurstMode.value ~= 'Off' then
-				if state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
+				if state.CastingMode.value:contains('Proc') then
+					equip(sets.midcast['Elemental Magic'].Proc)
+				elseif state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
 					equip(sets.ResistantMagicBurst)
 				elseif spell.english:contains('ja') then
 					equip(sets.MagicEffectDurationBurst)
@@ -164,18 +175,6 @@ function job_post_midcast(spell, spellMap, eventArgs)
 			end
 			
 			if spell.element == world.weather_element or spell.element == world.day_element then
-				if state.CastingMode.value == 'Fodder' then
-					-- if item_available('Twilight Cape') and not LowTierNukes:contains(spell.english) and not state.Capacity.value then
-						-- sets.TwilightCape = {back="Twilight Cape"}
-						-- equip(sets.TwilightCape)
-					-- end
-					if spell.element == world.day_element then
-						if item_available('Zodiac Ring') then
-							sets.ZodiacRing = {ring2="Zodiac Ring"}
-							equip(sets.ZodiacRing)
-						end
-					end
-				end
 			end
 			
 			if spell.element and sets.element[spell.element] then
@@ -186,6 +185,8 @@ function job_post_midcast(spell, spellMap, eventArgs)
 				if state.MagicBurstMode.value ~= 'Off' then
 					if state.CastingMode.value:contains('Resistant') and sets.ResistantRecoverBurst then
 						equip(sets.ResistantRecoverBurst)
+					elseif state.CastingMode.value:contains('Proc') then
+						equip(sets.midcast['Elemental Magic'].Proc)
 					elseif sets.RecoverBurst then
 						equip(sets.RecoverBurst)
 					elseif sets.RecoverMP then
@@ -337,6 +338,7 @@ end
 
 function job_tick()
 	if check_arts() then return true end
+	if check_zerg_sp() then return true end
 	if check_buff() then return true end
 	if check_buffup() then return true end
 	return false
@@ -496,6 +498,9 @@ end
 function check_buff()
 	if state.AutoBuffMode.value ~= 'Off' and not data.areas.cities:contains(world.area) then
 		local spell_recasts = windower.ffxi.get_spell_recasts()
+		local abil_recasts = windower.ffxi.get_ability_recasts()
+		local battle_target = windower.ffxi.get_mob_by_target('bt') or false
+		
 		for i in pairs(buff_spell_lists[state.AutoBuffMode.Value]) do
 			if not buffactive[buff_spell_lists[state.AutoBuffMode.Value][i].Buff] and (buff_spell_lists[state.AutoBuffMode.Value][i].When == 'Always' or 
             (buff_spell_lists[state.AutoBuffMode.Value][i].When == 'Combat' and (player.in_combat or being_attacked)) or 
@@ -511,6 +516,11 @@ function check_buff()
 				return true
 			end
 		end
+		if player.mp < 385 and abil_recasts[0] < latency and player.in_combat and (battle_target and battle_target.distance:sqrt() < (battle_target.model_size + 20.1) and battle_target.valid_target) then
+            windower.send_command('input /ja "Manafont" <me>')
+			tickdelay = os.clock() + 2
+            return true
+        end
 	else
 		return false
 	end
@@ -548,11 +558,26 @@ function check_buffup()
 	end
 end
 
+function check_zerg_sp()
+    if state.AutoZergMode.value and player.in_combat and not data.areas.cities:contains(world.area) then
+
+        local abil_recasts = windower.ffxi.get_ability_recasts()
+		local battle_target = windower.ffxi.get_mob_by_target('bt') or false
+
+        if abil_recasts[254] < latency and not buffactive['Subtle Sorcery'] and (battle_target and battle_target.distance:sqrt() < (battle_target.model_size + 20.1) and battle_target.valid_target) then
+			windower.chat.input('/ja "Subtle Sorcery" <me>')
+            tickdelay = os.clock() + 2.5
+            return true
+        else
+            return false
+        end
+    end
+end
+
 buff_spell_lists = {
 	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
 		{Name='Haste',			Buff='Haste',			SpellID=57,		When='Always'},
 		{Name='Refresh',		Buff='Refresh',			SpellID=109,	When='Always'},
-		{Name='Stoneskin',		Buff='Stoneskin',		SpellID=54,		When='Always'},
 		{Name='Klimaform',		Buff='Klimaform',		SpellID=287,	When='Combat'},
         {Name='Reraise',		Buff='Reraise',			SpellID=113,	When='Always'},
 	},
@@ -567,5 +592,10 @@ buff_spell_lists = {
 		{Name='Regen',			Buff='Regen',			SpellID=108,	Reapply=false},
 		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
         {Name='Reraise',		Buff='Reraise',			SpellID=113,	Reapply=false},
+	},
+	
+	Rebuff = {
+		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=true},
+		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=true},
 	},
 }

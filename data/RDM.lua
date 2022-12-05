@@ -142,17 +142,6 @@ function job_precast(spell, spellMap, eventArgs)
 					end
 				end
 			end
-		elseif spellMap == 'Cure' or spellMap == 'Curaga' then
-			gear.default.obi_back = gear.obi_cure_back
-			gear.default.obi_waist = gear.obi_cure_waist
-		elseif spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' then
-			if LowTierNukes:contains(spell.english) or spell.english:endswith('helix') then
-				gear.default.obi_back = gear.obi_low_nuke_back
-				gear.default.obi_waist = gear.obi_low_nuke_waist
-			else
-				gear.default.obi_back = gear.obi_high_nuke_back
-				gear.default.obi_waist = gear.obi_high_nuke_waist
-			end
 		elseif spell.english == 'Phalanx' and (spell.target.type ~= 'SELF') then
 			windower.chat.input('/ma "Phalanx II" '..spell.target.raw)
 			cancel_spell()
@@ -197,25 +186,15 @@ function job_post_midcast(spell, spellMap, eventArgs)
 
 	if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' and spell.english ~= 'Impact' then
 		if state.MagicBurstMode.value ~= 'Off' then
-			if state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
+			if state.CastingMode.value:contains('Proc') then
+				equip(sets.midcast['Elemental Magic'].Proc)
+			elseif state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
 				equip(sets.ResistantMagicBurst)
 			else
 				equip(sets.MagicBurst)
 			end
 		end
 		if spell.element == world.weather_element or spell.element == world.day_element then
-			if state.CastingMode.value == 'Fodder' then
-				-- if item_available('Twilight Cape') and not LowTierNukes:contains(spell.english) and not state.Capacity.value then
-					-- sets.TwilightCape = {back="Twilight Cape"}
-					-- equip(sets.TwilightCape)
-				-- end
-				if spell.element == world.day_element then
-					if item_available('Zodiac Ring') then
-						sets.ZodiacRing = {ring2="Zodiac Ring"}
-						equip(sets.ZodiacRing)
-					end
-				end
-			end
 		end
 		
 		if spell.element and sets.element[spell.element] then
@@ -226,6 +205,8 @@ function job_post_midcast(spell, spellMap, eventArgs)
 			if state.MagicBurstMode.value ~= 'Off' then
 				if state.CastingMode.value:contains('Resistant') and sets.ResistantRecoverBurst then
 					equip(sets.ResistantRecoverBurst)
+				elseif state.CastingMode.value:contains('Proc') then
+					equip(sets.midcast['Elemental Magic'].Proc)
 				elseif sets.RecoverBurst then
 					equip(sets.RecoverBurst)
 				elseif sets.RecoverMP then
@@ -724,5 +705,11 @@ buff_spell_lists = {
 		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
 		{Name='Aquaveil',		Buff='Aquaveil',		SpellID=55,		Reapply=false},
         {Name='Reraise',	    Buff='Reraise',		    SpellID=135,	Reapply=false},
+	},
+	Rebuff = {
+		{Name='Refresh III',	Buff='Refresh',			SpellID=894,	Reapply=true},
+		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=true},
+		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=true},
+		{Name='Aquaveil',		Buff='Aquaveil',		SpellID=55,		Reapply=true},
 	},
 }

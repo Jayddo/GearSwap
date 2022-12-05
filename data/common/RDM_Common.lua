@@ -1,65 +1,54 @@
-if item_available('Ea Hat +1') then
-  gear.BurstHead = 'Ea Hat +1'
+--Burst
+if item_available("Ea Hat +1") then
+	gear.BurstHead = 'Ea Hat +1'
+elseif item_available("Leth. Chappel +3") then
+	gear.BurstHead = "Leth. Chappel +3"
 else
-  gear.BurstHead = 'Nyame Helm'
+	gear.BurstHead = "Leth. Chappel +2"
 end
 
-if item_available('Ea Houppelande') then
-  gear.BurstBody = 'Ea Houppelande'
-else
-  gear.BurstBody = 'Jhakri Robe +2'
-end
-
-if item_available('Ea Slops +1') then
-	gear.BurstLegs = 'Ea Slops +1'
-elseif item_available('Ea Slops') then
-	gear.BurstLegs = 'Ea Slops'
-else
-	gear.BurstLegs = 'Nyame Flanchard'
-end
-
-if item_available('Crepuscular Cloak') then
+if item_available("Crepuscular Cloak") then
 	gear.impact_body = "Crepuscular Cloak"
 else
 	gear.impact_body = "Twilight Cloak"
 end
 
--- JSE
-
-if item_available('Atrophy Tights +3') then
+-- JSE AF
+if item_available("Atrophy Tights +3") then
 	gear.jse_af_legs = "Atrophy Tights +3"
 else
 	gear.jse_af_legs = "Atrophy Tights +2"
 end
 
-if item_available('Lethargy Sayon +2') then
+-- JSE Empy
+if item_available("Lethargy Sayon +3") then
+	gear.jse_empy_body = "Lethargy Sayon +3"
+else
 	gear.jse_empy_body = "Lethargy Sayon +2"
-else
-	gear.jse_empy_body = "Lethargy Sayon +1"
 end
 
-if item_available('Leth. Ganth. +2') then
+if item_available("Leth. Ganth. +3") then
+	gear.jse_empy_hands = "Leth. Ganth. +3"
+else
 	gear.jse_empy_hands = "Leth. Ganth. +2"
-else
-	gear.jse_empy_hands = "Leth. Gantherots +1"
 end
 
-if item_available('Leth. Houseaux +2') then
+if item_available("Leth. Houseaux +3") then
+	gear.jse_empy_feet = "Leth. Houseaux +3"
+else
 	gear.jse_empy_feet = "Leth. Houseaux +2"
-else
-	gear.jse_empy_feet = "Leth. Houseaux +1"
 end
 
-if item_available('Leth. Fuseau +2') then
+if item_available("Leth. Fuseau +3") then
+	gear.jse_empy_legs = "Leth. Fuseau +3"
+else
 	gear.jse_empy_legs = "Leth. Fuseau +2"
-else
-	gear.jse_empy_legs = "Leth. Fuseau +1"
 end
 
-if item_available('Leth. Chappel +2') then
-	gear.jse_empy_head = "Leth. Chappel +2"
+if item_available("Leth. Chappel +3") then
+	gear.jse_empy_head = "Leth. Chappel +3"
 else
-	gear.jse_empy_head = "Leth. Chappel +1"
+	gear.jse_empy_head = "Leth. Chappel +2"
 end
 
 if item_available("Leth. Earring +2") then
@@ -71,6 +60,15 @@ elseif item_available("Leth. Earring +1") then
 else
 	gear.empy_earring = "Lethargy Earring"
 	gear.empy_debuff_earring = "Regal Earring"
+end
+
+--Idle
+if item_available("Lethargy Sayon +3") then
+	gear.idle_body = "Lethargy Sayon +3"
+elseif item_available("Shamash Robe") then
+	gear.idle_body = "Shamash Robe"
+else
+	gear.idle_body = "Atrophy Tabard +3"
 end
 
 -- Weapons sets
@@ -106,20 +104,24 @@ sets.precast.Waltz['Healing Waltz'] = {}
 sets.precast.FC = {
 	ammo={name="Impatiens", priority=1},													-- QC 2
 	ranged=empty,
-	head=gear.merlinic_fc_head,																-- 15
-	body="Viti. Tabard +3",																-- 15
+	head="Nyame Helm",
+	body="Viti. Tabard +3",																	-- 15
+	hands="Leyline Gloves",																	-- 8
+	legs="Psycloth Lappas",																	-- 7
+	feet="Nyame Sollerets",
 	neck="Baetyl Pendant",  																-- 4
-	legs="Aya. Cosciales +2",																-- 6	
 	waist="Embla Sash",																		-- 5
-	left_ear="Loquac. Earring",																-- 2
-	right_ear="Etiolation Earring",															-- 1
-	left_ring=gear.weather_ring,															-- 4
-	right_ring="Lebeche Ring",																-- QC 2
+	left_ear="Loquac. Earring",																-- 1
+	right_ear=gear.empy_earring,															-- 8
+	left_ring=gear.weather_ring,															-- 6 QC 4
+	right_ring="Kishar Ring",																-- 4
 	back="Perimede Cape",																	-- QC 4
 }
 	
 sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body=gear.impact_body})
 sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
+
+sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ammo="Sapience Orb", left_ring="Petrov Ring", back=gear.jse_mab_back})
    
 -- Weaponskill sets
 sets.precast.WS = {
@@ -162,7 +164,7 @@ sets.precast.WS['Savage Blade'] = {
 	
 sets.precast.WS['Seraph Blade'] = {
 	range=empty,
-	ammo="Pemphredo Tathlum",
+	ammo="Sroda Tathlum",
 	head="Nyame Helm",
 	body="Nyame Mail",
 	hands="Nyame Gauntlets",
@@ -190,20 +192,20 @@ sets.RecoverMP = {body="Seidr Cotehardie"}
 
 -- Gear for Magic Burst mode.
 sets.MagicBurst = {
-	main="Bunzi's Rod",																			-- 7
+	main="Bunzi's Rod",																			-- 10
 	sub="Ammurapi Shield",
 	range=empty,
-	ammo="Pemphredo Tathlum",
-	head=gear.BurstHead,																		-- 8
-	body=gear.BurstBody,
-	hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-	legs=gear.BurstLegs,																		-- 8
-	feet="Jhakri Pigaches +2",																	-- 7
+	ammo="Ghastly Tathlum +1",
+	head=gear.BurstHead,																		-- 7 / 7II
+	body=gear.jse_empy_body,
+	hands="Bunzi's Gloves",																		-- 8 / 5 II
+	legs=gear.jse_empy_legs,																	-- 15
+	feet=gear.jse_empy_feet,
 	neck="Mizu. Kubikazari",																	-- 10
-	waist=gear.ElementalObi,
+	waist="Sacro Cord",
 	left_ear="Regal Earring",
 	right_ear="Malignance Earring",
-	left_ring="Mujin Band",																		
+	left_ring="Metamor. Ring +1",
 	right_ring="Freke Ring",
 	back=gear.jse_mab_back,
 }
@@ -211,26 +213,42 @@ sets.MagicBurst = {
 sets.midcast.FastRecast = sets.precast.FC
 
 sets.midcast.Cure = {
-	main="Bunzi's Rod",										-- 30
-	sub="Ammurapi Shield",
-	range=empty,
-	ammo="Hydrocera",
-	head="Nyame Helm",
-	body="Nyame Mail",
-	hands="Kaykaus Cuffs +1",								-- 11
-	legs="Nyame Flanchard",
-	feet="Vanya Clogs",
-	neck="Incanter's Torque",
-	waist="Luminary Sash",
-	left_ear="Regal Earring",
-	right_ear="Mendi. Earring",								-- 5
-	left_ring=gear.stikini_ring,
-	right_ring={name="Lebeche Ring",priority=500},
-	back="Solemnity Cape",									-- 7
+    main="Bunzi's Rod",
+    sub="Ammurapi Shield",
+    ammo="Staunch Tathlum +1",
+    head=gear.jse_empy_head,
+    body=gear.jse_empy_body,
+    hands=gear.jse_empy_hands,
+    legs=gear.jse_af_legs,
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Incanter's Torque",
+    waist="Luminary Sash",
+    left_ear="Regal Earring",
+    right_ear="Mendi. Earring",
+    left_ring="Defending Ring",
+    right_ring=gear.stikini_ring,
+    back="Solemnity Cape",
 }
 	
-sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure, { main=gear.light_weather_staff, sub="Enki Strap", waist="Korin Obi" })
-sets.midcast.LightDayCure = set_combine(sets.midcast.Cure, { main=gear.light_weather_staff, sub="Enki Strap", waist="Korin Obi" })
+sets.midcast.LightWeatherCure = {
+    main="Chatoyant Staff",
+    sub="Enki Strap",
+    ammo="Staunch Tathlum +1",
+    head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
+    body=gear.jse_empy_body,
+    hands=gear.jse_empy_hands,
+    legs=gear.jse_af_legs,
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Nodens Gorget",
+    waist="Korin Obi",
+    left_ear="Regal Earring",
+    right_ear="Mendi. Earring",
+    left_ring="Defending Ring",
+    right_ring="Lebeche Ring",
+    back="Solemnity Cape",
+}
+
+sets.midcast.LightDayCure = set_combine(sets.midcast.LightWeatherCuree, {})
 	
 sets.midcast.Cursna =  set_combine(sets.midcast.Cure, {neck="Debilis Medallion",left_ring="Haoma's Ring",right_ring="Menelaus's Ring"})
 sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {})
@@ -265,7 +283,8 @@ sets.buff.ComposureOther = --set_combine(sets.midcast['Enhancing Magic'], {
 {		
 	head=gear.jse_empy_head,
 	body=gear.jse_empy_body,
-	hands=gear.jse_empy_hands,
+	--hands=gear.jse_empy_hands,
+	hands="Atrophy Gloves +3",
 	legs=gear.jse_empy_legs,
 	feet=gear.jse_empy_feet,
 }
@@ -332,7 +351,7 @@ sets.midcast['Enfeebling Magic'] = {
 	sub="Ammurapi Shield",
 	range=empty,
 	ammo={name="Regal Gem", priority=500},
-	head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+	head="Viti. Chapeau +3",
 	body=gear.jse_empy_body,
 	hands=gear.rdm_regal_hands,
 	legs=gear.chironic_enfeeble_legs,
@@ -340,7 +359,7 @@ sets.midcast['Enfeebling Magic'] = {
 	neck=gear.rdm_jse_neck,
 	waist="Obstin. Sash",
 	left_ear="Snotra Earring",
-	right_ear=empy_debuff_earring,
+	right_ear=gear.empy_debuff_earring,
 	left_ring={name="Kishar Ring", priority=500},
 	right_ring="Metamorph Ring +1",
 	back=gear.jse_macc_back,
@@ -350,34 +369,40 @@ sets.midcast['Enfeebling Magic'] = {
 -- -24% Potency
 -- +92 Macc/skill
 sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {
-	range={name="Ullr", priority=1},
+	range={name="Ullr", priority=500},
 	ammo=empty,
-	body=gear.jse_empy_body,
-	hands={ name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mag. Acc.+20',}},
+	body="Atrophy Tabard +3",
+	hands=gear.jse_empy_hands,
+	legs=gear.chironic_enfeeble_legs,
 	left_ring=gear.stikini_ring,
 	right_ring={name="Metamorph Ring +1", priority=500},
 })
 
 sets.midcast['Enfeebling Magic'].Resistant.INT = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
 	main="Bunzi's Rod", 
-	left_ring={name="Metamorph Ring +1", priority=1},
 })
 	
 sets.midcast.DurationOnlyEnfeebling = set_combine(sets.midcast['Enfeebling Magic'], {
-	range={name="Ullr", priority=1},
+	range={name="Ullr", priority=500},
 	ammo=empty,
-	body=gear.jse_empy_body,
+	head=gear.jse_empy_head,
+	legs=gear.jse_empy_legs,
+	feet=gear.jse_empy_feet,
 })
 
 sets.midcast.DurationOnlyEnfeebling.INT = set_combine(sets.midcast['Enfeebling Magic'], {
-	range={name="Ullr", priority=1},
+	main="Bunzi's Rod",
+	range={name="Ullr", priority=500},
 	ammo=empty,
-	main="Bunzi's Rod", 
-	body=gear.jse_empy_body,
+	head=gear.jse_empy_head,
+	legs=gear.jse_empy_legs,
+	feet=gear.jse_empy_feet,
 })	
 
 sets.midcast.DurationOnlyEnfeebling.Melee = set_combine(sets.midcast['Enfeebling Magic'], {
-	body=gear.jse_empy_body,
+	head=gear.jse_empy_head,
+	legs=gear.jse_empy_legs,
+	feet=gear.jse_empy_feet,
 })
 	
 sets.midcast.Silence = sets.midcast.DurationOnlyEnfeebling
@@ -406,6 +431,9 @@ sets.midcast.Break.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resi
 
 sets.midcast.Dispel = sets.midcast['Enfeebling Magic'].Resistant
 sets.midcast.Dispel.Melee = sets.midcast['Enfeebling Magic']
+
+sets.midcast['Dispelga'] = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {main="Daybreak"})
+sets.midcast['Dispelga'].Melee = set_combine(sets.midcast['Enfeebling Magic'], {})
 
 sets.midcast.SkillBasedEnfeebling = set_combine(sets.midcast['Enfeebling Magic'], {})
 
@@ -447,13 +475,13 @@ sets.midcast['Elemental Magic'] = {
 	main="Bunzi's Rod",
 	sub="Ammurapi Shield",
 	ammo="Pemphredo Tathlum",
-	head="C. Palug Crown",
+	head=gear.jse_empy_head,
 	body="Shamash Robe",
-	hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-	legs=gear.BurstLegs,
+	hands=gear.jse_empy_hands,
+	legs=gear.jse_empy_legs,
 	feet="Vitiation Boots +3",
 	neck=gear.rdm_jse_neck,
-	waist=gear.ElementalObi,
+	waist="Sacro Cord",
 	left_ear="Regal Earring",
 	right_ear="Malignance Earring",
 	left_ring="Metamor. Ring +1",
@@ -466,6 +494,25 @@ sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental 
 sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {})
 sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
 
+-- Minimal damage gear, maximum recast gear for procs.
+sets.midcast['Elemental Magic'].Proc = {
+	main="Daybreak",
+	sub="Genmei Shield",
+	ammo=gear.dt_ammo,
+	head="Befouled Crown",
+	body="Shango Robe",
+	hands="Shrieker's Cuffs",
+	legs="Psycloth Lappas",
+	feet="Vanya Clogs",
+	neck="Incanter's Torque",
+	waist="Luminary Sash",
+	left_ear="Regal Earring",
+	right_ear="Malignance Earring",
+	left_ring="Metamor. Ring +1",
+	right_ring=gear.stikini_ring,
+	back=gear.jse_mab_back,
+}
+
 sets.midcast['Dark Magic'] = {
 	main="Bunzi's Rod",
 	sub="Ammurapi Shield",
@@ -473,7 +520,7 @@ sets.midcast['Dark Magic'] = {
 	head="Pixie Hairpin +1",
 	body="Atrophy Tabard +3",
 	hands=gear.rdm_regal_hands,
-	legs=gear.BurstLegs,
+	legs=gear.jse_empy_legs,
 	feet="Jhakri Pigaches +2",
 	neck="Erra Pendant",
 	waist="Fucho-no-obi",
@@ -500,7 +547,7 @@ sets.idle = {
 	sub="Genmei Shield",
 	ammo="Homiliary",
 	head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
-	body="Shamash Robe",
+	body=gear.idle_body,
 	hands=gear.chironic_refresh_hands,
 	legs="Nyame Flanchard",
 	feet=gear.chironic_refresh_feet,
@@ -513,16 +560,15 @@ sets.idle = {
 	back=gear.jse_macc_back,
 }
 
-sets.idle.DT = 
-{
+sets.idle.DT = {
 	main="Daybreak",
 	sub="Genmei Shield",																		-- 10
 	ammo="Homiliary",
 	head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
-	body="Shamash Robe",																		-- 10
+	body=gear.idle_body,																		-- 14
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
-	feet="Nyame Sollerets",
+	feet=gear.chironic_refresh_feet,
 	neck="Sanctity Necklace",
 	waist=gear.dt_waist,																		-- 4
 	left_ear="Infused Earring",
@@ -591,7 +637,7 @@ sets.engaged = {
 	neck="Combatant's Torque",
 	waist="Windbuffet Belt +1",
 	left_ear="Sherida Earring",
-	right_ear="Telos Earring",
+	right_ear=gear.empy_earring,
 	left_ring="Chirich Ring +1",
 	right_ring="Ilabrat Ring",
 	back=gear.jse_da_back,

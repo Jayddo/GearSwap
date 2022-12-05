@@ -121,15 +121,6 @@ function job_precast(spell, spellMap, eventArgs)
 		state.CombatWeapon:set(player.equipment.range)
     -- Check that proper ammo is available if we're using ranged attacks or similar.
     end
-    -- elseif spell.type == 'CorsairShot' then
-		-- if not player.inventory['Trump Card'] then
-			-- -- windower.chat.input('//get "Trump Card Case"; wait 1.1; /item "Trump Card Case" <me>')
-			-- eventArgs.cancel = true
-			-- windower.chat.input:schedule(2.5,'/ja "'..spell.english..'" '..spell.target.raw..'')
-			-- return
-		-- end
-        -- --do_bullet_checks(spell, spellMap, eventArgs)
-    -- end
 	
     if spell.action_type == 'Ranged Attack' or spell.name == 'Shadowbind' or (spell.type == 'WeaponSkill' and spell.skill == 'Marksmanship') then
         do_bullet_checks(spell, spellMap, eventArgs)
@@ -488,7 +479,7 @@ function check_buff()
             windower.send_command('input /ja "Light Shot" '..shot_mob_id)
             tickdelay = os.clock() + 2.8
             return true
-		elseif player.sub_job == 'WAR' and not state.Buff['SJ Restriction'] and not buffactive.Berserk and abil_recasts[1] < latency and player.status == 'Engaged' then
+		elseif player.sub_job == 'WAR' and not state.Buff['SJ Restriction'] and not buffactive.Berserk and abil_recasts[1] < latency then
 			windower.chat.input('/ja "Berserk" <me>')
 			tickdelay = os.clock() + 5.1
 			return true
@@ -555,3 +546,18 @@ function job_tick()
 	if check_steps_subjob() then return true end
 	return false
 end
+
+buff_spell_lists = {
+	Auto = {	
+		--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
+		{Name='Haste',			Buff='Haste',			SpellID=57,		When='Always'},
+        {Name='Refresh',		Buff='Refresh',			SpellID=109,	When='Always'},
+        {Name='Reraise',	    Buff='Reraise',		    SpellID=135,	When='Always'},
+	},
+	
+	Default = {
+		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=true},
+		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=true},
+        {Name='Reraise',	    Buff='Reraise',		    SpellID=141,	Reapply=true},
+	},
+}

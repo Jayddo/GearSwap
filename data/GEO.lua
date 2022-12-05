@@ -220,21 +220,15 @@ function job_post_midcast(spell, spellMap, eventArgs)
 
 	if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' and spell.english ~= 'Impact' then
 		if state.MagicBurstMode.value ~= 'Off' then
-			if state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
+			if state.CastingMode.value:contains('Proc') then
+				equip(sets.midcast['Elemental Magic'].Proc)
+			elseif state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
 				equip(sets.ResistantMagicBurst)
 			else
 				equip(sets.MagicBurst)
 			end
 		end
 		if spell.element == world.weather_element or spell.element == world.day_element then
-			if state.CastingMode.value == 'Fodder' then
-				if spell.element == world.day_element then
-					if item_available('Zodiac Ring') then
-						sets.ZodiacRing = {ring2="Zodiac Ring"}
-						equip(sets.ZodiacRing)
-					end
-				end
-			end
 		end
 
 		if spell.element and sets.element[spell.element] then
@@ -245,6 +239,8 @@ function job_post_midcast(spell, spellMap, eventArgs)
 			if state.MagicBurstMode.value ~= 'Off' then
 				if state.CastingMode.value:contains('Resistant') and sets.ResistantRecoverBurst then
 					equip(sets.ResistantRecoverBurst)
+				elseif state.CastingMode.value:contains('Proc') then
+					equip(sets.midcast['Elemental Magic'].Proc)
 				elseif sets.RecoverBurst then
 					equip(sets.RecoverBurst)
 				elseif sets.RecoverMP then
@@ -603,6 +599,7 @@ function check_geo()
 	local PlayerBubbles = S{'Fury','Refresh','Regen','Haste','Barrier','Acumen','Fend','Precision','Voidance','Focus','Attunement','STR','DEX','VIT','AGI','INT','MND','CHR'}
     local battle_target = windower.ffxi.get_mob_by_target('bt') or false
     local myluopan = windower.ffxi.get_mob_by_target('pet') or false
+	local entrust_target = windower.ffxi.get_mob_by_name(autoentrustee) or false
     
     if autogeotar:lower() ~= 'none' then
         local geo_target = windower.ffxi.get_mob_by_name(autogeotar)    
@@ -622,9 +619,13 @@ function check_geo()
 			windower.chat.input('/ma "Indi-'..autoindi..'" <me>')
 			tickdelay = os.clock() + 2.1
 			return true
-		elseif autoentrust ~= 'None' and abil_recasts[93] < latency and (player.in_combat or state.CombatEntrustOnly.value == false) then
-			send_command('@input /ja "Entrust" <me>; wait 1.1; input /ma "Indi-'..autoentrust..'" '..autoentrustee)
-			tickdelay = os.clock() + 3.5
+		elseif autoentrust ~= 'None' and abil_recasts[93] < latency and (player.in_combat or state.CombatEntrustOnly.value == false) then 
+			windower.chat.input('/ja "Entrust" <me>')
+			tickdelay = os.clock() + 1.1
+			return true
+		elseif autoentrust ~= 'None' and buffactive["Entrust"] and (player.in_combat or state.CombatEntrustOnly.value == false) then 
+			send_command('@input /ma "Indi-'..autoentrust..'" '..autoentrustee)
+			tickdelay = os.clock() + 2.2
 			return true
 		elseif pet.isvalid then
 			local pet = windower.ffxi.get_mob_by_target("pet")
@@ -666,7 +667,7 @@ function check_geo()
 			else
 				return false
 			end
-		elseif autogeo ~= 'None' and player.mp > geo_spell_data.mp_cost and (windower.ffxi.get_mob_by_target('bt') or data.spells.geo_buffs:contains(autogeo)) then
+		elseif autogeo ~= 'None' and player.mp > geo_spell_data.mp_cost and (windower.ffxi.get_mob_by_target('bt') or data.spells.geo_buffs:contains(autogeo)) and (battle_target and battle_target.distance:sqrt() < (battle_target.model_size + 20.4) and battle_target.valid_target) then
 			if player.in_combat and state.AutoGeoAbilities.value and abil_recasts[247] < latency and not buffactive.Bolster then
 			
 				-- ZergMode is ON
@@ -685,7 +686,7 @@ function check_geo()
 					return true
 				end
 			elseif player.in_combat then
-				if autogeotar:lower() == 'none' or not (PlayerBubbles:contains(autogeo)) then
+				if (autogeotar:lower() == 'none' or not (PlayerBubbles:contains(autogeo))) and (((state.AutoZergMode.value and buffactive.Bolster) or (state.AutoZergMode.value and (abil_recasts[0] > latency))) or (not state.AutoZergMode.value)) then
 					windower.chat.input('/ma "Geo-'..autogeo..'" <bt>')
 					tickdelay = os.clock() + 3.1
 					return true
@@ -811,6 +812,7 @@ function check_buff()
 	if state.AutoBuffMode.value ~= 'Off' and not data.areas.cities:contains(world.area) then
 		local spell_recasts = windower.ffxi.get_spell_recasts()
         local abil_recasts = windower.ffxi.get_ability_recasts()
+		
 		for i in pairs(buff_spell_lists[state.AutoBuffMode.Value]) do
 			if not buffactive[buff_spell_lists[state.AutoBuffMode.Value][i].Buff] and (buff_spell_lists[state.AutoBuffMode.Value][i].When == 'Always' or 
             (buff_spell_lists[state.AutoBuffMode.Value][i].When == 'Combat' and (player.in_combat or being_attacked)) or 
@@ -826,9 +828,22 @@ function check_buff()
 				return true
 			end
 		end
-        if player.mpp < 65 and abil_recasts[252] < latency and pet.isvalid and pet.distance:sqrt() < 9 then
-            windower.send_command('input /ja "Radial Arcana" <me>')
-            return true
+        if player.mpp < 55 and abil_recasts[252] < latency and not silent_check_amnesia() then
+			local pet = windower.ffxi.get_mob_by_target("pet")
+			
+			if pet and pet.isvalid and pet.distance:sqrt() < 7 then 
+				windower.send_command('input /ja "Radial Arcana" <me>')
+				tickdelay = os.clock() + 2.2
+				return true
+			-- elseif pet.isvalid and pet.distance:sqrt() > 7 and player.mp > res.spells[814].mp_cost and silent_can_use(814) then
+				-- windower.send_command('input /ma "Geo-Voidance" <me>')
+				-- tickdelay = os.clock() + 2.2
+				-- return true
+			-- elseif not pet.isvalid and player.mp > res.spells[814].mp_cost and silent_can_use(814) then
+				-- windower.send_command('input /ma "Geo-Voidance" <me>')
+				-- tickdelay = os.clock() + 2.2
+				-- return true
+			end
         end
 	else
 		return false
@@ -871,8 +886,9 @@ function check_zerg_sp()
     if state.AutoZergMode.value and player.in_combat and not data.areas.cities:contains(world.area) then
 
         local abil_recasts = windower.ffxi.get_ability_recasts()
+		local battle_target = windower.ffxi.get_mob_by_target('bt') or false
 
-        if abil_recasts[0] < latency and abil_recasts[243] < latency and not buffactive['Bolster'] then
+        if abil_recasts[0] < latency and abil_recasts[243] < latency and not buffactive['Bolster'] and (battle_target and battle_target.distance:sqrt() < (battle_target.model_size + 20.1) and battle_target.valid_target) then
 			if pet.isvalid then
 				windower.chat.input('/ja "Bolster" <me>')
 				windower.chat.input:schedule(1.6,'/ja "Full Circle" <me>')
@@ -910,37 +926,14 @@ buff_spell_lists = {
 		{Name='Phalanx',	Buff='Phalanx',		SpellID=106,	Reapply=false},
         {Name='Reraise',	Buff='Reraise',	    SpellID=135,	Reapply=false},
 	},
+	
+	Rebuff = {
+		{Name='Refresh',		Buff='Refresh',			SpellID=109,	Reapply=true},
+		{Name='Haste',			Buff='Haste',			SpellID=57,		Reapply=true},
+	},
 }
 
-geo_spell_lists = {
-	{Name='Regen',	SpellID=54},
-    {Name='Poison',	SpellID=54},
-    {Name='Refresh',	SpellID=54},
-    {Name='Haste',	SpellID=54},
-	{Name='STR',		SpellID=53},
-	{Name='DEX',		SpellID=108},
-	{Name='VIT',	SpellID=106},
-    {Name='AGI',	SpellID=106},
-    {Name='INT',	SpellID=106},
-    {Name='MND',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='Fury',	SpellID=106},
-    {Name='Barrier',	SpellID=106},
-    {Name='Acumen',	SpellID=106},
-    {Name='Fend',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-    {Name='CHR',	SpellID=106},
-}
+-- Select default macro book on initial load or subjob change.
+function select_default_macro_book()
+	set_macro_page(1, 21)
+end

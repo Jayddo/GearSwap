@@ -612,8 +612,8 @@ function set_macro_page(set,book)
             add_to_chat(123,'Error setting macro page: book is not a valid number ('..tostring(book)..').')
             return
         end
-        if book < 1 or book > 20 then
-            add_to_chat(123,'Error setting macro page: Macro book ('..tostring(book)..') must be between 1 and 20.')
+        if book < 1 or book > 40 then
+            add_to_chat(123,'Error setting macro page: Macro book ('..tostring(book)..') must be between 1 and 40.')
             return
         end
         send_command('@input /macro book '..tostring(book)..';wait .1;input /macro set '..tostring(set))
@@ -741,10 +741,16 @@ function can_use(spell)
             return false
         -- At this point, we know that it is technically castable by this job combination if the right conditions are met.
 		elseif player.main_job == 'SCH' then
+			local abil_recasts = windower.ffxi.get_ability_recasts()
+			
 			if (spell_jobs[player.sub_job_id] and spell_jobs[player.sub_job_id] <= player.sub_job_level) or state.Buff['Enlightenment'] then
 				return true
 			elseif data.spells.addendum_white:contains(spell.english) and not state.Buff['Addendum: White'] then
-				if state.AutoArts.value and not state.Buff['Addendum: White'] and not silent_check_amnesia() and get_current_stratagem_count() > 0 then
+				if data.spells.reraise:contains(spell.english) and not silent_check_amnesia() and not state.Buff['Addendum: White'] and not state.Buff['Enlightenment'] and abil_recasts[235] < latency then
+					windower.chat.input('/ja "Enlightenment" <me>')
+					windower.chat.input:schedule(1.5,'/ma "'..spell.english..'" '..spell.target.raw..'')
+					tickdelay = os.clock() + 4.5
+				elseif state.AutoArts.value and not state.Buff['Addendum: White'] and not silent_check_amnesia() and get_current_stratagem_count() > 0 then
 					if state.Buff['Light Arts'] then
 						windower.chat.input('/ja "Addendum: White" <me>')
 						windower.chat.input:schedule(1.5,'/ma "'..spell.english..'" '..spell.target.raw..'')
@@ -841,17 +847,6 @@ function can_use(spell)
         elseif category == 9 then
 			if not S(available.job_abilities)[spell.id] then
 				add_to_chat(123,"Abort: You don't have access to ["..(res.job_abilities[spell.id][language] or spell.id).."].")
-				return false
-			elseif spell.type == 'CorsairShot' and not player.inventory['Trump Card'] then
-				if player.inventory['Trump Card Case'] then
-					--send_command.schedule(0.42, 'input /item "Trump Card Case" <me>')
-                    --send_command:schedule(1.53, 'input /item antidote <me>')
-                    return false
-				elseif player.satchel['Trump Card Case'] then
-					windower.send_command('get "Trump Card Case"')
-					send_command.schedule(1.52,'input /item "Trump Card Case" <me>')
-                    return false
-				end
 				return false
 			end
         end
@@ -1019,7 +1014,7 @@ function check_midaction(spell, spellMap, eventArgs)
 	if os.clock() < next_cast and not state.RngHelper.value then
 		if eventArgs and not (spell.type:startswith('BloodPact') and state.Buff["Astral Conduit"]) then
 			eventArgs.cancel = true
-			if delayed_cast == '' and state.MiniQueue.value then
+			if delayed_cast == '' and state.MiniQueue.value then -- and (spell.skill ~= 'Elemental Magic') then
 				windower.send_command:schedule((next_cast - os.clock()),'gs c delayedcast')
 			end
 			delayed_cast = spell.english
@@ -1362,7 +1357,7 @@ function check_sub()
 					end
 				elseif state.AutoSubMode.value == 'On' then
 					if buffactive['Sublimation: Complete'] then
-						if player.mpp < 70 then
+						if player.mpp < 65 then
 							windower.chat.input('/ja Sublimation <me>')
 							tickdelay = os.clock() + 1.5
 							return true
@@ -1371,6 +1366,12 @@ function check_sub()
 						windower.chat.input('/ja Sublimation <me>')
 						tickdelay = os.clock() + 1.5
 						return true
+					elseif buffactive['Sublimation: Activated'] then
+						if player.mpp < 45 then
+							windower.chat.input('/ja Sublimation <me>')
+							tickdelay = os.clock() + 1.5
+							return true
+						end
 					end
 				end
 			end
@@ -1456,16 +1457,22 @@ function check_trust()
 				local spell_recasts = windower.ffxi.get_spell_recasts()
 				local available_spells = windower.ffxi.get_spells()
 
-				if spell_recasts[998] < spell_latency and available_spells[998] and not have_trust("Ygnas") then
-					windower.chat.input('/ma "Ygnas" <me>')
-					tickdelay = os.clock() + 3
-					return true
+				if (available_spells[998] and not have_trust("Ygnas")) or (available_spells[980] and not have_trust("Yoran-Oran")) then
+					if available_spells[998] and spell_recasts[998] < spell_latency and not have_trust("Ygnas") then
+						windower.chat.input('/ma "Ygnas" <me>')
+						tickdelay = os.clock() + 3
+						return true
+					elseif available_spells[980] and spell_recasts[980] < spell_latency and not have_trust("Yoran-Oran") then
+						windower.chat.input('/ma "Yoran-Oran (UC)" <me>')
+						tickdelay = os.clock() + 3
+						return true
+					end
 				elseif spell_recasts[981] < spell_latency and available_spells[981] and not have_trust("Sylvie") then
 					windower.chat.input('/ma "Sylvie (UC)" <me>')
 					tickdelay = os.clock() + 3
 					return true
-				elseif spell_recasts[952] < spell_latency and available_spells[952] and not have_trust("Koru-Moru") then
-					windower.chat.input('/ma "Koru-Moru" <me>')
+				elseif spell_recasts[999] < spell_latency and available_spells[999] and not have_trust("Monberaux") then
+					windower.chat.input('/ma "Monberaux" <me>')
 					tickdelay = os.clock() + 3
 					return true
 				elseif spell_recasts[914] < spell_latency and available_spells[914] and not have_trust("Ulmia") then
@@ -2041,7 +2048,7 @@ function is_nuke(spell, spellMap)
 	    (player.main_job == 'BLU' and spell.skill == 'Blue Magic' and spellMap and spellMap:contains('Magical')) or
 		(player.main_job == 'NIN' and spell.skill == 'Ninjutsu' and spellMap and spellMap:contains('ElementalNinjutsu')) or
 		spell.english == 'Comet' or spell.english == 'Meteor' or spell.english == 'Death' or spell.english:startswith('Banish')
-		or spell.english:startswith('Drain') or spell.english:startswith('Aspir')
+		--or spell.english:startswith('Drain') or spell.english:startswith('Aspir')
 		) then
 		
 		return true
@@ -2204,6 +2211,17 @@ function check_ammo()
 						return true
 					end
 				end
+			end
+		end
+	end
+	if player.main_job == 'COR' and state.AutoAmmoMode.value and not world.in_mog_house and not useItem then
+		if not player.inventory['Trump Card'] then
+			if player.inventory['Trump Card Case'] or player.sack['Trump Card Case'] or player.case['Trump Card Case'] or player.satchel['Trump Card Case'] then
+				send_command('input /item "Trump Card Case" <me>')
+				tickdelay = os.clock() + 7
+				return true
+			else
+				return false
 			end
 		end
 	end

@@ -8,6 +8,7 @@ send_command('bind ^= gs c cycle treasuremode')
 send_command('bind !f2 mc fin')
 send_command('bind ^end mc wsall')
 send_command('bind !f3 mc cc')
+send_command('bind @f2 mc dispelga')
 send_command('bind ^pagedown sa fullcircle')
 send_command('exec SI.txt')
 send_command('wait 5; lua r healbot')
@@ -61,6 +62,7 @@ state.AutoTomahawkMode = M(false, 'AutoTomahawkMode')
 state.AutoJumpMode = M(false, 'Auto Jump Mode')
 state.AutoRecoverHPMode = M(false, 'Auto Recover HP Mode')
 state.AutoShot = M(false, 'Auto Shot Mode')
+state.AutoCallPet = M(false, 'Auto Call Pet')
 
 data.weaponskills.mythic = {
     ["Conqueror"] = "King's Justice",
@@ -135,52 +137,9 @@ data.equipment.rema_ranged_weapons_ammo_pouch = {
 	['Anarchy +2'] = 'Chr. Bul. Pouch'
 }
 
-spell_stepdown = {
-    ['Aspir III'] = 'Aspir II',
-    ['Aspir II'] = 'Aspir',
-    ['Sleepga II'] = 'Sleepga',
-    ['Sleep II'] = 'Sleep',
-    ['Arise'] = 'Raise III',
-    ['Raise III'] = 'Raise II',
-    ['Raise II'] = 'Raise',
-    ['Reraise IV'] = 'Reraise III',
-    ['Reraise III'] = 'Reraise II',
-    ['Reraise II'] = 'Reraise',
-    ['Gravity II'] = 'Gravity',
-    ['Horde Lullaby II'] = 'Horde Lullaby',
-    ['Foe Lullaby II'] = 'Foe Lullaby',
-	['Puppet\'s Operetta'] = 'Scop\'s Operetta',
-	['Scop\'s Operetta'] = 'Goblin Gavotte',
-	['Goblin Gavotte'] = 'Shining Fantasia',
-	['Stoneja'] = 'Stone VI',
-	['Stone VI'] = 'Stone V',
-	['Stone V'] = 'Stone IV',
-	['Stone IV'] = 'Stone III',
-	['Water VI'] = 'Water V',
-	['Water V'] = 'Water IV',
-	['Water IV'] = 'Water III',
-	['Aeroja'] = 'Aero VI',
-	['Aero VI'] = 'Aero V',
-	['Aero V'] = 'Aero IV',
-	['Aero IV'] = 'Aero III',
-	['Fire VI'] = 'Fire V',
-	['Fire V'] = 'Fire IV',
-	['Fire IV'] = 'Fire III',
-	['Blizzard VI'] = 'Blizzard V',
-	['Blizzard V'] = 'Blizzard IV',
-	['Blizzard IV'] = 'Blizzard III',
-	['Thundaja'] = 'Thunder VI',
-	['Thunder VI'] = 'Thunder V',
-	['Thunder V'] = 'Thunder IV',
-	['Thunder IV'] = 'Thunder III',
-	
-	['Spectral Floe'] = 'Tenebral Crush',
-	['Anvil Lightning'] = 'Silent Storm',
-	
-	['Utsusemi: San'] = 'Utsusemi: Ni',
-	['Utsusemi: Ni'] = 'Utsusemi: Ichi',
-}
-
+sets.buff.Doom = {neck="Nicander's Necklace",waist="Gishdubar Sash",right_ring="Purity Ring"}
+sets.precast.Item['Hallowed Water'] = {neck="Nicander's Necklace",waist="Gishdubar Sash",left_ring="Blenmot's Ring +1",right_ring="Purity Ring"}
+sets.precast.Item['Holy Water'] = {neck="Nicander's Necklace",waist="Gishdubar Sash",left_ring="Blenmot's Ring +1",right_ring="Purity Ring"}
 
 function user_unload()
 	currentPC=windower.ffxi.get_player()
@@ -379,6 +338,7 @@ function default_zone_change(new_id,old_id)
 	state.AutoWSMode:reset()
 	state.AutoNukeMode:reset()
 	state.AutoArts:reset()
+	state.AutoCallPet:reset()
 	state.AutoSambaMode:reset()
 	--state.AutoShadowMode:reset()
 	state.AutoJumpMode:reset()
