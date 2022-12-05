@@ -19,7 +19,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Tizbron','Magic','Tizalmace','Tizclub','Naegbron','MaccWeapons','None')
+	state.Weapons:options('Tizbron','Magic','Tizalmace','Tizclub','Naegbron','MaccWeapons','Tiztsuken','None')
 	state.AutoWSRestore = M(false, 'AutoWSRestore')
 	state.AutoBLUSpam = M(false, 'AutoBLUSpam')
 	state.AutoJumpMode = M(false, 'AutoJumpMode')
@@ -74,6 +74,7 @@ function init_gear_sets()
 	sets.weapons.Naegmace = {main="Naegling",sub="Almace"}
 	sets.weapons.MaccWeapons = {main="Tizona",sub="Sakpata's Sword"}
 	sets.weapons.HybridWeapons = {main="Vampirism",sub="Vampirism"}
+	sets.weapons.Tiztsuken = {main="Tizona",sub="Zantetsuken"}
 
 
 	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3",feet="Hashi. Basmak +2"}
@@ -783,7 +784,7 @@ function init_gear_sets()
 end
 
 autows_list = {['Tizbron']='Expiacion',['Tizalmace']='Expiacion',['Almace']='Chant Du Cygne',['Magic']='Black Halo',
-['HybridWeapons']='Sanguine Blade',['Naegbron']='Savage Blade',['Naegmace']='Savage Blade',['MaccWeapons']='Expiacion'}	
+['HybridWeapons']='Sanguine Blade',['Naegbron']='Savage Blade',['Naegmace']='Savage Blade',['MaccWeapons']='Expiacion',['Tiztsuken']='Expiacion'}	
 
 buff_spell_lists = {
 	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
