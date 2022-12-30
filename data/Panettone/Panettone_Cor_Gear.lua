@@ -541,6 +541,6 @@ function select_default_macro_book()
     end
 end
 
-autows_list = {['Default']='Savage Blade',['Evisceration']='Evisceration',['Naegling']='Savage Blade',['Ranged']='Last Stand',['RangedDP']='Leaden Salute',['DualWeapons']='Savage Blade',['DualSavage']='Savage Blade',['DualEvisceration']='Evisceration',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualAeolian']='Aeolian Edge',['DualRanged']='Last Stand',['DualMeleeArmageddon']='Wildfire',['DualLastStand']='Last Stand'}
+autows_list = {['Default']='Savage Blade',['Evisceration']='Evisceration',['Naegling']='Savage Blade',['Ranged']='Last Stand',['RangedDP']='Leaden Salute',['DualWeapons']='Savage Blade',['DualSavage']='Savage Blade',['DualEvisceration']='Evisceration',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualLeaden']='Leaden Salute',['DualAeolian']='Aeolian Edge',['DualRanged']='Last Stand',['DualMeleeArmageddon']='Wildfire',['DualLastStand']='Last Stand'}
 
 -- autows_list = {['Default']='Last Stand',['Ranged']='Last Stand',['RangedDP']='Leaden Salute',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualRanged']='Last Stand'}
