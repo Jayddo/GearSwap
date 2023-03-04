@@ -99,7 +99,7 @@ sets.precast.WS.Multi = {
 	back=gear.jse_wsd_back,
 }
 	
-sets.precast.WS.Emnity = set_combine(sets.precast.WS, {left_ear="Schere Earring"})
+sets.precast.WS.Enmity = set_combine(sets.precast.WS, {left_ear="Schere Earring"})
 sets.precast.WS.Tank = set_combine(sets.precast.WS, {})
 
 -- Specific weaponskill sets.
@@ -128,15 +128,15 @@ sets.precast.WS['Shell Crusher']   = set_combine(sets.precast.WS.Multi, {
 
 
 -- Enmity
-sets.precast.WS["Raging Fists"].Emnity = set_combine(sets.precast.WS["Raging Fists"], {left_ear="Schere Earring"})
-sets.precast.WS["Howling Fist"].Emnity = set_combine(sets.precast.WS["Howling Fist"], {left_ear="Schere Earring"})
-sets.precast.WS["Asuran Fists"].Emnity = set_combine(sets.precast.WS["Asuran Fists"], {left_ear="Schere Earring"})
-sets.precast.WS["Ascetic's Fury"].Emnity = set_combine(sets.precast.WS["Ascetic's Fury"], {left_ear="Schere Earring"})
-sets.precast.WS["Victory Smite"].Emnity = set_combine(sets.precast.WS["Victory Smite"], {left_ear="Schere Earring"})
-sets.precast.WS["Shijin Spiral"].Emnity = set_combine(sets.precast.WS["Shijin Spiral"], {left_ear="Schere Earring"})
-sets.precast.WS["Dragon Kick"].Emnity = set_combine(sets.precast.WS["Dragon Kick"], {left_ear="Schere Earring"})
-sets.precast.WS["Tornado Kick"].Emnity = set_combine(sets.precast.WS["Tornado Kick"], {left_ear="Schere Earring"})
-sets.precast.WS["Shell Crusher"].Emnity = set_combine(sets.precast.WS["Shell Crusher"], {})
+sets.precast.WS["Raging Fists"].Enmity = set_combine(sets.precast.WS["Raging Fists"], {left_ear="Schere Earring"})
+sets.precast.WS["Howling Fist"].Enmity = set_combine(sets.precast.WS["Howling Fist"], {left_ear="Schere Earring"})
+sets.precast.WS["Asuran Fists"].Enmity = set_combine(sets.precast.WS["Asuran Fists"], {left_ear="Schere Earring"})
+sets.precast.WS["Ascetic's Fury"].Enmity = set_combine(sets.precast.WS["Ascetic's Fury"], {left_ear="Schere Earring"})
+sets.precast.WS["Victory Smite"].Enmity = set_combine(sets.precast.WS["Victory Smite"], {left_ear="Schere Earring"})
+sets.precast.WS["Shijin Spiral"].Enmity = set_combine(sets.precast.WS["Shijin Spiral"], {left_ear="Schere Earring"})
+sets.precast.WS["Dragon Kick"].Enmity = set_combine(sets.precast.WS["Dragon Kick"], {left_ear="Schere Earring"})
+sets.precast.WS["Tornado Kick"].Enmity = set_combine(sets.precast.WS["Tornado Kick"], {left_ear="Schere Earring"})
+sets.precast.WS["Shell Crusher"].Enmity = set_combine(sets.precast.WS["Shell Crusher"], {})
 
 -- Tank
 sets.precast.WS["Raging Fists"].Tank = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WS.Tank)
@@ -251,6 +251,22 @@ sets.engaged.DT = {
 	left_ring=gear.mnk_tp_ring,															-- 10
 	right_ring="Niqmaddu Ring",
 	back=gear.jse_da_back,																-- 10
+}
+
+sets.engaged.SubtleBlow = {
+	ammo="Coiste Bodhar",
+	head="Malignance Chapeau",
+	body="Mpaca's Doublet",
+	hands="Malignance Gloves",	
+	legs="Mpaca's Hose",						-- 5
+	feet="Malignance Boots",
+	neck="Mnk. Nodowa +2",
+	waist=gear.mnk_tp_waist,					-- 15 II
+	left_ear="Sherida Earring",					-- 5 II
+	right_ear=gear.empy_earring,
+	left_ring=gear.mnk_tp_ring,					-- 10
+	right_ring="Niqmaddu Ring",					-- 5 II
+	back=gear.jse_da_back,
 }
 
 sets.engaged.Tank = {

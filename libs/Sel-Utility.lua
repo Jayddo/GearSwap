@@ -50,6 +50,7 @@
 local lastwstimestamp = 0
 local cancel_spells_to_check = S{'Sneak','Stoneskin','Spectral Jig','Trance','Monomi: Ichi','Utsusemi: Ichi','Utsusemi: Ni','Diamondhide','Magic Barrier','Valiance'}
 local cancel_types_to_check = S{'Waltz', 'Samba'}
+job_registry = T{}
 
 -- Function to cancel buffs if they'd conflict with using the spell you're attempting.
 -- Requirement: Must have Cancel addon installed and loaded for this to work.
@@ -2297,19 +2298,35 @@ function check_rune()
 			return false
 			
 		elseif not buffactive['Vallation'] and not buffactive['Liement'] and buffactive[state.RuneElement.value] and state.HybridMode.value ~= 'Ongo' then
-			if player.main_job == 'RUN' and abil_recasts[23] < latency then
-				send_command('input /ja "Vallation" <me>')
-				tickdelay = os.clock() + 2.5
-				return true
+			if state.MaintainVorV then
+				if player.main_job == 'RUN' then
+					if not (state.Buff['Vallation'] or state.Buff['Valiance']) then
+						if abil_recasts[23] < latency and not state.Buff['Vallation'] then
+							send_command('input /ja "Vallation" <me>')
+							tickdelay = os.clock() + 2.5
+							return true
+						elseif abil_recasts[113] < latency and not state.Buff['Valiance'] then
+							send_command('input /ja "Valiance" <me>')
+							tickdelay = os.clock() + 2.5
+							return true
+						end
+					end
+				else
+					return false
+				end
 			else
-				return false
+				if player.main_job == 'RUN' and abil_recasts[23] < latency then
+					send_command('input /ja "Vallation" <me>')
+					tickdelay = os.clock() + 2.5
+					return true
+				else
+					return false
+				end
 			end
 		else
 			return false
 		end
-	
 	end
-	
 	return false
 end
 
@@ -2410,6 +2427,9 @@ function get_current_stratagem_count()
     local stratsRecast = allRecasts[231]
 	local StratagemChargeTimer = 240
 	local maxStratagems = 1
+	if buffactive['SJ Restriction'] then
+		return
+	end
 	
 	if player.sub_job == 'SCH' and (player.sub_job_level > 29 and player.sub_job_level < 50) then
 		StratagemChargeTimer = 120
@@ -2704,3 +2724,62 @@ end
 function get_fuzzy_name(name)
 	return name:lower():gsub("%s", ""):gsub("%p", "")
 end
+
+function job_list(job_selection)
+	if job_selection:lower() == 'tank' then
+		return true
+	end
+	for _,jobs in pairs(res.jobs) do
+		if type(jobs)=='table' and job_selection:lower() == jobs.ens:lower() then
+			return true
+		end
+	end
+end
+
+function set_registry(id, job_id)
+    if not id then return false end
+    job_registry[id] = job_registry[id] or 'NON'
+    job_id = job_id or 0
+    if res.jobs[job_id].ens == 'NON' and job_registry[id] and not S{'NON', 'UNK'}:contains(job_registry[id]) then 
+        return false
+    end
+    job_registry[id] = res.jobs[job_id].ens
+    return true
+end
+
+function get_registry(id)
+    if job_registry[id] then
+        return job_registry[id]
+    else
+        return 'UNK'
+    end
+end
+
+function getPlayerNameFromJob(job)
+	local target
+	for k, v in pairs(windower.ffxi.get_party()) do
+		if type(v) == 'table' and v.mob ~= nil and v.mob.in_party then
+			if ((job:lower() == 'tank' and S{'PLD','RUN'}:contains(get_registry(v.mob.id))) or (job:lower() ~= 'tank' and get_registry(v.mob.id):lower() == job:lower())) then
+				target = v.name
+			end
+		end
+	end
+    if target ~= nil then
+        return target
+    end
+    return nil
+end
+
+windower.raw_register_event('incoming chunk', function(id, data)
+	if id == 0x0DF or id == 0x0DD or id == 0x0C8 then -- Char update
+        local packet = packets.parse('incoming', data)
+		if packet then
+			local playerId = packet['ID']
+			local job = packet['Main job']
+			
+			if playerId and playerId > 0 then
+				set_registry(packet['ID'], packet['Main job'])
+			end
+		end
+	end
+end)
