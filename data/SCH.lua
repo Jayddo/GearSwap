@@ -580,10 +580,19 @@ function handle_elemental(cmdParams)
 		windower.chat.input('/ma "'..data.elements.nukega_of[state.ElementalMode.value]..'ga" '..target..'')
 		
 	elseif command == 'helix' then
+		local abil_recasts = windower.ffxi.get_ability_recasts() 
 		if player.job_points[(res.jobs[player.main_job_id].ens):lower()].jp_spent > 1199 then
-			windower.chat.input('/ma "'..data.elements.helix_of[state.ElementalMode.value]..'helix II" '..target..'')
+			if get_current_stratagem_count() > 0 and abil_recasts[233] < latency and not (buffactive['Ebullience'] or silent_check_amnesia()) and not (buffactive['Enlightenment'] or silent_check_amnesia()) then
+				windower.send_command('@input /ja "Ebullience" <me>; wait 1; input /ma "'..data.elements.helix_of[state.ElementalMode.value]..'helix II" '..target..'')
+			else
+				windower.chat.input('/ma "'..data.elements.helix_of[state.ElementalMode.value]..'helix II" '..target..'')
+			end
 		else
-			windower.chat.input('/ma "'..data.elements.helix_of[state.ElementalMode.value]..'helix" '..target..'')
+			if get_current_stratagem_count() > 0 and abil_recasts[233] < latency and not (buffactive['Ebullience'] or silent_check_amnesia()) and not (buffactive['Enlightenment'] or silent_check_amnesia()) then
+				windower.send_command('@input /ja "Ebullience" <me>; wait 1; input /ma "'..data.elements.helix_of[state.ElementalMode.value]..'helix " '..target..'')
+			else
+				windower.chat.input('/ma "'..data.elements.helix_of[state.ElementalMode.value]..'helix " '..target..'')
+			end
 		end
 		
 	elseif command == 'enfeeble' then
@@ -1155,7 +1164,7 @@ function check_zerg_sp()
 			return true		
         elseif buffactive['Tabula Rasa'] and tabularasa == true then
             tabularasa = false
-            windower.send_command:schedule(175,'cancel embrava; gs c set autozergmode off;')
+           -- windower.send_command:schedule(175,'cancel embrava; gs c set autozergmode off;')
 		else
 			return false
 		end
@@ -1168,7 +1177,7 @@ buff_spell_lists = {
 	Auto = {	
 		--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
 		{Name='Haste',			Buff='Haste',			SpellID=57,		When='Always'},
-        {Name='Embrava',		Buff='Embrava',			SpellID=478,	When='Always'},
+        --{Name='Embrava',		Buff='Embrava',			SpellID=478,	When='Always'},
         {Name='Reraise',	    Buff='Reraise',		    SpellID=135,	When='Always'},
 	},
 	
@@ -1178,7 +1187,7 @@ buff_spell_lists = {
 		{Name='Aurorastorm II', Buff='Aurorastorm',		SpellID=864,	When='Always'},
 		{Name='Protect V',		Buff='Protect',			SpellID=47, 	When='Always'},
 		{Name='Shell V',		Buff='Shell',			SpellID=52, 	When='Always'},
-        {Name='Embrava',		Buff='Embrava',			SpellID=478,	When='Always'},
+        --{Name='Embrava',		Buff='Embrava',			SpellID=478,	When='Always'},
 	},
 	
 	Nuking = {
