@@ -79,7 +79,7 @@ function init_gear_sets()
     sets.Enmity.SIRD = {
 		ammo="Staunch Tathlum",
 		head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		body="Souv. Cuirass +1", --temporary,
+		body="Souv. Cuirass +1",
 		hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		legs="Souveran Diechlings +1",
 		feet="Odyssean Greaves",
