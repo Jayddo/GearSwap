@@ -286,33 +286,32 @@ function job_pretarget(spell, spellMap, eventArgs)
 
 end
 
---function job_filter_precast(spell, spellMap, eventArgs)
---	if spell.skill == 'Blue Magic' and unbridled_spells:contains(spell.english) and not silent_check_amnesia() and not (buffactive['Unbridled Learning'] or buffactive['Unbridled Wisdom']) and not buffactive['Diffusion'] then
---		if (windower.ffxi.get_ability_recasts()[184] < latency or windower.ffxi.get_ability_recasts()[81] < latency) and (windower.ffxi.get_spell_recasts()[spell.recast_id]/60) < spell_latency then
---			eventArgs.cancel = true
---			windower.chat.input('/ja "Diffusion" <me>')
---			windower.chat.input:schedule(1.7,'/ja "Unbridled Learning" <me>')
---			windower.chat.input:schedule(3.4,'/ma "'..spell.english..'" '..spell.target.raw..'')
---			return
---		else
---			eventArgs.cancel = true
---			add_to_chat(123,'Abort: Unbridled Learning and Diffusion not active.')
---		end
---	end
---	if spell.skill == 'Blue Magic' and not buffactive['Diffusion'] and spell.id == 710 then
---		if windower.ffxi.get_ability_recasts()[184] < latency then
---			eventArgs.cancel = true
---			windower.chat.input('/ja "Diffusion" <me>')
---			windower.chat.input:schedule(1.8,'/ma "'..spell.en..'" <me>')
---			return
---		else
---			eventArgs.cancel = true
---			add_to_chat(123,'Abort: Unbridled Learning and Diffusion not active.')
---			return
---		end
---	end
---end
-
+function job_filter_precast(spell, spellMap, eventArgs)
+	if spell.skill == 'Blue Magic' and unbridled_spells:contains(spell.english) and not silent_check_amnesia() and not (buffactive['Unbridled Learning'] or buffactive['Unbridled Wisdom']) and not buffactive['Diffusion'] then
+		if (windower.ffxi.get_ability_recasts()[184] < latency or windower.ffxi.get_ability_recasts()[81] < latency) and (windower.ffxi.get_spell_recasts()[spell.recast_id]/60) < spell_latency then
+			eventArgs.cancel = true
+			windower.chat.input('/ja "Diffusion" <me>')
+			windower.chat.input:schedule(1.7,'/ja "Unbridled Learning" <me>')
+			windower.chat.input:schedule(3.4,'/ma "'..spell.english..'" '..spell.target.raw..'')
+			return
+		else
+			eventArgs.cancel = true
+			add_to_chat(123,'Abort: Unbridled Learning and Diffusion not active.')
+		end
+	end
+	-- if spell.skill == 'Blue Magic' and not buffactive['Diffusion'] and spell.id == 710 then
+		-- if windower.ffxi.get_ability_recasts()[184] < latency then
+			-- eventArgs.cancel = true
+			-- windower.chat.input('/ja "Diffusion" <me>')
+			-- windower.chat.input:schedule(1.8,'/ma "'..spell.en..'" <me>')
+			-- return
+		-- else
+			-- eventArgs.cancel = true
+			-- add_to_chat(123,'Abort: Unbridled Learning and Diffusion not active.')
+			-- return
+		-- end
+	-- end
+end
 	
 function job_precast(spell, spellMap, eventArgs)
 	if spell.action_type == 'Magic' then
