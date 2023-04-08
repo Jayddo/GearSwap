@@ -170,7 +170,7 @@ sets.precast.WS = {
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
 	feet="Nyame Sollerets",
-	neck="Bard's Charm +1",
+	neck=gear.brd_jse_neck,
 	waist="Fotia Belt",
 	left_ear="Ishvara Earring",			    -- 2%
 	right_ear="Moonshade Earring",
@@ -193,7 +193,7 @@ sets.precast.WS['Rudra\'s Storm'] = {
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
 	feet="Nyame Sollerets",
-	neck="Bard's Charm +1",
+	neck=gear.brd_jse_neck,
 	waist="Fotia Belt",
 	left_ear="Ishvara Earring",
 	right_ear="Moonshade Earring",
@@ -217,7 +217,7 @@ sets.precast.WS['Savage Blade'] = {
 	hands="Nyame Gauntlets",
 	legs="Nyame Flanchard",
 	feet="Nyame Sollerets",
-	neck="Bard's Charm +1",
+	neck=gear.brd_jse_neck,
 	waist="Grunfeld Rope",
 	left_ear="Ishvara Earring",
 	right_ear="Moonshade Earring",
@@ -289,7 +289,7 @@ sets.midcast.SongEffect = {
 }
 
 sets.midcast.SongEffect.Melee = {
---	main=gear.song_dagger,
+	main=gear.song_dagger,
 	range="Gjallarhorn",
 	head=gear.jse_empy_head,
 	body=gear.jse_empy_body,
@@ -463,7 +463,7 @@ sets.midcast['Dispelga'] = set_combine(sets.midcast.SongDebuff, {main="Daybreak"
 -- Duration gear
 -- 70%
 sets.midcast['Enhancing Magic'] = {
-	main=gear.gada_enhancing_club, 													-- 6%
+	main="Daybreak",
 	sub="Ammurapi Shield",															-- 10%
 	head=gear.telchine_enhancing_head,												-- 8%
 	body=gear.telchine_enhancing_body,												-- 8%
@@ -685,7 +685,7 @@ sets.engaged = {
 	hands="Bunzi's Gloves",
 	legs=gear.jse_empy_legs,
 	feet="Nyame Sollerets",
-	neck="Bard's Charm +1",
+	neck=gear.brd_jse_neck,
 	waist="Windbuffet Belt +1",
 	left_ear="Telos Earring",
 	right_ear=gear.empy_earring,
