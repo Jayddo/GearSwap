@@ -18,9 +18,9 @@ function user_setup()
 		gear.idle_jse_back = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}}
 	
 		-- Adjust this if using the Terpander (new +song instrument)
-		info.ExtraSongInstrument = 'Terpander'
+		info.ExtraSongInstrument = 'Daurdabla'
 		-- How many extra songs we can keep from Daurdabla/Terpander
-		info.ExtraSongs = 1
+		info.ExtraSongs = 2
 		
 		-- Set this to false if you don't want to use custom timers.
 		state.UseCustomTimers = M(false, 'Use Custom Timers')
