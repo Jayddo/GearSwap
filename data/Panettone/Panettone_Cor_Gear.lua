@@ -1,12 +1,12 @@
 function user_setup()
 
-	include('Common/COR_UserSetup_Common_DP.lua')
+	include('Common/COR_UserSetup_Common.lua')
 
 end
 
 function init_gear_sets()
 
-	include('Common/COR_Common_DP.lua')
+	include('Common/COR_Common.lua')
 	
 end
 
